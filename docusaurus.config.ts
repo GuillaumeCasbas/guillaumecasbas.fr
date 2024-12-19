@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Guillaume Casbas',
-  tagline: 'Freelance web developer',
+  title: 'Guillaume Casbas - Lead Tech & Développeur Web Freelance',
+  tagline: 'Expert React / React-native et fervant supporter du TDD, je vous accompagne dans la conception d’application fiables et scalables.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -53,12 +53,13 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Guillaume Casbas',
-      logo: {
-        alt: 'Guillaume Casbas',
-        src: 'img/logo.svg',
-      },
       items: [
-        {to: '/about', label: 'About', position: 'left'},
+        {to: '/experiences', label: 'Expériences', position: 'left'},
+        {
+          href: 'https://www.linkedin.com/in/guillaumecasbas/',
+          label: 'Linkedin',
+          position: 'right',
+        },
         {
           href: 'https://github.com/guillaumecasbas',
           label: 'GitHub',
@@ -67,7 +68,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} Guillaume Casbas. Built with Docusaurus.`,
     },
