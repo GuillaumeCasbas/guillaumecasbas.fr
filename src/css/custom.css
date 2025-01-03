@@ -70,6 +70,7 @@
 
 #hero .image-wrapper {
   text-align: right;
+  overflow-x: hidden;
 }
 
 #contact .heading {

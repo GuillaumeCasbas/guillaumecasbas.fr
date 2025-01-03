@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Guillaume Casbas - Lead Tech & Développeur Web Freelance',
   tagline: 'Expert React / React-native et fervant supporter du TDD, je vous accompagne dans la conception d’application fiables et scalables.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://www.guillaumecasbas.com',
