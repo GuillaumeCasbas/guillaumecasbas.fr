@@ -2,9 +2,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
 import SectionHero from '../components/SectionHero';
-import SectionPros from '../components/SectionPros';
 import SectionServices from '../components/SectionServices';
 import SectionContact from '../components/SectionContact';
+import SectionFavoriteTools from '../components/SectionFavoriteTools';
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -15,8 +15,8 @@ export default function Home(): JSX.Element {
     >
       <main>
         <SectionHero />
-        <SectionPros />
         <SectionServices />
+        <SectionFavoriteTools />
         <SectionContact />
       </main>
     </Layout>

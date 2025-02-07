@@ -1,7 +1,7 @@
 // Temporary components
 function Socials() {
   return (
-    <div>
+    <div className="socials">
       <a
         href="https://bsky.app/profile/guillaumecasbas.fr"
         target="_blank"

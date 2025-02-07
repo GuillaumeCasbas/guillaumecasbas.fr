@@ -1,16 +1,17 @@
 import React from 'react';
 import clsx from 'clsx';
+import Heading from '@theme/Heading';
 
 import { contact as content } from '../content';
 
 const SectionContact = () => (
-  <section className={clsx('background--secondary', 'padding-vert--lg')} id="contact">
+  <section className={clsx('padding-vert--lg')} id="contact">
     <div className={clsx('container', 'py-3', 'text--center')}>
-        <div className={clsx('text-on-primary', 'margin-bottom--md', 'heading')}>
+        <Heading as="h2" className={clsx('margin-vert--md', 'text--secondary')}>
           {content.title}
-        </div>
+        </Heading>
         <a
-          className={clsx('button', 'button--primary', 'button--lg')}
+          className={clsx('button', 'button--primary')}
           type="button"
           href="https://www.linkedin.com/in/guillaumecasbas/"
           target='_blank'

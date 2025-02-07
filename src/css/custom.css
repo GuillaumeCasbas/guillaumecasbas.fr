@@ -13,13 +13,14 @@
   --ifm-color-primary-lighter: #930025;
   --ifm-color-primary-lightest: #a6002a;
   --ifm-color-secondary: #276955;
-  --ifm-background-color: #e4e8dc;
-  --ifm-card-background-color: #ebf0e1;
+  --ifm-background-color: #fff;
+  --ifm-card-background-color: #F4F4F4;
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-navbar-shadow: none;
-  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-global-shadow-lw: 6px 6px 0 #000;
+  --ifm-footer-background-color: transparent;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --color--on-primary: #e4e8dc;
+  --color--on-primary: #FFF;
 }
 
 [data-theme='dark'] {
@@ -35,9 +36,9 @@
   --ifm-card-background-color: #242526;
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-navbar-shadow: none;
-  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: transparent;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --color--on-primary: #e4e8dc;
+  --color--on-primary: #FFF;
 }
 
 .background--secondary .text--primary {
@@ -53,6 +54,21 @@
 }
 
 /* TEMPORARY STYLES */
+body {
+  background-image: url('/img/pattern-light.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: auto !important;
+}
+
+[data-theme='dark'] {
+  body {
+    background-image: url('/img/pattern-dark.svg');
+  }
+}
+
 .hero-greetings {
   font-weight: 700;
   font-size: 18px;
@@ -64,13 +80,10 @@
   line-height: 35px;
 }
 
-#hero .text-wrapper {
-  padding-top: 5rem;
-}
-
-#hero .image-wrapper {
-  text-align: right;
-  overflow-x: hidden;
+.hero-cta {
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
 #contact .heading {
@@ -78,20 +91,37 @@
   font-size: 22px;
 }
 
-@media screen and (max-width: 996px) {
-  #hero .text-wrapper {
-    padding-top: 1rem;
-  }
-
-  #hero .image-wrapper {
-    padding-top: 5rem;
-    text-align: center;
-  }
-}
-
 .social-icon {
   height: var(--docusaurus-blog-social-icon-size);
   width: var(--docusaurus-blog-social-icon-size);
   margin-right: .4rem;
   line-height: 0;
+}
+
+#tools .tool-logo {
+  height: 22px;
+}
+
+#tools .tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: scroll;
+  gap: 25px;
+}
+
+.socials {
+  align-items: center;
+}
+
+.button {
+  box-shadow: 4px 4px 0 #000;
+}
+
+@media screen and (max-width: 996px) {
+  #hero .image-wrapper {
+    text-align: center;
+    padding-top: 0;
+  }
 }
