@@ -88,3 +88,10 @@
     text-align: center;
   }
 }
+
+.social-icon {
+  height: var(--docusaurus-blog-social-icon-size);
+  width: var(--docusaurus-blog-social-icon-size);
+  margin-right: .4rem;
+  line-height: 0;
+}

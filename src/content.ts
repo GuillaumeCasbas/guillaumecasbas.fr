@@ -1,7 +1,8 @@
 export const hero = {
   title: "Lead Tech & Développeur Web Freelance",
   greetings: "Bonjour, je suis Guillaume",
-  description: "Expert React / React-native / Symfony et fervant supporter du TDD, je vous accompagne dans la conception d’application fiables et scalables.",
+  description1: "J’accompagne les développeurs dans la conception de code fiables et scalables",
+  description2: "Expert React / React-native / Symfony / fervant supporter du Clean Code et du TDD",
   services: "Mes services",
   contact: "Me contacter",
 };
