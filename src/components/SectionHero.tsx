@@ -10,7 +10,7 @@ const SectionHero = () => (
   <div className="container" id="hero">
     <div className={clsx('row', 'padding-vert--mg')}>
       <div className={clsx('col', 'col--4', 'image-wrapper', 'text--right', 'padding-top--lg')}>
-        <img src={profileUrl} width={256} height={256} />
+        <img src={profileUrl} width={256} height={256} alt="Guillaume Casbas photo" />
       </div>
       <div className={clsx('col', 'col--8', 'text-wrapper')}>
         <div className={clsx('hero-greetings')}>{content.greetings}</div>

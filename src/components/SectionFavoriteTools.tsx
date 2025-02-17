@@ -31,7 +31,14 @@ const SectionFavoriteTools = () => (
         <div className="card__body">
           <div className="tool-list">
             {tools.map(tool => (
-              <img src={tool.url} alt={tool.alt} key={useId()} className="tool-logo" />
+              <img
+                src={tool.url}
+                alt={tool.alt}
+                key={useId()}
+                className="tool-logo"
+                height={22}
+                width="auto"
+              />
             ))}
           </div>
         </div>

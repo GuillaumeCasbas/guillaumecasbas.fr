@@ -98,10 +98,6 @@ body {
   line-height: 0;
 }
 
-#tools .tool-logo {
-  height: 22px;
-}
-
 #tools .tool-list {
   display: flex;
   flex-wrap: wrap;
