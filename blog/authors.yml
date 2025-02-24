@@ -1,0 +1,9 @@
+gcasbas:
+  name: Guillaume le boss
+  title: Mega dev
+  url: https://www.linkedin.com/in/guillaumecasbas/
+  image_url: https://github.com/guillaumecasbas.png
+  email: ecrire@guillaumecasbas.fr
+  socials:
+    # bluesky: https://bsky.app/profile/guillaumecasbas.fr
+    github: guillaumecasbas

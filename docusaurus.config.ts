@@ -40,7 +40,28 @@ const config: Config = {
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false,
+        blog: {
+          blogTitle: 'Blog du Guigui !',
+          blogDescription: 'Un blog qui propulse !',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'Tous les articles',
+          blogSidebarCount: 'ALL',
+          showReadingTime: true, // S'il est défini à false, le "x min read" ne sera pas affiché
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          // feedOptions: {
+          //   type: 'all',
+          //   copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+          //   createFeedItems: async (params) => {
+          //     const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+          //     return defaultCreateFeedItems({
+          //       // ne conserve que les 10 articles de blog les plus récents dans le flux
+          //       blogPosts: blogPosts.filter((item, index) => index < 10),
+          //       ...rest,
+          //     });
+          //   },
+          // },
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -55,6 +76,7 @@ const config: Config = {
       title: 'Guillaume Casbas',
       items: [
         {to: '/experiences', label: 'Expériences', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://www.linkedin.com/in/guillaumecasbas/',
           label: 'Linkedin',
@@ -74,7 +96,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.gruvboxMaterialDark,
     },
   } satisfies Preset.ThemeConfig,
 };
