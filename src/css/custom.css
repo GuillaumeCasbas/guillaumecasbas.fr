@@ -103,7 +103,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  overflow: scroll;
   gap: 25px;
 }
 
