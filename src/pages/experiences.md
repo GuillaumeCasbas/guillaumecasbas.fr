@@ -4,15 +4,24 @@ title: Expériences professionnelles
 
 # Expériences
 
-## 2025: Coach lead tech & Développeur web freelance
+## 2025: Lead tech & Développeur web freelance
 ***Freelance***
 
-Depuis début 2025, je lance mon activité freelance. Capilatisant sur mes 10ans d'expérience, je propose mes compétences pour accompagner des équipes et développer des projets ambitieux.
+J'accompagne les porteurs de projets et les équipe tech pour développer des projets ambitieux, fiables et scalables
+
+Je suis spécialisé dans le développement web React/Symfony et mobile React Native.
+J’accompagne également les équipes dans l’amélioration de leurs pratiques techniques grâce au TDD et à l’automatisation des processus CI/CD
+
+- Développement d'applications React React-native Symfony.
+- Mentoring et coaching tech sur les bonnes pratiques (TDD, tests unitaires).
+- Mise en place et optimisation de pipelines CI/CD.
 
 ## 2020 - 2024: Lead Tech
 ***Medelse***
 
-Développement des différents produits (back et front) tout en accompagnant l'équipe vers une méthodologie de CI/CD basée sur les tests.
+J'ai créé et maintenu l'application mobile en mettant en place un politique de tests intégrée dans la CI/CD.
+J'ai aussi participé à l'accompagnement des développeurs dans la montée en compétence sur les aspects du Clean Code et du TDD.
+J'ai participé aux développement des produits existants
 
 *Stack: React-native, react, symfony, graphql, golang, GCP, …*
 
@@ -20,7 +29,10 @@ Développement des différents produits (back et front) tout en accompagnant l'�
 
 ***Humans Connexion***
 
-Développement sur différents projets web (from scratch, modules spécifiques, CMS, application mobile, …)
+En tant que développeur fullstack, j'ai travaillé sur des typologies de projets très variée.
+
+- Développement d'application web et mobile
+- Développement sépcifique sur CMS
 
 *Stack: React, Laravel, VueJs, Android, Wordpress, Drupal, Prestashop*
 
