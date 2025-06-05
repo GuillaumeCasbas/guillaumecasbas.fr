@@ -14,7 +14,7 @@ const SectionServices = () => (
     </Heading>
     <div className="row">
       {content.list.map(service => (
-        <div className="col col--6 padding-vert--sm" key={useId()}>
+        <div className="col col--4 padding-vert--sm" key={useId()}>
           <div className={clsx('card')}>
             <div className="card__header">
               <h3>{service.title}</h3>

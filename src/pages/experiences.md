@@ -4,17 +4,25 @@ title: Expériences professionnelles
 
 # Expériences
 
-## 2025: Lead tech & Développeur web freelance
+## 2025 Lead tech & Développeur web freelance
 ***Freelance***
 
 J'accompagne les porteurs de projets et les équipe tech pour développer des projets ambitieux, fiables et scalables
 
-Je suis spécialisé dans le développement web React/Symfony et mobile React Native.
-J’accompagne également les équipes dans l’amélioration de leurs pratiques techniques grâce au TDD et à l’automatisation des processus CI/CD
+*Mes missions*
+- [Depuis mars 2025] **Réflex boutique**: développement de module Prestashop 8
+- [Depuis mai 2025] **Egoprod**: Missions courtes de renfort sur du développement CMS
 
-- Développement d'applications React React-native Symfony.
-- Mentoring et coaching tech sur les bonnes pratiques (TDD, tests unitaires).
-- Mise en place et optimisation de pipelines CI/CD.
+---
+
+## 2025 Développeur Typescript bénévole
+***Oryxchange***
+
+J'accompagne en tant que bénévole [l'association PADEO](https://www.padeo.fr/) sur le projet open source [Oryxchange](https://github.com/padeocc/oryx-application) en tant que développeur Typescript
+
+*Stack*: Nextjs, strapi
+
+---
 
 ## 2020 - 2024: Lead Tech
 ***Medelse***
@@ -24,6 +32,8 @@ J'ai aussi participé à l'accompagnement des développeurs dans la montée en c
 J'ai participé aux développement des produits existants
 
 *Stack: React-native, react, symfony, graphql, golang, GCP, …*
+
+---
 
 ## 2015 - 2020: Développeur Full stack
 
