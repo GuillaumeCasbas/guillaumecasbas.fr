@@ -24,6 +24,11 @@ export const services = {
       tools: "React / React-native / Symfony / …",
     },
     {
+      title: "Développement spécifique CMS",
+      desc: "Je développe des modules spécifiques sur les principaux CMS",
+      tools: "Prestashop / Wordpress / Drupal",
+    },
+    {
       title: "Coaching / mentoring",
       desc: "J'aide et accompagne les développeurs à améliorer leur technique en Craftmanship",
       tools: "TDD / CI/CD /Clean Code / Clean Architecture, …",
