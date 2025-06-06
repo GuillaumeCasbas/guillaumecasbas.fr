@@ -7,7 +7,7 @@ title: Expériences professionnelles
 ## 2025 Lead tech & Développeur web freelance
 ***Freelance***
 
-J'accompagne les porteurs de projets et les équipe tech pour développer des projets ambitieux, fiables et scalables
+Mon rôle est d'aider les porteurs de projets et les équipes techniques à développer des projets ambitieux, fiables et scalables.
 
 *Mes missions*
 - [Depuis mars 2025] **Réflex boutique**: développement de module Prestashop 8
@@ -18,7 +18,7 @@ J'accompagne les porteurs de projets et les équipe tech pour développer des pr
 ## 2025 Développeur Typescript bénévole
 ***Oryxchange***
 
-J'accompagne en tant que bénévole [l'association PADEO](https://www.padeo.fr/) sur le projet open source [Oryxchange](https://github.com/padeocc/oryx-application) en tant que développeur Typescript
+Dans le cadre de mon engagement bénévole, je collabore avec [l'association PADEO](https://www.padeo.fr/) en tant que développeur TypeScript sur le projet open source [Oryxchange](https://github.com/padeocc/oryx-application). Ce projet vise à promouvoir des actions vertueuses pour l'environnement, et mon implication me permet de contribuer à une initiative innovante et qui me tient à coeur tout en mettant en pratique mes compétences en développement.
 
 *Stack*: Nextjs, strapi
 
@@ -27,9 +27,7 @@ J'accompagne en tant que bénévole [l'association PADEO](https://www.padeo.fr/)
 ## 2020 - 2024: Lead Tech
 ***Medelse***
 
-J'ai créé et maintenu l'application mobile en mettant en place un politique de tests intégrée dans la CI/CD.
-J'ai aussi participé à l'accompagnement des développeurs dans la montée en compétence sur les aspects du Clean Code et du TDD.
-J'ai participé aux développement des produits existants
+En tant que lead tech, j'ai conçu et assuré la maintenance d'une application mobile, en intégrant une stratégie de tests automatisés au sein de notre pipeline CI/CD. J'ai également joué un rôle clé dans la formation et l'accompagnement des développeurs, en mettant l'accent sur les bonnes pratiques du Clean Code et du Test-Driven Development (TDD). De plus, j'ai contribué activement à l'amélioration et au développement des produits existants.
 
 *Stack: React-native, react, symfony, graphql, golang, GCP, …*
 
@@ -39,10 +37,10 @@ J'ai participé aux développement des produits existants
 
 ***Humans Connexion***
 
-En tant que développeur fullstack, j'ai travaillé sur des typologies de projets très variée.
+ j'ai eu l'opportunité de travailler sur une large gamme de projets variés, couvrant divers aspects du développement logiciel. Mes missions incluaient:
 
-- Développement d'application web et mobile
-- Développement sépcifique sur CMS
+- Le développement d'applications web et mobile
+- Le développement sépcifique sur les principaux CMS
 
 *Stack: React, Laravel, VueJs, Android, Wordpress, Drupal, Prestashop*
 
