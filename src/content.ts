@@ -20,12 +20,12 @@ export const services = {
   list: [
     {
       title: "Développement d’application web",
-      desc: "Conception et développement d'applications (web et/ou mobile) robustes et scalables.",
+      desc: "Je conçois et développe des applications (web et/ou mobile) robustes et scalables.",
       tools: "React / React-native / Symfony / …",
     },
     {
       title: "Développement spécifique CMS",
-      desc: "Je développe des modules spécifiques sur les principaux CMS",
+      desc: "Je développe des modules spécifiques pour les principaux CMS",
       tools: "Prestashop / Wordpress / Drupal",
     },
     {
@@ -37,7 +37,7 @@ export const services = {
 };
 
 export const contact = {
-  title: "Vous avez un projet ou souhaitez monter en compétences en qualité logicielle ?",
+  title: "Vous avez un projet ou vous souhaitez développer vos compétences en qualité logicielle?",
   contact: "Contactez-moi pour en discuter !",
 };
 
