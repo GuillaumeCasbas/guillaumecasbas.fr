@@ -42,8 +42,3 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ### Troubleshooting
 
-After dump to 3.8 > start error for macOS users with no Chromium-based browser
-[See #11205](https://github.com/facebook/docusaurus/pull/11205)
-```
-npx docusaurus start --no-open
-```
