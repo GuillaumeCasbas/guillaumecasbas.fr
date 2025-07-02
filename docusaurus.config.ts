@@ -68,8 +68,47 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'light',
-      links: [],
+      style: 'dark',
+      links: [
+        {
+          title: 'Ressources intéressantes',
+          items: [
+            {
+              label: 'Le Craftmanship',
+              href: 'https://www.cultura.com/p-coder-proprement-9782326002272.html',
+            },
+            {
+              label: 'Le TDD',
+              href: 'https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html',
+            },
+            {
+              label: 'Sur l\'architecture d\'application',
+              href: 'https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation',
+            },
+            {
+              label: 'Sur le front-end',
+              href: 'https://blog.octo.com/tests-sur-tous-les-fronts-emergence-des-composants-applicatifs',
+            }
+          ]
+        },
+        {
+          title: 'Socials',
+          items: [
+            {
+              label: 'Linkedin',
+              href: 'https://www.linkedin.com/in/guillaumecasbas/',
+            },
+            {
+              label: 'Github',
+              href: 'https://github.com/guillaumecasbas',
+            },
+            {
+              label: 'Bluesky',
+              href: 'https://bsky.app/profile/guillaumecasbas.fr',
+            },
+          ],
+        },
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} Guillaume Casbas. Built with Docusaurus.`,
     },
     prism: {
