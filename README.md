@@ -1,5 +1,7 @@
 # Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2da858fa-ba71-4ecf-ab33-9f82cb7047a5/deploy-status)](https://app.netlify.com/projects/guillaumecasbaswebsite/deploys)
+
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
