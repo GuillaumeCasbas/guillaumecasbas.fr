@@ -1,0 +1,147 @@
+/**
+ * Movember Banner Styles
+ * Temporary banner displayed under the header
+ * Design: Sobre, dark theme with site's primary accent color
+ */
+.movember-banner {
+  /* Base styling */
+  width: 100%;
+  background-color: #111; /* Anthracite */
+  color: #ffffff;
+  text-align: center;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  
+  /* Prevent CLS - fixed height in desktop */
+  min-height: 80px;
+
+  /* Use site's primary color for hover */
+  --movember-accent: var(--ifm-color-secondary, #800020);
+}
+
+.movember-banner__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 100%;
+  min-height: 80px;
+}
+
+/* Title */
+.movember-banner__title {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.movember-banner__title:hover {
+  color: var(--movember-accent);
+}
+
+/* Indicators Container */
+.movember-banner__indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Individual Indicator */
+.movember-banner__indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 180px;
+}
+
+.movember-banner__indicator-label {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+}
+
+/* Progress Bar */
+.movember-banner__progress-bar {
+  height: 8px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.movember-banner__progress-fill {
+  height: 100%;
+  background-color: var(--movember-accent);
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* CTA Button */
+.movember-banner__cta {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--movember-accent);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+.movember-banner__cta:hover {
+  background-color: var(--movember-accent);
+  color: var(--color--on-primary, #ffffff);
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 996px) {
+  .movember-banner {
+    min-height: auto;
+  }
+
+  .movember-banner__content {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .movember-banner__indicators {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .movember-banner__indicator {
+    min-width: 0;
+  }
+
+  .movember-banner__cta {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Dark mode compatibility - ensure colors work in both modes */
+[data-theme='dark'] .movember-banner {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .movember-banner__indicator-label {
+  color: #e0e0e0;
+}
+
+/* Reduce motion - skip animations if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  .movember-banner__progress-fill {
+    transition: none;
+  }
+}
