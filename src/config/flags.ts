@@ -23,9 +23,9 @@ export const flags: SiteFlags = {
   movemberBanner: {
     enabled: true, // Set to true to display the banner
     kmTotal: 120,
-    kmDone: 51.1,
-    donationGoal: 120,
-    donationDone: 40,
+    kmDone: 61.1,
+    donationGoal: 200,
+    donationDone: 120,
     donationUrl: 'https://movember.com/m/14950664?mc=1',
     endDate: '2026-11-30', // Used for "days remaining" calculation
   },
