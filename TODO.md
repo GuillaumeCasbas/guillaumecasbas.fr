@@ -22,7 +22,7 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
   - [ ] À propos (parcours, pourquoi, OryxChange, Movember, 2 recommandations)
   - [ ] Expériences (contenu actuel + introduction de lien avec le positionnement)
 - [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
-- [ ] **7. Mise en ligne** : relecture finale, bascule
+- [ ] **7. Mise en ligne** : relecture finale, traiter les vulnérabilités signalées par `npm audit` (picomatch via Vite/Astro), bascule
 
 ## À fournir
 
