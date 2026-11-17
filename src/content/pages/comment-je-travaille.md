@@ -20,7 +20,7 @@ Prix fixes, périmètre écrit, et un seul critère de réussite : vous déploye
 
 <!-- Le refus du TJM, expliqué du point de vue du client. -->
 
-Je ne facture pas au temps passé. Un taux journalier récompense le prestataire qui traîne et fait porter le risque au client.
+Je ne facture pas au temps passé : avec un taux journalier, le prix dépend de la durée de la mission, pas de ce qu'elle vous apporte.
 
 Mes prix reposent sur le résultat attendu. Vous savez ce que vous payez avant de commencer, et ce montant ne bouge pas.
 
@@ -36,7 +36,11 @@ L'audit de livraison coûte 700 €, la session stratégie 300 €. Pas de devis
 
 Pipeline et tests critiques, ATDD, partenaire de livraison : je ne les chiffre pas avant d'avoir vu votre projet. Pas parce que je cache mes prix, mais parce qu'un prix donné sans diagnostic, c'est une supposition.
 
-Après l'audit, vous recevez une proposition écrite sous 48 heures : périmètre écrit noir sur blanc, prix ferme.
+Le prix dépend de ce que l'audit révèle : la taille de votre équipe, le rythme de vos mises en prod, l'état de votre pipeline.
+
+Pour un besoin simple et bien cerné, la session stratégie peut suffire : je vous dirai lequel des deux il faut.
+
+Ensuite, vous recevez une proposition écrite sous 48 heures : périmètre écrit noir sur blanc, prix ferme.
 
 ## Votre budget choisit le périmètre, pas le prix
 

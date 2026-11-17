@@ -102,7 +102,7 @@ Vous recevez un compte rendu factuel, un plan d'action priorisé, mes checklists
 
 ### Missions
 
-**Chiffré sur la base de l'audit** · périmètre écrit, prix ferme
+**Chiffré après l'audit ou la session** · périmètre écrit, prix ferme
 
 Si le diagnostic le justifie :
 
@@ -110,7 +110,7 @@ Si le diagnostic le justifie :
 - l'ATDD : des tests écrits à partir des critères de votre équipe produit ;
 - un lead tech à temps partiel pour vos mises en prod.
 
-Proposition écrite sous 48 heures après l'audit.
+Proposition écrite sous 48 heures après l'audit ou la session.
 
 [Commencer par l'audit](/contact?offre=audit)
 
