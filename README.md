@@ -2,45 +2,34 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2da858fa-ba71-4ecf-ab33-9f82cb7047a5/deploy-status)](https://app.netlify.com/projects/guillaumecasbaswebsite/deploys)
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Site statique construit avec [Astro](https://astro.build/). Suivi de la refonte : [TODO.md](TODO.md).
 
-### Installation
+## Installation
 
-```
-$ npm install
-```
-
-### Local Development
-
-```
-$ npm run start
+```bash
+npm install
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Développement local
 
-### Build
-
-```
-$ npm run build
+```bash
+npm run dev
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Build
 
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true npm run deploy
+```bash
+npm run build
 ```
 
-Not using SSH:
+Vérifie les types (`astro check`) puis génère le site dans `dist/`.
 
+```bash
+npm run preview
 ```
-$ GIT_USER=<Your GitHub username> npm run deploy
-```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Sert localement le contenu de `dist/`.
 
-### Troubleshooting
+## Déploiement
 
+Netlify construit et publie le site à chaque push, selon `netlify.toml`.
