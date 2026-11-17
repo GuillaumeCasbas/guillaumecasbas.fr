@@ -18,3 +18,6 @@ npm-debug.log*
 
 # Claude deps
 .claude/launch.json
+
+# Notes de travail de la refonte (jamais commitées)
+/knowledge-refonte-site/

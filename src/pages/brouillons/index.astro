@@ -1,0 +1,27 @@
+---
+// Liste temporaire des textes de l'étape 2. À supprimer une fois les pages intégrées (étape 5).
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pages = await getCollection('pages');
+---
+
+<BaseLayout title="Brouillons" description="Textes en cours de rédaction." noindex>
+  <main>
+    <h1>Brouillons</h1>
+    <ul>
+      {pages.map((page) => (
+        <li><a href={`/brouillons/${page.id}`}>{page.data.title}</a></li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    max-width: 42rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: system-ui, sans-serif;
+  }
+</style>
