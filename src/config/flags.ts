@@ -23,7 +23,7 @@ export const flags: SiteFlags = {
   movemberBanner: {
     enabled: true, // Set to true to display the banner
     kmTotal: 120,
-    kmDone: 61.1,
+    kmDone: 81.2,
     donationGoal: 200,
     donationDone: 120,
     donationUrl: 'https://movember.com/m/14950664?mc=1',
