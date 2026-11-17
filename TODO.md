@@ -21,7 +21,7 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
   - [ ] Comment je travaille
   - [ ] À propos (parcours, pourquoi, OryxChange, Movember, 2 recommandations)
   - [ ] Expériences (contenu actuel + introduction de lien avec le positionnement)
-- [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? »), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
+- [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
 - [ ] **7. Mise en ligne** : relecture finale, bascule
 
 ## À fournir

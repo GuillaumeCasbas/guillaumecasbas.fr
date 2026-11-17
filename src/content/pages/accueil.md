@@ -72,39 +72,49 @@ Pas de magie : des tests unitaires et d'intégration, une QA sérieuse, et des r
 
 ## Comment on démarre
 
-<!-- La porte d'entrée : le seul prix de la page, très visible. Bizarre à refuser. -->
+<!--
+Grille de trois cartes, façon page de tarifs SaaS.
+La carte Audit est au centre, plus grande, avec l'étiquette « Recommandé ».
+Les boutons mènent au formulaire de contact avec le champ « Ce qui vous amène » présélectionné (?offre=…), à construire à l'étape 6.
+-->
 
-### L'audit de livraison : 700 €, 1 jour.
+Prix fixes, périmètre écrit. Pas de surprise.
 
-Je regarde comment votre équipe travaille : pipeline, tests, déploiements, revues de code. Je vous dis pourquoi vous déboguez en prod, et quoi faire en premier.
+### Session stratégie
 
-Vous repartez avec :
+**300 €** · 90 minutes, à distance
 
-- un compte rendu écrit, avec des constats factuels ;
-- un plan d'action priorisé : quoi faire en premier, dans quel ordre ;
-- mes checklists, réutilisables dès votre prochaine mise en prod.
+On échange : vous me racontez votre façon de livrer, et vous me montrez ce qui coince en partage d'écran.
 
-Prix fixe, périmètre écrit. Pas de surprise.
+Vous recevez un compte rendu écrit : où vous en êtes, les options, la priorité que je recommande.
 
-[Découvrir l'audit](/audit)
+[Prendre une session](/contact?offre=session)
 
-## Ensuite, si le diagnostic le justifie
+### Audit de livraison
 
-<!-- Les offres principales, sans prix. Elles montrent où mène l'audit. -->
+*Recommandé*
 
-### Un pipeline qui protège votre métier
+**700 €** · 1 jour, sur place ou à distance
 
-Une CI/CD complète et les tests critiques d'abord. L'objectif : déployer un vendredi après-midi sans trembler.
+Je constate par moi-même dans votre code et vos outils : pipeline, tests, déploiements, revues de code. Je vous dis pourquoi vous déboguez en prod, et quoi faire en premier.
 
-### Des tests écrits à partir de vos critères métier
+Vous recevez un compte rendu factuel, un plan d'action priorisé, mes checklists réutilisables, et une restitution orale.
 
-L'IA écrit le code, votre équipe produit définit ce qu'il doit faire, les tests le vérifient. Le contrôle revient.
+[Réserver un audit](/contact?offre=audit) · [Découvrir l'audit](/audit)
 
-### Un lead tech à temps partiel
+### Missions
 
-Je suis là pour vos mises en prod et les revues du code généré par IA, avec un bilan chiffré chaque mois. Le confort d'un senior dans l'équipe, sans recrutement.
+**Chiffré sur la base de l'audit** · périmètre écrit, prix ferme
 
-Chaque offre est chiffrée sur la base de l'audit : périmètre écrit noir sur blanc, prix ferme.
+Si le diagnostic le justifie :
+
+- un pipeline et les tests critiques, pour déployer un vendredi après-midi sans trembler ;
+- l'ATDD : des tests écrits à partir des critères de votre équipe produit ;
+- un lead tech à temps partiel pour vos mises en prod.
+
+Proposition écrite sous 48 heures après l'audit.
+
+[Commencer par l'audit](/contact?offre=audit)
 
 ## Appel à l'action
 
