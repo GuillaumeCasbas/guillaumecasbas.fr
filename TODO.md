@@ -8,7 +8,7 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
 - [x] **1. Squelette Astro** : remplacer Docusaurus, build qui passe, déploiement de prévisualisation sur Netlify
 - [x] **2. Textes** : rédiger en Markdown le texte de chaque page (brief, LinkedIn, existant), validation du fond avant tout design
   - [x] Accueil
-  - [x] Audit de livraison (avec la session stratégie et la phrase TPE)
+  - [x] Démarrer (ex-page Audit : session stratégie, audit, missions, FAQ — 4 réponses de FAQ à valider)
   - [x] Comment je travaille
   - [x] À propos
   - [x] Expériences
@@ -17,7 +17,7 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
 - [ ] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page, composant CTA
 - [ ] **5. Intégration des pages** (une étape par page)
   - [ ] Accueil
-  - [ ] Audit de livraison (700 €, session stratégie 300 €, phrase TPE)
+  - [ ] Démarrer (`/demarrer`, ancres `#session` et `#audit`)
   - [ ] Comment je travaille
   - [ ] À propos (parcours, pourquoi, OryxChange, Movember, 2 recommandations)
   - [ ] Expériences (contenu actuel + introduction de lien avec le positionnement)

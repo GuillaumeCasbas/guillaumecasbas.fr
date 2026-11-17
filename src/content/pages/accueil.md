@@ -1,6 +1,6 @@
 ---
 title: "Guillaume Casbas · Livrer sans stress, même quand l'IA écrit le code"
-description: "Lead tech pendant plus de 10 ans, je remets le contrôle dans vos livraisons. On démarre par un audit de livraison : 700 €, 1 jour."
+description: "Lead tech pendant plus de 10 ans, je remets le contrôle dans vos livraisons. On démarre par un audit de livraison : 700 € HT, 1 jour."
 ---
 
 <!--
@@ -80,7 +80,7 @@ Prix fixes, périmètre écrit. Pas de surprise.
 
 ### Session stratégie
 
-**300 €** · 90 minutes, à distance
+**300 € HT** · 90 minutes, à distance
 
 On échange : vous me racontez votre façon de livrer, et vous me montrez ce qui coince en partage d'écran.
 
@@ -92,13 +92,13 @@ Vous recevez un compte rendu écrit : où vous en êtes, les options, la priorit
 
 *Recommandé*
 
-**700 €** · 1 jour, sur place ou à distance
+**700 € HT** · 1 jour, sur place ou à distance
 
 Je constate par moi-même dans votre code et vos outils : pipeline, tests, déploiements, revues de code. Je vous dis pourquoi vous déboguez en prod, et quoi faire en premier.
 
 Vous recevez un compte rendu factuel, un plan d'action priorisé, mes checklists réutilisables, et une restitution orale.
 
-[Réserver un audit](/contact?offre=audit) · [Découvrir l'audit](/audit)
+[Réserver un audit](/contact?offre=audit) · [Découvrir l'audit](/demarrer#audit)
 
 ### Missions
 

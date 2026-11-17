@@ -30,7 +30,7 @@ Mes prix reposent sur le résultat attendu. Vous savez ce que vous payez avant d
 
 ### Les offres d'entrée ont un prix affiché.
 
-L'audit de livraison coûte 700 €, la session stratégie 300 €. Pas de devis à attendre, pas de négociation.
+L'audit de livraison coûte 700 € HT, la session stratégie 300 € HT. Pas de devis à attendre, pas de négociation.
 
 ### Les missions sont chiffrées sur la base de l'audit.
 
