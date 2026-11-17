@@ -38,9 +38,9 @@ Alors je suis passé de l'autre côté. Je n'écris plus vos features : j'apport
 
 <!-- Le Why. Deux lectures : la sérénité pour les décideurs, la charge mentale pour les devs. Ne jamais les opposer. -->
 
-Parce que l'accélération a un coût, et qu'aujourd'hui ce sont souvent les devs qui le paient : plus de contexte à tenir, plus de bugs à éteindre, et la même pression qu'avant.
+Parce que l'accélération a un coût, et qu'aujourd'hui ce sont souvent les devs qui le paient : davantage de contexte à tenir, davantage de bugs à corriger, et toujours la même pression.
 
-Je mets en place des process pour travailler avec l'IA en gardant le maximum de sérénité. Bonne nouvelle pour tout le monde : les équipes qui maîtrisent l'accélération sont celles qui gardent leurs devs.
+Je mets en place des process pour travailler avec l'IA en gardant le maximum de sérénité. Moins de bugs en prod, c'est des devs plus sereins, des utilisateurs plus satisfaits, et une entreprise qui avance plus vite. Tout le monde y gagne.
 
 ## Ce qu'ils en disent
 
@@ -60,11 +60,11 @@ Je mets en place des process pour travailler avec l'IA en gardant le maximum de 
 
 ### OryxChange
 
-OryxChange est né en 2025 au sein de l'association PADEO, qui aide celles et ceux qui veulent agir sur les 17 objectifs de développement durable de l'ONU. J'y ai d'abord contribué comme développeur bénévole. Aujourd'hui, le projet devient une entreprise à part entière, et j'en fais partie.
+OryxChange, c'est l'aventure entrepreneuriale que je mène comme CTO, avec trois associés. Le projet est né en 2025 au sein de l'association PADEO, qui aide celles et ceux qui veulent agir sur les 17 objectifs de développement durable de l'ONU.
 
 ### Movember
 
-Depuis 2022, je participe chaque novembre à Movember, la campagne pour la santé des hommes, et en particulier leur santé mentale. Un sujet qui rejoint mon métier : la pression qu'on fait peser sur les équipes finit toujours par se payer.
+Depuis 2022, je participe chaque novembre à Movember, la campagne pour la santé des hommes, et en particulier leur santé mentale. Une cause qui rejoint ma vision du travail : on fait du meilleur travail quand on va bien.
 
 [Ma page Movember](https://fr.movember.com/mospace/14950664)
 

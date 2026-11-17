@@ -42,7 +42,7 @@ Si la réponse est « jamais », ce n'est pas de la prudence. C'est que personne
 
 ### Qui relit le code généré par IA dans votre équipe ?
 
-L'IA écrit vite. Quelqu'un doit encore vérifier que ça fait ce que le métier attend.
+L'IA écrit vite, mais elle ne connaît pas votre métier. Quelqu'un doit s'assurer que le code fait ce qu'on attend de lui.
 
 ### Vous déboguez en prod plus souvent que vous ne l'aimeriez ?
 
@@ -50,13 +50,11 @@ Alors vos tests et votre pipeline ne protègent pas ce qui compte vraiment.
 
 ## Mon métier
 
-<!-- Le positionnement en une phrase forte, puis la nuance pour les deux lectures (décideurs et devs). -->
+<!-- Le positionnement en une phrase forte, puis ce que j'apporte concrètement. -->
 
-Remettre le contrôle dans ce circuit.
+**Remettre le contrôle dans ce circuit.**
 
-Je ne vends pas des lignes de code. Je vends du contrôle, de la méthode et du jugement : ce qui permet à une équipe d'aller vite sans se brûler.
-
-Les équipes qui maîtrisent l'accélération sont celles qui gardent leurs devs.
+J'apporte du contrôle là où l'IA apporte de la vitesse : des tests qui protègent ce qui compte, un pipeline fiable, des revues de code qui ont du sens. Votre équipe garde le rythme, et retrouve la sérénité.
 
 ## La preuve
 
@@ -64,7 +62,7 @@ Les équipes qui maîtrisent l'accélération sont celles qui gardent leurs devs
 
 **4 ans** de lead tech chez Medelse, sur le web et le mobile. **Zéro interruption de service.**
 
-Pas de magie : des tests unitaires et d'intégration, une QA sérieuse, et des revues de code exigeantes. Oui, j'étais celui qui renvoyait les PR sans tests.
+Pas de magie : des tests unitaires et d'intégration, une QA sérieuse, et des revues de code exigeantes. Mon rôle : fixer un niveau d'exigence élevé, et donner à l'équipe les moyens de l'atteindre.
 
 > Guillaume a été une personne clé au sein de Medelse pendant quatre ans. Il s'est distingué par son expertise technique, sa rigueur, son investissement et son esprit d'équipe.
 >

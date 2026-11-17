@@ -111,11 +111,11 @@ Plus de 10 ans de développement web et mobile, dont 4 ans comme lead tech. Je s
 
 ## Engagement associatif et entrepreneurial
 
-### OryxChange
+### OryxChange : CTO et associé
 
 *Depuis mars 2025*
 
-**Contexte** : un projet né au sein de l'association PADEO (Pour un avenir durable en Occitanie), qui aide celles et ceux qui veulent agir sur les 17 objectifs de développement durable de l'ONU. Le projet devient aujourd'hui une entreprise à part entière.
+**Contexte** : un projet né au sein de l'association PADEO (Pour un avenir durable en Occitanie), qui aide celles et ceux qui veulent agir sur les 17 objectifs de développement durable de l'ONU. Le projet devient aujourd'hui une entreprise, avec quatre associés ; j'en suis le CTO.
 
 **Missions**
 
