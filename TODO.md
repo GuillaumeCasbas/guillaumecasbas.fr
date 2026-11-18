@@ -24,13 +24,14 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
 - [ ] **5. Intégration des pages** (une étape par page)
   - [x] Accueil (maquettes, composant Affiche et brouillon accueil.md supprimés : le texte vit dans `src/pages/index.astro`)
   - [x] Démarrer (`/demarrer`, ancres `#session` et `#audit` ; brouillon demarrer.md supprimé)
-  - [ ] Comment je travaille
+  - [x] Comment je travaille (brouillon supprimé ; critère de réussite : « le vendredi comme un mardi »)
   - [ ] Qui je suis (`/qui-je-suis`, ex-`/a-propos` à rediriger ; parcours, pourquoi, OryxChange, Movember, 2 recommandations)
     - [ ] Bloc « Mes lectures recommandées » : les 4 ressources du pied de page actuel (Coder proprement, The Cycles of TDD, architecture hexagonale et tests front-end chez OCTO), chacune avec une phrase sur ce qu'elle apporte ; vérifier que les liens fonctionnent toujours
   - [ ] Expériences (contenu actuel + introduction de lien avec le positionnement)
 - [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
 - [ ] **Bloc « Trois questions » de l'accueil** : gardé pour la V1 ; à repenser avec le ton positif (« ce n'est pas de la prudence, c'est que personne n'a confiance » et « vos tests ne protègent pas ce qui compte » restent accusateurs), ou à retirer pour alléger la page
 - [ ] **Ton de la page Démarrer** : revoir en positif les phrases négatives du « Pour qui » de l'audit (« chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod ») et l'accroche « Pourquoi vous déboguez en prod »
+- [ ] **Ton de la page Comment je travaille** : revoir en positif « ce serait la promesse d'un travail bâclé » (bloc budget), « Pas de devis qui gonfle en cours de route » et « Une usine à gaz ne sera pas maintenue par votre équipe » (principes)
 - [ ] **Taille des titres** : trancher une fois tout le contenu intégré (titres jugés trop gros sur ordinateur et mobile, notamment le CTA de fin de page) ; un seul réglage à revoir, les variables `--fs-*` de `src/styles/global.css`
 - [ ] **⚠️ Avant la mise en ligne : le « ×3–4 » du constat n'est pas sourcé.** Il vient du brief, sans source. Soit trouver une étude solide et la citer, soit remplacer les chiffres par une tendance (« plus vite », « toujours plus de features »…). Concerne l'escalier de l'accueil (`src/pages/index.astro`)
 - [ ] **7. Mise en ligne** : relecture finale, vérifier que « Pas de cookies, pas de suivi » reste vrai avec Netlify Forms, relancer les audits Ecoindex et kastor.green (nouvel identifiant de badge kastor), traiter les vulnérabilités signalées par `npm audit` (picomatch via Vite/Astro), bascule
