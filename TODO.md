@@ -3,58 +3,54 @@
 Objectif : mise en ligne fin novembre 2026. Stack : Astro, site statique, français uniquement.
 Méthode : petites étapes, plan validé avant chaque étape, relecture du code avant de passer à la suivante.
 
-## V1
+Les étapes 1 à 6 sont terminées (voir « Fait » en bas). Ce qui reste est classé par priorité, en vue du salon du **19 novembre 2026**.
 
-- [x] **1. Squelette Astro** : remplacer Docusaurus, build qui passe, déploiement de prévisualisation sur Netlify
-- [x] **2. Textes** : rédiger en Markdown le texte de chaque page (brief, LinkedIn, existant), validation du fond avant tout design
-  - [x] Accueil
-  - [x] Démarrer (ex-page Audit : session stratégie, audit, missions, FAQ)
-  - [x] Comment je travaille
-  - [x] Qui je suis (ex-À propos)
-  - [x] Expériences
-  - [x] Contact et mentions légales
-- [x] **3. Pistes visuelles** : 2 ou 3 maquettes de l'accueil sur la palette (vert #276955, orange #ff6f00, bordeaux #6d001b), choix d'une piste
-  - [x] Structure retenue : piste B « Affiche » (A et B d'origine écartées), titres plafonnés sur ordinateur
-  - [x] Couleurs b6 « Forêt et grenat » (accent #9b1426, primaire #173f33, secondaire #276955, fond #f6f0e4)
-  - [x] Portrait : photo détourée en bichromie grenat et crème (filtre SVG)
-- [x] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page, composant CTA
-  - [x] En-tête : sur mobile, les liens passent sur une deuxième ligne sous le nom et le bouton
-  - [x] Pied de page : « Pas de cookies, pas de suivi » (à revérifier une fois Netlify Forms en place) et bloc « Conception responsable » avec les badges Ecoindex et kastor.green repris du site actuel (`src/theme/Footer/Layout/index.tsx` sur main ; badges à relancer après la mise en ligne, le nouveau site changera le score)
-  - [x] Pied de page : liens LinkedIn, GitHub et Bluesky (repris de `docusaurus.config.ts` sur main), en lien texte plutôt qu'en icônes
-- [x] **5. Intégration des pages** (une étape par page)
-  - [x] Accueil (maquettes, composant Affiche et brouillon accueil.md supprimés : le texte vit dans `src/pages/index.astro`)
-  - [x] Démarrer (`/demarrer`, ancres `#session` et `#audit` ; brouillon demarrer.md supprimé)
-  - [x] Comment je travaille (brouillon supprimé ; critère de réussite : « le vendredi comme un mardi »)
-  - [x] Qui je suis (`/qui-je-suis` ; brouillon supprimé ; parcours, pourquoi, OryxChange, Movember, 2 recommandations)
-    - [x] Bloc « Mes lectures recommandées » : les 4 ressources du pied de page actuel (Coder proprement, The Cycles of TDD, architecture hexagonale et tests front-end chez OCTO), chacune avec une phrase sur ce qu'elle apporte ; vérifier que les liens fonctionnent toujours
-  - [x] Expériences (contenu actuel + introduction ; brouillon supprimé)
-- [x] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD (avec la mention des badges chargés depuis des serveurs tiers), page de remerciement, page 404, image de partage ; pas de redirection (décidé : l'ancien site n'avait que /, /experiences et /docs/intro)
-- [ ] **Bloc « Trois questions » de l'accueil** : gardé pour la V1 ; à repenser avec le ton positif (« ce n'est pas de la prudence, c'est que personne n'a confiance » et « vos tests ne protègent pas ce qui compte » restent accusateurs), ou à retirer pour alléger la page
-- [ ] **Ton de la page Démarrer** : revoir en positif les phrases négatives du « Pour qui » de l'audit (« chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod ») et l'accroche « Pourquoi vous déboguez en prod »
-- [ ] **Ton de la page Comment je travaille** : revoir en positif « ce serait la promesse d'un travail bâclé » (bloc budget), « Pas de devis qui gonfle en cours de route » et « Une usine à gaz ne sera pas maintenue par votre équipe » (principes)
-- [ ] **Ton de la page Qui je suis** : revoir en positif « l'accélération a un coût, et ce sont souvent les devs qui le paient » (bloc « Pourquoi je fais ça »)
-- [ ] **Passe typographique** : espaces insécables avant « : », « ; », « ? » et « ! » dans les textes des pages (faits pour les guillemets, les prix et une partie des questions)
-- [x] **Expériences, poste Medelse** : retirer la pastille grenat « 0 interruption de service en 4 ans » (trop chargé sur une page déjà dense) et mettre plutôt en gras la phrase « En quatre ans, aucune interruption de service. » dans le contexte
-- [ ] **Taille des titres** : trancher une fois tout le contenu intégré (titres jugés trop gros sur ordinateur et mobile, notamment le CTA de fin de page) ; un seul réglage à revoir, les variables `--fs-*` de `src/styles/global.css` ; corriger au passage le débordement horizontal sur les très petits écrans (320 px : en-tête et certains titres)
-- [ ] **⚠️ Avant la mise en ligne : le « ×3–4 » du constat n'est pas sourcé.** Il vient du brief, sans source. Soit trouver une étude solide et la citer, soit remplacer les chiffres par une tendance (« plus vite », « toujours plus de features »…). Concerne l'escalier de l'accueil (`src/pages/index.astro`)
-- [ ] **7. Mise en ligne** : relecture finale, vérifier que « Pas de cookies, pas de suivi » reste vrai avec Netlify Forms, relancer les audits Ecoindex et kastor.green (nouvel identifiant de badge kastor), traiter les vulnérabilités signalées par `npm audit` (picomatch via Vite/Astro), bascule
+## 🔴 Avant le salon (19 novembre)
 
-## À fournir
+Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton profil LinkedIn.
 
-- [ ] Textes des 2 recommandations LinkedIn, avec nom et poste des auteurs
-- [ ] Modèle de NDA prêt à signer pour l'audit (promis sur la page Audit : à avoir avant la mise en ligne)
-- [ ] Numéro de téléphone de Netlify pour les mentions légales (depuis le compte Netlify, avant la mise en ligne)
-- [ ] Netlify : activer la détection des formulaires (Forms → Enable form detection) lors du déploiement
-- [ ] Netlify : régler la notification email des nouveaux messages vers ecrire@guillaumecasbas.fr
-- [ ] Netlify : envoyer un message de test depuis le formulaire de la prévisualisation et vérifier sa réception et la page de remerciement
-- [x] Preuve « 4 ans en prod » : Medelse, lead tech web et mobile, aucune indisponibilité, tests unitaires et d'intégration + QA
+- [ ] **LinkedIn, l'essentiel** (≈ 30 min) : appliquer la section 1 de `knowledge-refonte-site/audit-profils.md`
+  - [ ] Nouvelle bannière : `knowledge-refonte-site/linkedin-banniere.png`
+  - [ ] Nouveau titre (« Livrer sereinement… » au lieu de « sans stress »)
+  - [ ] Nouveau résumé (sans le « 3 à 4 fois », prix en HT, session stratégie ajoutée), en vérifiant les retours à la ligne
+- [ ] **Décider : mettre le nouveau site en ligne avant le salon, ou juste après.** L'ancien site contredit le nouveau positionnement, mais un jour de plus est acceptable. Si mise en ligne, il faut d'abord régler ces bloquants (≈ 1 à 2 h) :
+  - [x] **Le « ×3–4 » non sourcé** : remplacé le 2026-11-18 par une tendance (« Plus vite pour coder. Davantage de features demandées… »)
+  - [x] **Le NDA promis** : adouci le 2026-11-18 (« Si vous le souhaitez, on signe votre accord de confidentialité… ») dans le déroulé de l'audit et la FAQ de Démarrer
+  - [x] **Le téléphone de Netlify** : introuvable (ni dans le compte, ni auprès de leur support) ; mentions légales : « Téléphone : non communiqué par l'hébergeur » (2026-11-18)
+  - [x] **`npm audit`** : vérifié le 2026-11-18. Faille ReDoS de picomatch (≤ 4.0.7), utilisé seulement au build par Vite et Astro ; aucun correctif publié, rien n'est livré aux visiteurs (site statique). Non bloquant : revérifier après une mise à jour d'Astro
+  - [ ] Fusionner la branche dans main, déployer, vérifier le site sur ton téléphone
+- [ ] **Bluesky** (≈ 10 min) : nouvelle bio (section 3 de l'audit) et bannière `knowledge-refonte-site/bluesky-banniere.png`
+- [ ] **Signature email** (≈ 5 min, une fois le site en ligne pour que l'avatar s'affiche) : ouvrir `knowledge-refonte-site/signature-email.html` dans le navigateur, tout copier, coller dans Gmail (Paramètres → Général → Signature)
 
-## Idées de design à explorer (présence humaine)
+## 🟠 Juste après le salon (avant fin novembre)
 
-- Signature manuscrite (prénom) sous le hero ou en fin de bloc
-- Annotations au feutre sur l'affiche (flèches, mots entourés), en lien avec la posture de mentor / éducateur
+### Profils (suite de `knowledge-refonte-site/audit-profils.md`)
 
-## Après la V1
+- [ ] LinkedIn : ajouter la preuve Medelse (« aucune interruption de service en 4 ans »), corriger le bachelor (« chef de projet digital, spécialisation développement web »), TDD01 en formation (OCTO Academy, 2019), remplacer « React.js » dans les compétences principales, harmoniser les intitulés (Human's Connexion, Go chez Medelse), décider pour OryxChange
+- [ ] GitHub : bio, README de profil en français relié au positionnement, description du dépôt du site (« construit avec Astro »)
+- [ ] Bluesky : garder le compte actif ou retirer le lien (pied de page du site et LinkedIn) ; supprimer ou non le post « J'ai envie de blogger »
+
+### Textes du site
+
+- [ ] **Modèle de NDA prêt à signer** : une fois prêt, remettre la promesse « j'apporte un NDA prêt à signer » dans le déroulé de l'audit et la FAQ de Démarrer (`src/pages/demarrer.astro`)
+
+- [ ] **Ton de l'accueil, bloc « Trois questions »** : à repenser en positif (« ce n'est pas de la prudence, c'est que personne n'a confiance », « vos tests ne protègent pas ce qui compte ») ou à retirer pour alléger la page
+- [ ] **Ton de Démarrer** : « chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod », l'accroche « Pourquoi vous déboguez en prod »
+- [ ] **Ton de Comment je travaille** : « ce serait la promesse d'un travail bâclé », « Pas de devis qui gonfle en cours de route », « Une usine à gaz ne sera pas maintenue par votre équipe »
+- [ ] **Ton de Qui je suis** : « l'accélération a un coût, et ce sont souvent les devs qui le paient »
+- [ ] **Passe typographique** : espaces insécables avant « : », « ; », « ? » et « ! » (déjà faits pour les guillemets, les prix et une partie des questions)
+
+### Design
+
+- [ ] **Taille des titres** : titres jugés trop gros sur ordinateur et mobile, notamment le CTA de fin de page ; un seul réglage, les variables `--fs-*` de `src/styles/global.css` ; corriger au passage le débordement sur les très petits écrans (320 px : en-tête et certains titres)
+
+### Après la mise en ligne
+
+- [ ] Vérifier sur le site en ligne que « Pas de cookies, pas de suivi » reste vrai (formulaire Netlify testé et fonctionnel le 2026-11-18)
+- [ ] Relancer les audits Ecoindex et kastor.green (nouvel identifiant de badge kastor)
+- [ ] Mettre à jour la description du dépôt GitHub du site
+
+## 🟢 Après la V1
 
 - FAQ de Démarrer : ajouter « Quand dois-je payer ? » une fois les modalités décidées (piste : session payée à la réservation, audit 50 % à la commande et solde à la remise du compte rendu)
 - Canaux d'acquisition : remplacer le champ libre « Comment m'avez-vous trouvé ? » par une liste de canaux (LinkedIn, salon, bouche-à-oreille, recherche…) pour savoir lesquels fonctionnent
@@ -62,5 +58,24 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
 - Portage de la bannière Movember (feature flag annuel)
 - Blog / ressources
 - Page dédiée aux TPE
-- Migration vers un hébergeur européen (statichost.eu, Bunny…)
+- Migration vers un hébergeur européen (statichost.eu, Bunny…) : critère en plus, Netlify ne communique pas de numéro de téléphone, pourtant exigé dans les mentions légales ; choisir un hébergeur qui donne toutes les informations légales (raison sociale, adresse, téléphone)
 - Mesure d'audience sans cookie (GoatCounter, Plausible), si besoin
+
+### Idées de design à explorer (présence humaine)
+
+- Signature manuscrite (prénom) sous le hero ou en fin de bloc
+- Annotations au feutre sur l'affiche (flèches, mots entourés), en lien avec la posture de mentor / éducateur
+
+## Fait
+
+- [x] **1. Squelette Astro** : remplacer Docusaurus, build qui passe, déploiement de prévisualisation sur Netlify
+- [x] **2. Textes** : accueil, Démarrer, Comment je travaille, Qui je suis, Expériences, contact et mentions légales
+- [x] **3. Pistes visuelles** : piste B « Affiche », couleurs b6 « Forêt et grenat », portrait en bichromie
+- [x] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page (badges, réseaux), boutons et CTA
+- [x] **5. Intégration des pages** : accueil, Démarrer, Comment je travaille, Qui je suis (avec lectures recommandées), Expériences (Medelse en gras, formation TDD01)
+- [x] **6. Contact et finitions** : formulaire Netlify avec présélection `?offre=`, page de remerciement, mentions légales et RGPD (badges tiers mentionnés), page 404, image de partage ; pas de redirection
+- [x] Netlify : détection des formulaires, notification email, message de test reçu
+- [x] Textes des 2 recommandations LinkedIn intégrés au site
+- [x] Preuve « 4 ans en prod » : Medelse, aucune interruption de service
+- [x] Charte graphique : `knowledge-refonte-site/charte-graphique.md`
+- [x] Audit des profils LinkedIn, GitHub et Bluesky, bannières LinkedIn et Bluesky : `knowledge-refonte-site/`
