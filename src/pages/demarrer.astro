@@ -1,0 +1,790 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/Button.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const entryOffers = [
+  {
+    href: '#session',
+    title: 'Session stratégie',
+    price: '300 €',
+    meta: '90 minutes, à distance',
+  },
+  {
+    href: '#audit',
+    title: 'Audit de livraison',
+    price: '700 €',
+    meta: '1 jour, sur place ou à distance',
+    featured: true,
+  },
+];
+
+const comparison = [
+  { label: 'Prix', session: '300 € HT', audit: '700 € HT' },
+  { label: 'Durée', session: '90 minutes', audit: '1 jour' },
+  { label: 'Format', session: 'À distance', audit: 'Sur place ou à distance' },
+  {
+    label: 'Je travaille sur',
+    session: 'Ce que vous me racontez et me montrez',
+    audit: 'Ce que je constate dans votre code et vos outils',
+  },
+  {
+    label: 'Vous recevez',
+    session: 'Un compte rendu : où vous en êtes, les options, la priorité recommandée',
+    audit:
+      'Un compte rendu factuel, un plan d’action priorisé, mes checklists et une restitution orale',
+  },
+];
+
+const faq = [
+  {
+    question: 'Mon code est confidentiel. Comment ça se passe ?',
+    answer:
+      'On signe un accord de confidentialité avant de commencer : j’en apporte un, prêt à signer.',
+  },
+  {
+    question: 'Vous êtes une TPE sans équipe tech ?',
+    answer:
+      'Écrivez-moi quand même. Je vous dirai honnêtement si l’une de ces offres est faite pour vous, ou ce qui le serait.',
+  },
+  {
+    question: 'Et si nous n’avons ni CI ni tests ?',
+    answer:
+      'C’est justement le cas où l’audit est le plus utile : il permet d’analyser votre situation et de définir les premières briques à mettre en place, dans le bon ordre.',
+  },
+  {
+    question: 'Combien de temps l’audit demande-t-il à mon équipe ?',
+    answer:
+      'Peu de temps. Il me faut un interlocuteur disponible pour répondre à mes questions pendant la journée, et quelques échanges courts avec les personnes clés (lead, devs, product owner si possible). Le reste du temps, votre équipe travaille normalement : j’observe.',
+  },
+  {
+    question: 'Vous connaissez notre stack ?',
+    answer:
+      'Peu importe la stack : l’audit porte sur votre façon de livrer (pipeline, tests, déploiements, revues), pas sur un langage. Ce qui compte, c’est que votre équipe la maîtrise, pour pouvoir maintenir en autonomie ce qu’on met en place.',
+  },
+  {
+    question: 'Puis-je partager le compte rendu ?',
+    answer:
+      'Oui. Une fois la prestation réglée, le compte rendu vous appartient : vous pouvez le partager avec votre direction, vos associés ou vos investisseurs.',
+  },
+  {
+    question: 'Les prix sont-ils HT ?',
+    answer:
+      'Oui. Tous les prix affichés sur ce site sont hors taxes : la TVA s’y ajoute au taux en vigueur.',
+  },
+];
+---
+
+<SiteLayout
+  title="Démarrer · Session stratégie 300 € HT, audit de livraison 700 € HT · Guillaume Casbas"
+  description="Deux façons de démarrer, à prix fixe : une session stratégie de 90 minutes pour 300 € HT, ou un audit de livraison d'une journée pour 700 € HT, avec un plan d'action priorisé."
+>
+  <main>
+    <section class="hero wrap section">
+      <h1>Deux façons de démarrer.</h1>
+      <p class="hero__lead">
+        Prix fixes, périmètre écrit. Vous savez ce que vous payez avant de commencer.
+      </p>
+      <ul class="entries">
+        {
+          entryOffers.map((offer) => (
+            <li>
+              <a class:list={['entry', { 'entry--featured': offer.featured }]} href={offer.href}>
+                {offer.featured && <span class="entry__tag">Recommandé</span>}
+                <span class="entry__title">{offer.title}</span>
+                <span class="entry__price">
+                  {offer.price}
+                  <small> HT</small>
+                </span>
+                <span class="entry__meta">{offer.meta}</span>
+                <span class="entry__more">Voir le détail ↓</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="session section" id="session" aria-labelledby="session-title">
+      <div class="wrap">
+        <p class="eyebrow">Option 1</p>
+        <h2 id="session-title">Session stratégie</h2>
+        <p class="session__summary">300&nbsp;€ HT, 90 minutes, à distance.</p>
+        <dl class="session__details">
+          <div>
+            <dt>Pour qui</dt>
+            <dd>
+              Vous voulez prendre du recul sur votre façon de livrer, avec un regard extérieur, avant
+              d'engager quoi que ce soit.
+            </dd>
+          </div>
+          <div>
+            <dt>Comment ça se passe</dt>
+            <dd>
+              Je vous pose mes questions, vous me racontez, et si c'est utile vous me montrez ce qui
+              coince en partage d'écran.
+            </dd>
+          </div>
+          <div>
+            <dt>Ce que vous recevez</dt>
+            <dd>
+              Un compte rendu écrit : où vous en êtes, les options, la priorité que je recommande.
+            </dd>
+          </div>
+        </dl>
+        <Button href="/contact?offre=session">Prendre une session</Button>
+      </div>
+    </section>
+
+    <section class="audit wrap section" id="audit" aria-labelledby="audit-title">
+      <div class="audit__intro">
+        <p class="eyebrow">Option 2 <span class="audit__tag">Recommandé</span></p>
+        <h2 id="audit-title">Audit de livraison</h2>
+        <p class="audit__summary">700&nbsp;€ HT, 1 jour, sur place ou à distance.</p>
+        <p class="audit__lead">Pourquoi vous déboguez en prod, et quoi faire en premier.</p>
+
+        <h3>Pour qui</h3>
+        <ul class="audit__for">
+          <li>Votre équipe livre vite, mais chaque mise en prod se termine en correctifs.</li>
+          <li>
+            L'IA écrit une part croissante du code, et plus personne ne sait vraiment ce qui part en
+            prod.
+          </li>
+          <li>
+            Vous reprenez un projet, ou vous hésitez avant d'investir dessus, et vous voulez un regard
+            extérieur avant de décider.
+          </li>
+        </ul>
+        <p class="audit__not-for">
+          <strong>Ce n'est pas pour vous</strong> si vous cherchez quelqu'un pour développer vos fonctionnalités
+          : je ne vends pas de lignes de code.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <h3 class="timeline__title">Le déroulé de l'audit</h3>
+        <ol class="timeline__steps">
+          <li>
+            <h4>Avant la journée</h4>
+            <ul>
+              <li>
+                On signe un accord de confidentialité : vous m'ouvrez votre code, j'apporte un NDA
+                prêt à signer.
+              </li>
+              <li>
+                Vous remplissez un court questionnaire : votre stack, la taille de l'équipe, vos
+                trois principaux irritants.
+              </li>
+              <li>
+                On vérifie les accès ensemble (code, CI, outils), pour ne pas perdre la matinée sur
+                un accès qui ne marche pas.
+              </li>
+              <li>Vous désignez un interlocuteur pour la journée.</li>
+            </ul>
+          </li>
+          <li>
+            <h4>Pendant la journée</h4>
+            <p>Je regarde comment votre équipe travaille, du commit à la prod :</p>
+            <ul>
+              <li><strong>le pipeline</strong> : ce qui est automatisé, ce qui se fait encore à la main ;</li>
+              <li>
+                <strong>les tests</strong> : ce qu'ils protègent vraiment, et surtout ce qu'ils ne
+                protègent pas ;
+              </li>
+              <li>
+                <strong>les déploiements</strong> : comment ils se passent, et ce qui se passe quand
+                ils ratent ;
+              </li>
+              <li>
+                <strong>les revues de code</strong> : qui relit quoi, y compris le code généré par IA.
+              </li>
+            </ul>
+            <p>Je constate et je priorise ; je ne vends rien pendant l'audit.</p>
+          </li>
+          <li>
+            <h4>Après la journée</h4>
+            <p>Sous 48 heures, vous recevez :</p>
+            <ul>
+              <li>
+                <strong>un compte rendu écrit</strong>, avec des constats factuels, pas des impressions ;
+              </li>
+              <li>
+                <strong>un plan d'action priorisé</strong> : quoi traiter en premier, avec quelle
+                urgence, dans quel ordre ;
+              </li>
+              <li><strong>mes checklists</strong>, réutilisables dès votre prochaine mise en prod.</li>
+            </ul>
+            <p>
+              Puis on fait <strong>une restitution orale d'environ 30 minutes</strong>, avec vous et
+              votre équipe.
+            </p>
+            <p>Le plan d'action est à vous : vous pouvez le mettre en œuvre sans moi.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="testimonial section" aria-labelledby="testimonial-title">
+      <div class="wrap">
+        <h2 id="testimonial-title" class="eyebrow">Ce qu'en dit un client</h2>
+        <figure class="testimonial__quote">
+          <blockquote>
+            <p>
+              « J'ai eu le plaisir de travailler avec Guillaume à plusieurs reprises sur nos projets
+              web, et dès que j'ai un besoin, je fais appel à lui sans hésiter. C'est un développeur
+              sérieux, impliqué et très à l'écoute de nos demandes. Son code est propre, structuré et
+              fiable, ce qui rend chaque collaboration fluide et efficace. »
+            </p>
+          </blockquote>
+          <figcaption><strong>Clément Castelli</strong>, président de Réflex Boutique</figcaption>
+        </figure>
+        <Button href="/contact?offre=audit" variant="outline">Réserver un audit</Button>
+      </div>
+    </section>
+
+    <section class="compare wrap section" aria-labelledby="compare-title">
+      <h2 id="compare-title">Session ou audit&nbsp;?</h2>
+      <p class="compare__intro">
+        Avec la session, on échange : je travaille sur ce que vous me racontez et me montrez. Avec
+        l'audit, je constate par moi-même dans votre code et vos outils.
+      </p>
+      <table class="compare__table">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Session stratégie</th>
+            <th scope="col">Audit de livraison</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            comparison.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td data-label="Session">{row.session}</td>
+                <td data-label="Audit">{row.audit}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </section>
+
+    <section class="next section" aria-labelledby="next-title">
+      <div class="wrap">
+        <h2 id="next-title">Et ensuite&nbsp;?</h2>
+        <p class="next__intro">
+          Si le diagnostic le justifie, je vous fais une proposition écrite sous 48 heures, chiffrée sur
+          la base de l'audit ou de la session : périmètre écrit, prix ferme.
+        </p>
+        <ul class="next__missions">
+          <li>
+            <h3>Pipeline et tests critiques</h3>
+            <p>
+              Une CI/CD complète et les tests qui protègent votre métier, pour déployer un vendredi
+              après-midi sans trembler.
+            </p>
+          </li>
+          <li>
+            <h3>ATDD</h3>
+            <p>
+              Des tests écrits à partir des critères de votre équipe produit, qui valident le code
+              généré par IA. Demande l'implication de votre product owner, et toujours un audit au
+              préalable.
+            </p>
+          </li>
+          <li>
+            <h3>Partenaire de livraison</h3>
+            <p>
+              Votre lead tech à temps partiel, présent pour vos mises en prod, avec un bilan chiffré
+              chaque mois. Engagement de 3 mois minimum.
+            </p>
+          </li>
+        </ul>
+        <a class="next__link" href="/comment-je-travaille">Comment je fixe mes prix →</a>
+      </div>
+    </section>
+
+    <section class="faq wrap section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions fréquentes</h2>
+      <div class="faq__list">
+        {
+          faq.map((item) => (
+            <details class="faq__item">
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <CallToAction tone="accent" />
+  </main>
+</SiteLayout>
+
+<style>
+  .hero__lead {
+    max-width: 36rem;
+    margin-bottom: 3rem;
+    font-size: var(--fs-lead);
+  }
+
+  /* Two link cards jumping to the detailed sections below */
+  .entries {
+    display: grid;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .entry {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    height: 100%;
+    padding: 1.75rem 1.5rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: var(--radius);
+    background: var(--bg);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--primary);
+    text-decoration: none;
+    transition:
+      transform 0.1s,
+      box-shadow 0.1s;
+  }
+
+  .entry:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--primary);
+  }
+
+  .entry--featured {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .entry__tag {
+    position: absolute;
+    top: -1rem;
+    right: 1.25rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: var(--primary);
+    color: var(--on-primary);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .entry__title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .entry__price {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--primary);
+  }
+
+  .entry__price small {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .entry--featured .entry__title,
+  .entry--featured .entry__price {
+    color: var(--on-accent);
+  }
+
+  .entry__meta {
+    font-weight: 600;
+  }
+
+  .entry__more {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+  }
+
+  @media (min-width: 801px) {
+    .entries {
+      grid-template-columns: repeat(2, minmax(0, 24rem));
+    }
+  }
+
+  /* Strategy session: green block, three short answers side by side */
+  .session {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .session h2 {
+    margin-bottom: 0.5rem;
+    color: var(--on-secondary);
+  }
+
+  .session__summary {
+    margin-bottom: 2.5rem;
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    text-transform: uppercase;
+  }
+
+  .session__details {
+    display: grid;
+    gap: 2rem;
+    margin: 0 0 2.5rem;
+  }
+
+  .session__details > div {
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--on-secondary);
+  }
+
+  .session__details dt {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+  }
+
+  .session__details dd {
+    margin: 0;
+  }
+
+  @media (min-width: 801px) {
+    .session__details {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Option label above each offer */
+  .eyebrow {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .session .eyebrow {
+    color: var(--on-secondary);
+  }
+
+  /* Delivery audit: one cream block, the timeline as three cards inside it */
+  .audit__tag {
+    display: inline-block;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .audit h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .audit__summary {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .audit__lead {
+    max-width: 36rem;
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+    font-weight: 600;
+  }
+
+  .audit__for {
+    max-width: 44rem;
+    margin: 0 0 1.5rem;
+    padding-left: 1.2rem;
+  }
+
+  .audit__for li + li {
+    margin-top: 0.5rem;
+  }
+
+  .audit__not-for {
+    max-width: 44rem;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-left: var(--border-width) solid var(--accent);
+  }
+
+  .timeline {
+    margin-top: var(--section);
+  }
+
+  .timeline__title {
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-h3);
+  }
+
+  .timeline__steps {
+    display: grid;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .timeline__steps > li {
+    padding: 1.75rem 1.5rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--primary);
+    counter-increment: step;
+  }
+
+  .timeline__steps h4 {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .timeline__steps h4::before {
+    content: counter(step) ' · ';
+  }
+
+  .timeline__steps ul {
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+
+  .timeline__steps ul li + li {
+    margin-top: 0.4rem;
+  }
+
+  .timeline__steps p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 801px) {
+    .timeline__steps {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  /* Client testimonial: garnet block, large quote, then the audit button */
+  .testimonial {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .testimonial .eyebrow {
+    color: var(--on-accent);
+  }
+
+  .testimonial__quote {
+    max-width: 52rem;
+    margin: 0 0 2.5rem;
+  }
+
+  .testimonial__quote blockquote {
+    margin: 0 0 1.25rem;
+  }
+
+  .testimonial__quote blockquote p {
+    margin: 0;
+    font-size: var(--fs-lead);
+    line-height: 1.45;
+  }
+
+  /* Session vs audit: a table on desktop; on mobile each row stacks its label above two columns */
+  .compare__intro {
+    max-width: 40rem;
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+  }
+
+  .compare__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .compare__table th,
+  .compare__table td {
+    padding: 1rem;
+    border-bottom: 2px solid var(--primary);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .compare__table thead th {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--primary);
+    border-bottom-width: var(--border-width);
+  }
+
+  .compare__table thead th:last-child,
+  .compare__table td:last-child {
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+  }
+
+  .compare__table tbody th {
+    font-weight: 600;
+    width: 22%;
+  }
+
+  @media (max-width: 800px) {
+    .compare__table thead {
+      display: none;
+    }
+
+    .compare__table tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1rem;
+      padding-block: 1rem;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .compare__table th,
+    .compare__table td {
+      padding: 0;
+      border: 0;
+    }
+
+    .compare__table tbody th {
+      grid-column: 1 / -1;
+      width: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .compare__table td:last-child {
+      background: none;
+    }
+
+    .compare__table td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+  }
+
+  /* What comes next: forest block with the three missions */
+  .next {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .next h2 {
+    margin-bottom: 1rem;
+    color: var(--on-primary);
+  }
+
+  .next__intro {
+    max-width: 40rem;
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+  }
+
+  .next__missions {
+    display: grid;
+    gap: 2rem;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .next__missions li {
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--accent-on-primary);
+  }
+
+  .next__missions h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    color: var(--accent-on-primary);
+  }
+
+  .next__missions p {
+    margin: 0;
+  }
+
+  .next__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent-on-primary);
+  }
+
+  @media (min-width: 801px) {
+    .next__missions {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* FAQ: native disclosure widgets, no JavaScript */
+  .faq__list {
+    max-width: 52rem;
+    border-top: var(--border-width) solid var(--primary);
+  }
+
+  .faq__item {
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .faq__item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1.25rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .faq__item[open] summary::after {
+    content: '\2212';
+  }
+
+  .faq__item p {
+    max-width: 44rem;
+    margin: 0 0 1.25rem;
+  }
+</style>
