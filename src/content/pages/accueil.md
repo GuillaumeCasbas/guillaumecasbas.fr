@@ -1,5 +1,5 @@
 ---
-title: "Guillaume Casbas · Livrer sans stress, même quand l'IA écrit le code"
+title: "Guillaume Casbas · Livrer sereinement, même quand l'IA écrit le code"
 description: "Lead tech pendant plus de 10 ans, je remets le contrôle dans vos livraisons. On démarre par un audit de livraison : 700 € HT, 1 jour."
 ---
 
@@ -12,9 +12,9 @@ Les commentaires comme celui-ci expliquent l'intention du bloc ; ils ne seront p
 
 <!-- Le fil rouge, en très gros. Une seule action possible : le CTA. -->
 
-# Livrer sans stress, même quand l'IA écrit le code.
+# Livrer sereinement, même quand l'IA écrit le code.
 
-Je remets le contrôle dans vos livraisons : des process, des tests et du jugement, pour que votre équipe déploie sereinement.
+Je remets le contrôle dans vos livraisons : des process, des tests et du jugement, pour que votre équipe déploie en confiance.
 
 [Vous déboguez en prod plus souvent que vous ne l'aimeriez ? Envoyez-moi un message.](/contact)
 
@@ -30,7 +30,7 @@ Mécaniquement : 3 à 4 fois plus de contexte, 3 à 4 fois plus de bugs.
 
 Pour le même niveau de stress.
 
-**Ce qui devait nous libérer nous épuise.**
+**La vitesse a augmenté. Le contrôle, lui, court derrière.**
 
 ## Trois questions
 

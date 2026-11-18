@@ -10,18 +10,21 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
   - [x] Accueil
   - [x] Démarrer (ex-page Audit : session stratégie, audit, missions, FAQ — 4 réponses de FAQ à valider)
   - [x] Comment je travaille
-  - [x] À propos
+  - [x] Qui je suis (ex-À propos)
   - [x] Expériences
   - [x] Contact et mentions légales
-- [ ] **3. Pistes visuelles** : 2 ou 3 maquettes de l'accueil sur la palette (vert #276955, orange #ff6f00, bordeaux #6d001b), choix d'une piste
+- [x] **3. Pistes visuelles** : 2 ou 3 maquettes de l'accueil sur la palette (vert #276955, orange #ff6f00, bordeaux #6d001b), choix d'une piste
   - [x] Structure retenue : piste B « Affiche » (A et B d'origine écartées), titres plafonnés sur ordinateur
-  - [ ] Couleurs à choisir parmi b1, b2, b4, b5, b6
+  - [x] Couleurs b6 « Forêt et grenat » (accent #9b1426, primaire #173f33, secondaire #276955, fond #f6f0e4)
+  - [x] Portrait : photo détourée en bichromie grenat et crème (filtre SVG)
 - [ ] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page, composant CTA
+  - [ ] En-tête : sur mobile, les liens passent sur une deuxième ligne sous le nom et le bouton
+  - [ ] Pied de page : « Pas de cookies, pas de suivi » (à revérifier une fois Netlify Forms en place) et bloc « Conception responsable » avec les badges Ecoindex et kastor.green repris du site actuel (`src/theme/Footer/Layout/index.tsx` sur main ; badges à relancer après la mise en ligne, le nouveau site changera le score)
 - [ ] **5. Intégration des pages** (une étape par page)
   - [ ] Accueil
   - [ ] Démarrer (`/demarrer`, ancres `#session` et `#audit`)
   - [ ] Comment je travaille
-  - [ ] À propos (parcours, pourquoi, OryxChange, Movember, 2 recommandations)
+  - [ ] Qui je suis (`/qui-je-suis`, ex-`/a-propos` à rediriger ; parcours, pourquoi, OryxChange, Movember, 2 recommandations)
   - [ ] Expériences (contenu actuel + introduction de lien avec le positionnement)
 - [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
 - [ ] **7. Mise en ligne** : relecture finale, traiter les vulnérabilités signalées par `npm audit` (picomatch via Vite/Astro), bascule
@@ -32,6 +35,11 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
 - [ ] Modèle de NDA prêt à signer pour l'audit (promis sur la page Audit : à avoir avant la mise en ligne)
 - [ ] Numéro de téléphone de Netlify pour les mentions légales (depuis le compte Netlify, avant la mise en ligne)
 - [x] Preuve « 4 ans en prod » : Medelse, lead tech web et mobile, aucune indisponibilité, tests unitaires et d'intégration + QA
+
+## Idées de design à explorer (présence humaine)
+
+- Signature manuscrite (prénom) sous le hero ou en fin de bloc
+- Annotations au feutre sur l'affiche (flèches, mots entourés), en lien avec la posture de mentor / éducateur
 
 ## Après la V1
 

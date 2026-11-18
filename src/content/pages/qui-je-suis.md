@@ -1,5 +1,5 @@
 ---
-title: "À propos · Guillaume Casbas"
+title: "Qui je suis · Guillaume Casbas"
 description: "Plus de 10 ans comme développeur web et lead tech avant de passer de l'autre côté : le contrôle, la méthode et le jugement plutôt que la ligne de code."
 ---
 
@@ -12,7 +12,7 @@ Les commentaires comme celui-ci expliquent l'intention du bloc ; ils ne seront p
 
 <!-- Qui je suis, en une phrase. Pas de photo : la typographie porte la page. -->
 
-# J'ai écrit du code pendant plus de 10 ans. Aujourd'hui, je fais en sorte que le vôtre arrive en prod sans stress.
+# J'ai écrit du code pendant plus de 10 ans. Aujourd'hui, je fais en sorte que le vôtre arrive en prod sereinement.
 
 ## D'où je viens
 
@@ -24,6 +24,8 @@ En 2020, je deviens lead tech chez Medelse, une plateforme de remplacement pour 
 
 Depuis 2025, je travaille en indépendant pour des équipes et des TPE. React, React Native, Symfony, Go, TDD, clean architecture : je connais le terrain parce que j'y ai passé plus de dix ans.
 
+Optimiseur un peu obsessionnel, j'aime les process qui marchent et les mises en prod dont plus personne ne parle.
+
 [Voir mon parcours en détail](/experiences)
 
 ## De l'autre côté
@@ -32,7 +34,7 @@ Depuis 2025, je travaille en indépendant pour des équipes et des TPE. React, R
 
 Puis l'IA est arrivée dans les équipes. Le code s'écrit plus vite que jamais, et c'est exactement pour ça que le contrôle compte plus que jamais.
 
-Alors je suis passé de l'autre côté. Je n'écris plus vos features : j'apporte le contrôle, la méthode et le jugement qui permettent à votre équipe de les livrer sereinement.
+Alors je suis passé de l'autre côté. Je n'écris plus vos features : j'apporte le contrôle, la méthode et le jugement qui permettent à votre équipe de les livrer en confiance.
 
 ## Pourquoi je fais ça
 

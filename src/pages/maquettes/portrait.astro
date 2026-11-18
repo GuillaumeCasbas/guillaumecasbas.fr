@@ -1,0 +1,164 @@
+---
+// Temporary step 3 mockup: portrait treatments in the "Poster" style (b6 palette).
+// Delete in step 5.
+import '@fontsource/archivo-black/400.css';
+import '@fontsource/archivo/400.css';
+import '@fontsource/archivo/600.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Maquette · Portrait" description="Traitements du portrait pour la piste Affiche." noindex>
+  <!-- Duotone filters: dark areas take the first colour, light areas the second. -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <filter id="duo-grenat" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.608 0.965" />
+        <feFuncG type="table" tableValues="0.078 0.941" />
+        <feFuncB type="table" tableValues="0.149 0.894" />
+      </feComponentTransfer>
+    </filter>
+    <filter id="duo-foret" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.090 0.965" />
+        <feFuncG type="table" tableValues="0.247 0.941" />
+        <feFuncB type="table" tableValues="0.200 0.894" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <main class="wrap">
+    <h1>Le portrait dans l'affiche</h1>
+    <p class="intro">Trois traitements de ta photo détourée, dans les couleurs de b6. Chacun est placé dans un exemple de bloc « qui je suis ».</p>
+
+    <section class="demo">
+      <figure class="portrait p-grenat">
+        <img src="/maquettes/portrait-detoure.webp" alt="Portrait de Guillaume Casbas" width="1024" height="1024" style="filter:url(#duo-grenat)" />
+      </figure>
+      <div class="txt">
+        <p class="label">1 · Bichromie grenat et crème</p>
+        <h2>Je m'appelle Guillaume.</h2>
+        <p>Effet sérigraphie : la photo devient un élément de l'affiche, au même titre que les aplats de couleur.</p>
+      </div>
+    </section>
+
+    <section class="demo demo-dark">
+      <figure class="portrait p-foret">
+        <img src="/maquettes/portrait-detoure.webp" alt="Portrait de Guillaume Casbas" width="1024" height="1024" style="filter:url(#duo-foret)" />
+      </figure>
+      <div class="txt">
+        <p class="label">2 · Bichromie forêt et crème, sur aplat grenat</p>
+        <h2>Je m'appelle Guillaume.</h2>
+        <p>Plus sobre : le visage reste discret, c'est la couleur de fond qui porte le bloc.</p>
+      </div>
+    </section>
+
+    <section class="demo">
+      <figure class="portrait p-sticker">
+        <img src="/maquettes/portrait-detoure.webp" alt="Portrait de Guillaume Casbas" width="1024" height="1024" />
+      </figure>
+      <div class="txt">
+        <p class="label">3 · Autocollant en couleurs naturelles</p>
+        <h2>Je m'appelle Guillaume.</h2>
+        <p>La silhouette en couleurs naturelles, inclinée comme un autocollant, avec une ombre qui suit son contour. Le plus chaleureux, et le plus proche de la carte Audit inclinée.</p>
+      </div>
+    </section>
+
+    <p class="back"><a href="/maquettes">← Toutes les maquettes</a></p>
+  </main>
+</BaseLayout>
+
+<style>
+  :global(body) {
+    margin: 0;
+    background: #f6f0e4;
+    color: #1d2a25;
+    font-family: 'Archivo', system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+  h1,
+  h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #173f33;
+    line-height: 1;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 0.75rem;
+  }
+  .intro {
+    margin: 0 0 3rem;
+    max-width: 40rem;
+  }
+  .demo {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 3px solid #173f33;
+    border-radius: 1.5rem;
+  }
+  .demo-dark {
+    background: #9b1426;
+    color: #f6f0e4;
+    border-color: #9b1426;
+  }
+  .demo-dark h2 {
+    color: #f6f0e4;
+  }
+  .portrait {
+    margin: 0;
+  }
+  .portrait img {
+    clip-path: inset(8% 0 0 0);
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .p-sticker img {
+    transform: rotate(-4deg);
+    filter: drop-shadow(6px 6px 0 #173f33);
+  }
+  .label {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #9b1426;
+    margin: 0 0 0.5rem;
+  }
+  .demo-dark .label {
+    color: #ffc2c8;
+  }
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    margin: 0 0 1rem;
+  }
+  .txt p:last-child {
+    margin: 0;
+  }
+  .back {
+    margin-top: 2rem;
+  }
+  a {
+    color: inherit;
+  }
+  @media (max-width: 700px) {
+    .demo {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+    .portrait {
+      max-width: 14rem;
+    }
+  }
+</style>
