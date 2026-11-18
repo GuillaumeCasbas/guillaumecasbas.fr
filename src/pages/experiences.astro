@@ -1,0 +1,417 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Tag from '../components/Tag.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const skills = [
+  { family: 'Backend', items: ['PHP', 'Symfony', 'Go', 'PostgreSQL', 'GraphQL', 'Algolia'] },
+  {
+    family: 'Frontend',
+    items: ['TypeScript', 'React', 'React Native', 'Next.js', 'Bootstrap', 'Tailwind', 'Storybook'],
+  },
+  { family: 'DevOps', items: ['Docker', 'GCP', 'CI/CD', 'Nginx', 'Tests automatisés'] },
+  { family: 'CMS', items: ['PrestaShop', 'WordPress', 'Drupal', 'Strapi'] },
+  {
+    family: 'Transversal',
+    items: ['TDD', 'Clean architecture', 'Mentoring', 'SOLID', 'YAGNI', 'KISS'],
+  },
+];
+
+const jobs = [
+  {
+    company: 'Synergie',
+    role: 'Développeur web et mobile',
+    dates: 'Novembre 2025 à juillet 2026',
+    context:
+      'Intégration de l’IT de Medelse, entité rachetée, dans le système d’information de Synergie, avec l’adaptation des solutions existantes au nouveau métier.',
+    missions: [
+      'Mise à jour complète des librairies des projets React Native et React',
+      'Reprise du développement de l’application mobile (React Native, Jest) pour aligner les fonctionnalités sur les besoins métier de Synergie',
+      'Maintenance et amélioration des applications React existantes',
+      'Modifications du backend Symfony pour prendre en charge les nouveaux cas d’usage',
+      'Peer programming et passation du code à l’équipe interne pour assurer la pérennité des projets',
+    ],
+    stack: ['React Native', 'React', 'Jest', 'Symfony', 'GraphQL'],
+  },
+  {
+    company: 'Réflex Boutique',
+    role: 'Développeur web',
+    dates: 'Mars 2025 à juillet 2026',
+    context:
+      'Une entreprise qui gère toute son activité sur PrestaShop (vente en ligne et physique, devis, logistique, stocks), avec de nombreux modules spécifiques développés en Symfony.',
+    missions: [
+      'Développement de modules métier sur mesure : connecteur aux API des transporteurs, calcul des meilleures ventes, gestion comptable',
+      'Vérification et optimisation des tournées de livraison par camion',
+      'Gestion avancée des stocks : suivi en temps réel, alertes',
+      'Travail en binôme avec le développeur interne',
+    ],
+    stack: ['PrestaShop', 'Symfony', 'PHP', 'API tierces'],
+  },
+  {
+    company: 'Indépendant',
+    role: 'Développeur web et mobile',
+    dates: 'Depuis janvier 2025',
+    context:
+      'Des interventions pour des indépendants, des agences web et des TPE/PME, sur des besoins courts et ciblés.',
+    missions: [
+      'Support et conseil technique : mises à jour de sécurité, migrations de sites, gestion de DNS, résolution de bugs',
+      'Développement de nouvelles fonctionnalités sur des sites existants',
+      'Développement de modules spécifiques pour CMS',
+    ],
+    stack: ['WordPress', 'PrestaShop'],
+  },
+  {
+    company: 'Medelse',
+    role: 'Lead tech, développeur full-stack',
+    dates: 'Septembre 2020 à novembre 2024',
+    context:
+      'Une plateforme de mise en relation pour lutter contre la pénurie de soignants et faciliter les remplacements des praticiens de santé. Back-office, espaces web et application mobile, utilisés par plus de 5 000 utilisateurs actifs.',
+    contextHighlight: 'En quatre ans, aucune interruption de service.',
+    missions: [
+      'Montée en compétence des équipes : formation et accompagnement sur les bonnes pratiques craft (SOLID, TDD, YAGNI, KISS)',
+      'Mise en place d’une politique de tests automatisés : PHPUnit, Jest, Storybook',
+      'Conception et développement de l’application mobile en React Native (Jest, Detox)',
+      'Développement des espaces web : applications statiques en React (Jest, Cypress)',
+      'Développement du back-office métier complet en Symfony (Messenger, PostgreSQL, PHPUnit)',
+      'Conception et maintenance d’une API Symfony et GraphQL pour les applications web et mobile',
+      'Innovation produit : MVP en Go pour tester de nouveaux marchés',
+    ],
+    stack: [
+      'Symfony',
+      'Docker',
+      'CI/CD',
+      'Storybook',
+      'React',
+      'React Native',
+      'Go',
+      'PostgreSQL',
+      'GraphQL',
+      'PHPUnit',
+      'Jest',
+      'Cypress',
+      'Detox',
+    ],
+  },
+  {
+    company: 'Human’s Connexion',
+    role: 'Développeur full-stack',
+    dates: 'Avril 2015 à mai 2020',
+    context:
+      'Une agence web généraliste aux projets variés (sites vitrines, SaaS, objets connectés), pour des clients allant des TPE/PME aux grandes entreprises européennes et au secteur de la défense.',
+    missions: [
+      'Développement sur mesure pour CMS : modules et thèmes spécifiques pour Drupal, WordPress et PrestaShop',
+      'Intégration et maintenance de sites web : migration, optimisation, support technique',
+      'Développement d’outils SaaS : solutions métier en Laravel et Symfony, interfaces en React et Vue.js, déployées avec Docker',
+      'Applications mobiles Android natives en Java et Kotlin',
+    ],
+    stack: [
+      'Laravel',
+      'Symfony',
+      'PHP',
+      'React',
+      'Vue.js',
+      'WordPress',
+      'Drupal',
+      'PrestaShop',
+      'Docker',
+      'Java',
+      'Kotlin',
+    ],
+  },
+];
+---
+
+<SiteLayout
+  title="Expériences · Guillaume Casbas"
+  description="Plus de 10 ans de développement web et mobile et de lead tech : React, React Native, Symfony, Go, TDD et clean architecture."
+>
+  <main>
+    <section class="hero wrap section">
+      <h1>Avant de remettre le contrôle dans vos livraisons, j'ai livré.</h1>
+      <p class="hero__lead">
+        Plus de 10&nbsp;ans de développement web et mobile, dont 4&nbsp;ans comme lead tech. Je sais ce
+        que c'est qu'une mise en prod qui part de travers, parce que je suis passé par là. Voici le
+        détail.
+      </p>
+    </section>
+
+    <section class="skills section" aria-labelledby="skills-title">
+      <div class="wrap">
+        <h2 id="skills-title">Compétences</h2>
+        <dl class="skills__list">
+          {
+            skills.map((group) => (
+              <div>
+                <dt>{group.family}</dt>
+                <dd>
+                  {group.items.map((item) => (
+                    <Tag tone="inverse">{item}</Tag>
+                  ))}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </section>
+
+    <section class="jobs wrap section" aria-labelledby="jobs-title">
+      <h2 id="jobs-title">Expériences professionnelles</h2>
+      <ol class="jobs__list">
+        {
+          jobs.map((job) => (
+            <li class="job">
+              <header class="job__header">
+                <h3>{job.company}</h3>
+                <p class="job__role">{job.role}</p>
+                <p class="job__dates">{job.dates}</p>
+              </header>
+              <div class="job__body">
+                <p>
+                  {job.context}
+                  {job.contextHighlight && <strong> {job.contextHighlight}</strong>}
+                </p>
+                <ul>
+                  {job.missions.map((mission) => (
+                    <li>{mission}</li>
+                  ))}
+                </ul>
+                <p class="visually-hidden">Stack :</p>
+                <div class="job__stack">
+                  {job.stack.map((item) => (
+                    <Tag>{item}</Tag>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="commitment section" aria-labelledby="commitment-title">
+      <div class="wrap">
+        <h2 id="commitment-title">Engagement associatif et entrepreneurial</h2>
+        <article class="job">
+          <header class="job__header">
+            <h3>OryxChange</h3>
+            <p class="job__role">CTO et associé</p>
+            <p class="job__dates">Depuis mars 2025</p>
+          </header>
+          <div class="job__body">
+            <p>
+              Un projet né au sein de l'association PADEO (Pour un avenir durable en Occitanie), qui
+              aide celles et ceux qui veulent agir sur les 17 objectifs de développement durable de
+              l'ONU. Le projet devient aujourd'hui une entreprise, avec quatre associés ; j'en suis le
+              CTO.
+            </p>
+            <ul>
+              <li>Développement de l'application web : CMS Strapi et Next.js</li>
+              <li>Développement de l'application mobile et de l'API du projet Oryxway</li>
+              <li>Sauvegardes et maintenance du VPS Linux</li>
+            </ul>
+            <p class="visually-hidden">Stack :</p>
+            <div class="job__stack">
+              {
+                ['Strapi', 'Next.js', 'React Native', 'PostgreSQL', 'Algolia'].map((item) => (
+                  <Tag tone="inverse">{item}</Tag>
+                ))
+              }
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="education wrap section" aria-labelledby="education-title">
+      <h2 id="education-title">Formation</h2>
+      <ul class="education__list">
+        <li>
+          <span class="job__dates">2013 à 2016</span>
+          <span>Bachelor chef de projet web, spécialisation développement web, Digital Campus (31)</span>
+        </li>
+        <li>
+          <span class="job__dates">2010 à 2013</span>
+          <span>Licence SFA, Université Paul Sabatier (31)</span>
+        </li>
+        <li>
+          <span class="job__dates">2010</span>
+          <span>Baccalauréat S, lycée Pierre-Paul Riquet (31)</span>
+        </li>
+      </ul>
+    </section>
+
+    <CallToAction tone="accent" />
+  </main>
+</SiteLayout>
+
+<style>
+  .hero h1 {
+    max-width: 18ch;
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+  }
+
+  .hero__lead {
+    max-width: 40rem;
+    margin: 0;
+    font-size: var(--fs-lead);
+  }
+
+  /* Skills: forest block, one row per family with its tags */
+  .skills {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .skills h2 {
+    color: var(--on-primary);
+  }
+
+  .skills__list {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  .skills__list > div {
+    display: grid;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--accent-on-primary);
+  }
+
+  .skills__list dt {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    color: var(--accent-on-primary);
+  }
+
+  .skills__list dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  @media (min-width: 801px) {
+    .skills__list > div {
+      grid-template-columns: 12rem 1fr;
+      align-items: baseline;
+      gap: 2rem;
+    }
+  }
+
+  /* Work experience: one row per job, header on the left, details on the right */
+  /* "Professionnelles" and "entrepreneurial" are too long for the mobile heading size */
+  .jobs h2,
+  .commitment h2 {
+    font-size: clamp(1.7rem, 7vw, 4.2rem);
+  }
+
+  .jobs__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .job {
+    display: grid;
+    gap: 1rem;
+    padding-block: 2rem;
+    border-top: var(--border-width) solid var(--primary);
+  }
+
+  .job:last-child {
+    padding-bottom: 0;
+  }
+
+  .job__header h3 {
+    margin-bottom: 0.4rem;
+    font-size: var(--fs-h3);
+  }
+
+  .job__header p {
+    margin: 0;
+  }
+
+  .job__role {
+    font-weight: 600;
+  }
+
+  .job__dates {
+    font-size: var(--fs-small);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .job__body {
+    max-width: 46rem;
+  }
+
+  .job__body ul {
+    margin: 0 0 1.25rem;
+    padding-left: 1.2rem;
+  }
+
+  .job__body li + li {
+    margin-top: 0.35rem;
+  }
+
+  .job__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 801px) {
+    .job {
+      grid-template-columns: 16rem 1fr;
+      gap: 3rem;
+    }
+  }
+
+  /* Commitment: green block, same layout as a job */
+  .commitment {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .commitment h2,
+  .commitment h3 {
+    color: var(--on-secondary);
+  }
+
+  .commitment .job {
+    padding-bottom: 0;
+    border-top-color: var(--on-secondary);
+  }
+
+  .commitment .job__dates {
+    color: var(--on-secondary);
+  }
+
+  /* Education: one line per degree */
+  .education__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .education__list li {
+    display: grid;
+    gap: 0.25rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--primary);
+  }
+
+  @media (min-width: 801px) {
+    .education__list li {
+      grid-template-columns: 16rem 1fr;
+      gap: 3rem;
+      align-items: baseline;
+    }
+  }
+</style>

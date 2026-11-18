@@ -1,0 +1,34 @@
+---
+// Small pill naming a technology or practice.
+// default: forest outline, for cream backgrounds · inverse: filled cream, for dark backgrounds.
+interface Props {
+  tone?: 'default' | 'inverse';
+}
+
+const { tone = 'default' } = Astro.props;
+---
+
+<span class:list={['tag', `tag--${tone}`]}><slot /></span>
+
+<style>
+  .tag {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: var(--fs-small);
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .tag--default {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+
+  .tag--inverse {
+    border: 2px solid var(--on-primary);
+    background: var(--on-primary);
+    color: var(--primary);
+  }
+</style>
