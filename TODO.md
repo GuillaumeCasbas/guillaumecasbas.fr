@@ -25,10 +25,10 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
   - [x] Accueil (maquettes, composant Affiche et brouillon accueil.md supprimés : le texte vit dans `src/pages/index.astro`)
   - [x] Démarrer (`/demarrer`, ancres `#session` et `#audit` ; brouillon demarrer.md supprimé)
   - [x] Comment je travaille (brouillon supprimé ; critère de réussite : « le vendredi comme un mardi »)
-  - [x] Qui je suis (`/qui-je-suis`, ex-`/a-propos` à rediriger à l'étape 6 ; brouillon supprimé ; parcours, pourquoi, OryxChange, Movember, 2 recommandations)
+  - [x] Qui je suis (`/qui-je-suis` ; brouillon supprimé ; parcours, pourquoi, OryxChange, Movember, 2 recommandations)
     - [x] Bloc « Mes lectures recommandées » : les 4 ressources du pied de page actuel (Coder proprement, The Cycles of TDD, architecture hexagonale et tests front-end chez OCTO), chacune avec une phrase sur ce qu'elle apporte ; vérifier que les liens fonctionnent toujours
   - [x] Expériences (contenu actuel + introduction ; brouillon supprimé)
-- [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
+- [x] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD (avec la mention des badges chargés depuis des serveurs tiers), page de remerciement, page 404, image de partage ; pas de redirection (décidé : l'ancien site n'avait que /, /experiences et /docs/intro)
 - [ ] **Bloc « Trois questions » de l'accueil** : gardé pour la V1 ; à repenser avec le ton positif (« ce n'est pas de la prudence, c'est que personne n'a confiance » et « vos tests ne protègent pas ce qui compte » restent accusateurs), ou à retirer pour alléger la page
 - [ ] **Ton de la page Démarrer** : revoir en positif les phrases négatives du « Pour qui » de l'audit (« chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod ») et l'accroche « Pourquoi vous déboguez en prod »
 - [ ] **Ton de la page Comment je travaille** : revoir en positif « ce serait la promesse d'un travail bâclé » (bloc budget), « Pas de devis qui gonfle en cours de route » et « Une usine à gaz ne sera pas maintenue par votre équipe » (principes)
@@ -44,6 +44,9 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
 - [ ] Textes des 2 recommandations LinkedIn, avec nom et poste des auteurs
 - [ ] Modèle de NDA prêt à signer pour l'audit (promis sur la page Audit : à avoir avant la mise en ligne)
 - [ ] Numéro de téléphone de Netlify pour les mentions légales (depuis le compte Netlify, avant la mise en ligne)
+- [ ] Netlify : activer la détection des formulaires (Forms → Enable form detection) lors du déploiement
+- [ ] Netlify : régler la notification email des nouveaux messages vers ecrire@guillaumecasbas.fr
+- [ ] Netlify : envoyer un message de test depuis le formulaire de la prévisualisation et vérifier sa réception et la page de remerciement
 - [x] Preuve « 4 ans en prod » : Medelse, lead tech web et mobile, aucune indisponibilité, tests unitaires et d'intégration + QA
 
 ## Idées de design à explorer (présence humaine)

@@ -1,0 +1,80 @@
+---
+// Not found page. Astro builds it as 404.html, which Netlify serves for unknown URLs.
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<SiteLayout
+  title="Page introuvable · Guillaume Casbas"
+  description="Cette page n'existe pas ou a changé d'adresse."
+  noindex
+>
+  <main>
+    <section class="not-found wrap section">
+      <p class="not-found__number" aria-hidden="true">404</p>
+      <div>
+        <h1>Cette page n'existe pas.</h1>
+        <p class="not-found__lead">
+          Elle a peut-être changé d'adresse avec le nouveau site. Le plus simple : repartir de
+          l'accueil.
+        </p>
+        <div class="not-found__actions">
+          <Button href="/">Retour à l'accueil</Button>
+          <a class="not-found__link" href="/demarrer">Voir comment démarrer →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</SiteLayout>
+
+<style>
+  .not-found {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+    min-height: 60vh;
+  }
+
+  /* The huge number, like the "0" of the home page proof */
+  .not-found__number {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 22vw, 14rem);
+    line-height: 0.8;
+    color: var(--accent);
+  }
+
+  .not-found h1 {
+    max-width: 16ch;
+    margin-bottom: 1rem;
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+  }
+
+  .not-found__lead {
+    max-width: 32rem;
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+  }
+
+  .not-found__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2rem;
+  }
+
+  .not-found__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+  }
+
+  @media (min-width: 801px) {
+    .not-found {
+      grid-template-columns: auto 1fr;
+      gap: 4rem;
+    }
+  }
+</style>

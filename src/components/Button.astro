@@ -1,18 +1,28 @@
 ---
-// Pill-shaped link button with an offset "poster" shadow.
+// Pill-shaped button with an offset "poster" shadow.
+// Renders a link when `href` is given, otherwise a form submit button.
 interface Props {
-  href: string;
+  href?: string;
   /** accent: garnet (default) · primary: forest · outline: cream with dark border */
   variant?: 'accent' | 'primary' | 'outline';
   size?: 'default' | 'small';
 }
 
 const { href, variant = 'accent', size = 'default' } = Astro.props;
+const classes = ['button', `button--${variant}`, { 'button--small': size === 'small' }];
 ---
 
-<a class:list={['button', `button--${variant}`, { 'button--small': size === 'small' }]} href={href}>
-  <slot />
-</a>
+{
+  href ? (
+    <a class:list={classes} href={href}>
+      <slot />
+    </a>
+  ) : (
+    <button class:list={classes} type="submit">
+      <slot />
+    </button>
+  )
+}
 
 <style>
   .button {
@@ -33,6 +43,7 @@ const { href, variant = 'accent', size = 'default' } = Astro.props;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
     transition:
       transform 0.1s,
       box-shadow 0.1s;
