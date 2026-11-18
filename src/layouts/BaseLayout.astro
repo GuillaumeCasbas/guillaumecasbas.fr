@@ -3,14 +3,18 @@ import '@fontsource/archivo-black/400.css';
 import '@fontsource/archivo/400.css';
 import '@fontsource/archivo/600.css';
 import '../styles/global.css';
+import { person } from '../config/structured-data';
 
 interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  /** Extra schema.org objects for this page; the Person is always included. */
+  structuredData?: object[];
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, structuredData = [] } = Astro.props;
+const jsonLd = [person, ...structuredData];
 
 // Absolute URLs for search engines and social previews (LinkedIn, Bluesky…).
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
@@ -44,6 +48,8 @@ const shareImageUrl = new URL('/partage.png', Astro.site);
       content="Livrer sereinement, même quand l'IA écrit le code. Guillaume Casbas."
     />
     <meta name="twitter:card" content="summary_large_image" />
+
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
   </head>
   <body>
     <slot />
