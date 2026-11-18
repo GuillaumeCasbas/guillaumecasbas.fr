@@ -1,0 +1,278 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<SiteLayout
+  title="Comment je travaille · Guillaume Casbas"
+  description="Prix fixes affichés, périmètre écrit, pas de taux journalier. Un seul critère de réussite : déployer en toute sérénité."
+>
+  <main>
+    <section class="hero wrap section">
+      <h1>Je vends du contrôle, pas des heures.</h1>
+      <p class="hero__lead">
+        Prix fixes, périmètre écrit, et un seul critère de réussite : vous déployez sereinement.
+      </p>
+    </section>
+
+    <section class="result section" aria-labelledby="result-title">
+      <div class="wrap">
+        <h2 id="result-title">Un prix lié au résultat</h2>
+        <p class="result__statement">
+          Mon intérêt rejoint le vôtre : livrer vite et bien, pas faire durer la mission.
+        </p>
+        <p class="result__text">
+          Mes prix reposent sur le résultat attendu. Vous savez ce que vous payez avant de commencer, et
+          ce montant ne bouge pas.
+        </p>
+      </div>
+    </section>
+
+    <section class="prices wrap section" aria-labelledby="prices-title">
+      <h2 id="prices-title">Des prix fixes, affichés ou écrits</h2>
+      <div class="prices__grid">
+        <article class="prices__card">
+          <h3>Les offres d'entrée ont un prix affiché.</h3>
+          <p>
+            L'audit de livraison coûte 700&nbsp;€ HT, la session stratégie 300&nbsp;€ HT. Pas de devis
+            à attendre, pas de négociation.
+          </p>
+          <a class="prices__link" href="/demarrer">Voir les deux offres →</a>
+        </article>
+        <article class="prices__card">
+          <h3>Les missions sont chiffrées sur la base de l'audit.</h3>
+          <p>
+            Pipeline et tests critiques, ATDD, partenaire de livraison : je ne les chiffre pas avant
+            d'avoir vu votre projet. Pas parce que je cache mes prix, mais parce qu'un prix donné sans
+            diagnostic, c'est une supposition.
+          </p>
+          <p>
+            Le prix dépend de ce que l'audit révèle : la taille de votre équipe, le rythme de vos mises
+            en prod, l'état de votre pipeline.
+          </p>
+          <p>
+            Pour un besoin simple et bien cerné, la session stratégie peut suffire : je vous dirai
+            lequel des deux il faut.
+          </p>
+          <p>
+            Ensuite, vous recevez une proposition écrite sous 48 heures : périmètre écrit noir sur
+            blanc, prix ferme.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="budget section" aria-labelledby="budget-title">
+      <div class="wrap">
+        <h2 id="budget-title">Votre budget choisit le périmètre, pas le prix</h2>
+        <p>
+          Si le budget ne suit pas, on réduit le périmètre. On ne brade pas le prix pour le même
+          travail : ce serait la promesse d'un travail bâclé.
+        </p>
+        <p>
+          Et le périmètre écrit tient. Pas de devis qui gonfle en cours de route, pas de « petit
+          ajout » qui devient une mission.
+        </p>
+      </div>
+    </section>
+
+    <section class="diagnosis wrap section" aria-labelledby="diagnosis-title">
+      <h2 id="diagnosis-title">Un diagnostic avant une solution</h2>
+      <p>
+        Je ne propose rien avant d'avoir constaté. Pendant un audit, je diagnostique et je priorise ; je
+        ne vends pas.
+      </p>
+      <p>
+        La mission vient après, sur la base des faits. Et si les faits montrent que votre équipe peut
+        avancer seule, je vous le dis.
+      </p>
+    </section>
+
+    <section class="principles section" aria-labelledby="principles-title">
+      <div class="wrap">
+        <h2 id="principles-title">Simple d'abord, critique d'abord</h2>
+        <ul class="principles__list">
+          <li>
+            <h3>Les tests qui protègent votre métier passent en premier.</h3>
+            <p>
+              Viser 100&nbsp;% de couverture n'est pas un objectif ; protéger ce qui fait votre chiffre
+              d'affaires, si.
+            </p>
+          </li>
+          <li>
+            <h3>Un pipeline reste simple.</h3>
+            <p>Une usine à gaz ne sera pas maintenue par votre équipe une fois que je serai parti.</p>
+          </li>
+          <li>
+            <h3>Je repars, vous restez.</h3>
+            <p>
+              Chaque mission se termine par un transfert de compétences : votre équipe sait utiliser et
+              faire évoluer ce qui a été mis en place.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="success wrap section" aria-labelledby="success-title">
+      <h2 id="success-title" class="success__label">Le critère de réussite</h2>
+      <p class="success__statement">
+        Une mission est réussie quand votre équipe déploie le vendredi comme un mardi.
+      </p>
+    </section>
+
+    <CallToAction tone="accent" />
+  </main>
+</SiteLayout>
+
+<style>
+  .hero__lead {
+    max-width: 36rem;
+    margin: 0;
+    font-size: var(--fs-lead);
+  }
+
+  /* Result-based price: forest block, the main argument in large type */
+  .result {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .result h2 {
+    color: var(--accent-on-primary);
+    font-size: var(--fs-h3);
+  }
+
+  .result__statement {
+    max-width: 30ch;
+    margin-bottom: 2rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .result__text {
+    max-width: 40rem;
+    margin: 0;
+    font-size: var(--fs-lead);
+  }
+
+  /* Fixed prices: two cards, shown or written */
+  .prices__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .prices__card {
+    padding: 2rem 1.5rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--primary);
+  }
+
+  .prices__card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .prices__card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .prices__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+  }
+
+  @media (min-width: 801px) {
+    .prices__grid {
+      grid-template-columns: 1fr 1.4fr;
+    }
+  }
+
+  /* Budget rule: garnet block */
+  .budget {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .budget h2 {
+    max-width: 20ch;
+    color: var(--on-accent);
+  }
+
+  .budget p,
+  .diagnosis p {
+    max-width: 40rem;
+    font-size: var(--fs-lead);
+  }
+
+  .budget p:last-child,
+  .diagnosis p:last-child {
+    margin-bottom: 0;
+  }
+
+  .diagnosis h2 {
+    max-width: 20ch;
+  }
+
+  /* Technical principles: green block, three columns on desktop */
+  .principles {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .principles h2 {
+    color: var(--on-secondary);
+  }
+
+  .principles__list {
+    display: grid;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .principles__list li {
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--on-secondary);
+  }
+
+  .principles__list h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    color: var(--on-secondary);
+  }
+
+  .principles__list p {
+    margin: 0;
+  }
+
+  @media (min-width: 801px) {
+    .principles__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Success criterion: the page signature, in large type */
+  .success__label {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--accent);
+  }
+
+  .success__statement {
+    max-width: 20ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+</style>

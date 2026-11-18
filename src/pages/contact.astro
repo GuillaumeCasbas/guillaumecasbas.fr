@@ -1,0 +1,301 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/Button.astro';
+
+// Values sent by the "Ce qui vous amène" choice. `?offre=audit` or `?offre=session` preselects one.
+const reasons = [
+  { value: 'audit', label: 'L’audit de livraison' },
+  { value: 'session', label: 'La session stratégie' },
+  { value: 'autre', label: 'Je ne sais pas encore' },
+];
+---
+
+<SiteLayout
+  title="Contact · Guillaume Casbas"
+  description="Vous déboguez en prod plus souvent que vous ne l'aimeriez ? Envoyez-moi un message, on regarde ça ensemble."
+>
+  <main>
+    <section class="contact wrap section">
+      <h1>Vous déboguez en prod plus souvent que vous ne l'aimeriez&nbsp;?</h1>
+      <p class="contact__lead">Envoyez-moi un message, on regarde ça ensemble.</p>
+
+      <!-- Netlify Forms: detected at deploy time; the hidden bot-field is a honeypot against spam. -->
+      <form
+        class="form"
+        name="contact"
+        method="POST"
+        action="/contact/merci"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="visually-hidden">
+          <label>Ne pas remplir ce champ : <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <div class="form__row">
+          <div class="form__field">
+            <label for="name">Votre nom</label>
+            <input id="name" name="nom" type="text" autocomplete="name" required />
+          </div>
+          <div class="form__field">
+            <label for="email">Votre email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="form__field">
+          <label for="company">Votre entreprise <span class="form__optional">(facultatif)</span></label>
+          <input id="company" name="entreprise" type="text" autocomplete="organization" />
+        </div>
+
+        <fieldset class="form__field form__choices">
+          <legend>Ce qui vous amène</legend>
+          {
+            reasons.map((reason, index) => (
+              <label class="form__choice">
+                <input
+                  type="radio"
+                  name="offre"
+                  value={reason.value}
+                  checked={index === reasons.length - 1}
+                />
+                <span>{reason.label}</span>
+              </label>
+            ))
+          }
+        </fieldset>
+
+        <div class="form__field">
+          <label for="message">Votre message</label>
+          <p class="form__hint" id="message-hint">
+            Décrivez votre situation en quelques lignes. Comment livrez-vous aujourd'hui, qu'est-ce qui
+            coince&nbsp;?
+          </p>
+          <textarea id="message" name="message" rows="7" aria-describedby="message-hint" required
+          ></textarea>
+        </div>
+
+        <div class="form__field">
+          <label for="source">
+            Comment m'avez-vous trouvé&nbsp;? <span class="form__optional">(facultatif)</span>
+          </label>
+          <input id="source" name="source" type="text" />
+        </div>
+
+        <div class="form__submit">
+          <Button>Envoyer mon message</Button>
+        </div>
+
+        <p class="form__privacy">
+          Vos informations servent uniquement à vous répondre. Elles ne sont ni revendues ni utilisées
+          pour vous envoyer de la publicité.{' '}
+          <a href="/mentions-legales#donnees-personnelles">En savoir plus</a>
+        </p>
+      </form>
+    </section>
+
+    <section class="next section" aria-labelledby="next-title">
+      <div class="wrap next__inner">
+        <div>
+          <h2 id="next-title">Ce qui se passe ensuite</h2>
+          <ol class="next__steps">
+            <li>Je lis votre message et je vous réponds personnellement.</li>
+            <li>
+              Si l'audit ou la session stratégie vous convient, on fixe une date et je vous envoie le
+              périmètre écrit.
+            </li>
+            <li>
+              Si ce n'est pas le bon format pour vous, je vous le dis, et je vous oriente si je peux.
+            </li>
+          </ol>
+          <p>Pas de relance automatique, pas de newsletter imposée.</p>
+        </div>
+        <div>
+          <h2 class="next__elsewhere">Ailleurs</h2>
+          <p>
+            Vous préférez écrire directement&nbsp;?{' '}
+            <a href="mailto:ecrire@guillaumecasbas.fr">ecrire@guillaumecasbas.fr</a> ou{' '}
+            <a href="https://www.linkedin.com/in/guillaumecasbas/">LinkedIn</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</SiteLayout>
+
+<!-- Preselects "Ce qui vous amène" from ?offre=audit or ?offre=session. Without JavaScript, the default choice stays. -->
+<script is:inline>
+  (() => {
+    const offer = new URLSearchParams(window.location.search).get('offre');
+    const radio = offer && document.querySelector(`input[name="offre"][value="${CSS.escape(offer)}"]`);
+    if (radio) radio.checked = true;
+  })();
+</script>
+
+<style>
+  .contact h1 {
+    max-width: 20ch;
+    margin-bottom: 1rem;
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+  }
+
+  .contact__lead {
+    margin-bottom: 3rem;
+    font-size: var(--fs-lead);
+  }
+
+  /* Form: thick forest borders, like the cards */
+  .form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 44rem;
+  }
+
+  .form__row {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .form__field {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .form label,
+  .form legend {
+    font-weight: 600;
+  }
+
+  .form legend {
+    margin-bottom: 0.4rem;
+    padding: 0;
+  }
+
+  .form__optional,
+  .form__hint {
+    font-weight: 400;
+    font-size: var(--fs-small);
+  }
+
+  .form__hint {
+    margin: 0;
+  }
+
+  .form input[type='text'],
+  .form input[type='email'],
+  .form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: 0.75rem;
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+  }
+
+  .form textarea {
+    resize: vertical;
+  }
+
+  /* Reason choice: radio buttons shown as pills */
+  .form__choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .form__choices legend {
+    width: 100%;
+  }
+
+  .form__choice {
+    position: relative;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .form__choice input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .form__choice span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: 999px;
+  }
+
+  .form__choice input:checked + span {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .form__choice input:focus-visible + span {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .form__submit {
+    margin-top: 0.5rem;
+  }
+
+  .form__privacy {
+    margin: 0;
+    font-size: var(--fs-small);
+  }
+
+  .form__privacy a {
+    font-weight: 600;
+  }
+
+  @media (min-width: 801px) {
+    .form__row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* What happens next: green block */
+  .next {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .next__inner {
+    display: grid;
+    gap: 3rem;
+  }
+
+  .next h2 {
+    font-size: var(--fs-h3);
+    color: var(--on-secondary);
+  }
+
+  .next__steps {
+    margin: 0 0 1.5rem;
+    padding-left: 1.4rem;
+  }
+
+  .next__steps li + li {
+    margin-top: 0.5rem;
+  }
+
+  .next p {
+    margin: 0;
+  }
+
+  .next a {
+    font-weight: 600;
+  }
+
+  @media (min-width: 801px) {
+    .next__inner {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+</style>

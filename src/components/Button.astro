@@ -1,0 +1,74 @@
+---
+// Pill-shaped button with an offset "poster" shadow.
+// Renders a link when `href` is given, otherwise a form submit button.
+interface Props {
+  href?: string;
+  /** accent: garnet (default) · primary: forest · outline: cream with dark border */
+  variant?: 'accent' | 'primary' | 'outline';
+  size?: 'default' | 'small';
+}
+
+const { href, variant = 'accent', size = 'default' } = Astro.props;
+const classes = ['button', `button--${variant}`, { 'button--small': size === 'small' }];
+---
+
+{
+  href ? (
+    <a class:list={classes} href={href}>
+      <slot />
+    </a>
+  ) : (
+    <button class:list={classes} type="submit">
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  .button {
+    --button-bg: var(--accent);
+    --button-fg: var(--on-accent);
+    --button-border: var(--primary);
+    --button-shadow: var(--primary);
+
+    display: inline-block;
+    padding: 0.95rem 1.6rem;
+    border: var(--border-width) solid var(--button-border);
+    border-radius: 999px;
+    background: var(--button-bg);
+    color: var(--button-fg);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--button-shadow);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      transform 0.1s,
+      box-shadow 0.1s;
+  }
+
+  .button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--button-shadow);
+  }
+
+  .button--primary {
+    --button-bg: var(--primary);
+    --button-fg: var(--on-primary);
+  }
+
+  .button--outline {
+    --button-bg: var(--bg);
+    --button-fg: var(--ink);
+    --button-border: var(--ink);
+    --button-shadow: var(--ink);
+  }
+
+  .button--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+</style>

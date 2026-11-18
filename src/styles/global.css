@@ -1,0 +1,139 @@
+/*
+ * Site-wide styles: colours, typography, spacing and shared base rules.
+ * "Poster" visual direction, b6 palette (forest and garnet).
+ * Components keep their own scoped styles; only shared rules live here.
+ */
+
+:root {
+  /* Colours */
+  --bg: #f6f0e4; /* cream background */
+  --ink: #1d2a25; /* body text */
+  --primary: #173f33; /* forest: headings, dark blocks, borders */
+  --on-primary: #f6f0e4;
+  --accent: #9b1426; /* garnet: buttons, highlights, marquee */
+  --on-accent: #f6f0e4;
+  --accent-on-primary: #ff8a93; /* light garnet, readable on forest */
+  --secondary: #276955; /* green: secondary blocks */
+  --on-secondary: #f6f0e4;
+
+  /* Typography */
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-text: 'Archivo', system-ui, sans-serif;
+
+  /* Sizes: on mobile, headings scale with the viewport; on desktop they are capped
+     so they feel bold without "shouting". */
+  --fs-hero: clamp(2.1rem, 9vw, 5.5rem);
+  --fs-h2: clamp(2.2rem, 6.5vw, 4.2rem);
+  --fs-h3: clamp(1.2rem, 3vw, 2rem);
+  --fs-lead: clamp(1.1rem, 2vw, 1.4rem);
+  --fs-small: 0.85rem;
+
+  /* Spacing */
+  --wrap: 76rem; /* max content width */
+  --gutter: 1rem; /* side gutter */
+  --section: clamp(3rem, 9vw, 7rem); /* vertical space between sections */
+
+  /* Shapes */
+  --border-width: 3px;
+  --radius: 1.5rem;
+  --shadow-offset: 4px;
+}
+
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-text);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Headings: Archivo Black capitals, forest colour */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--primary);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+}
+
+h1 {
+  font-size: var(--fs-hero);
+  line-height: 0.92;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Utilities */
+
+/* Centred container at content width. */
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Page section, separated from the next one by the shared vertical space. */
+.section {
+  padding-block: var(--section);
+}
+
+/* Text for screen readers only. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

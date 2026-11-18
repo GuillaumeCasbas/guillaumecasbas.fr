@@ -1,0 +1,141 @@
+---
+// Pricing card for an offer, SaaS pricing-page style.
+// The featured card is garnet, slightly tilted, with a tag; the others are cream.
+// The card description goes in the default slot.
+import Button from './Button.astro';
+
+interface Props {
+  title: string;
+  /** Amount shown in large type, e.g. "700 €". Omit it to show `priceText` instead. */
+  price?: string;
+  /** Text price for offers quoted case by case. */
+  priceText?: string;
+  /** Short line under the price: duration, format, conditions. */
+  meta: string;
+  cta: { href: string; label: string };
+  featured?: boolean;
+  tag?: string;
+}
+
+const { title, price, priceText, meta, cta, featured = false, tag } = Astro.props;
+---
+
+<article class:list={['offer', { 'offer--featured': featured }]}>
+  {tag && <p class="offer__tag">{tag}</p>}
+  <h3 class="offer__title">{title}</h3>
+  {
+    price ? (
+      <p class="offer__price">
+        {price}
+        <small> HT</small>
+      </p>
+    ) : (
+      <p class="offer__price offer__price--text">{priceText}</p>
+    )
+  }
+  <p class="offer__meta">{meta}</p>
+  <div class="offer__body">
+    <slot />
+  </div>
+  <div class="offer__action">
+    <Button href={cta.href} variant="outline">{cta.label}</Button>
+  </div>
+</article>
+
+<style>
+  .offer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem 1.5rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  .offer--featured {
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: 8px 8px 0 var(--primary);
+  }
+
+  @media (min-width: 801px) {
+    .offer--featured {
+      transform: rotate(-1.5deg) translateY(-0.75rem);
+    }
+  }
+
+  .offer__tag {
+    position: absolute;
+    top: -1rem;
+    right: 1.25rem;
+    margin: 0;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: var(--primary);
+    color: var(--on-primary);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .offer__title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary);
+  }
+
+  .offer__price {
+    margin: 0.5rem 0 0;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--primary);
+  }
+
+  .offer__price small {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .offer__price--text {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .offer--featured .offer__title,
+  .offer--featured .offer__price {
+    color: var(--on-accent);
+  }
+
+  .offer__meta {
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+
+  .offer__body :global(p) {
+    margin: 0 0 0.75rem;
+  }
+
+  .offer__body :global(ul) {
+    margin: 0 0 0.75rem;
+    padding-left: 1.2rem;
+  }
+
+  .offer__body :global(a) {
+    font-weight: 600;
+  }
+
+  .offer__action {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .offer__action :global(.button) {
+    display: block;
+    text-align: center;
+  }
+</style>

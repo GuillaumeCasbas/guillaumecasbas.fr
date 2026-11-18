@@ -1,0 +1,472 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import MovemberBanner from '../components/MovemberBanner.astro';
+import Portrait from '../components/Portrait.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const path = [
+  {
+    year: '2015',
+    text: 'J’ai commencé dans une agence web : des sites vitrines, des SaaS, des applications mobiles, pour des TPE comme pour de grands groupes européens. J’y ai appris à livrer vite, sur tous les terrains.',
+  },
+  {
+    year: '2020',
+    text: 'Je deviens lead tech chez Medelse, une plateforme de remplacement pour les soignants : back-office, web et application mobile, plus de 5 000 utilisateurs actifs. Pendant quatre ans, on livre sans une seule interruption de service. C’est là que je comprends que la qualité n’est pas une affaire de talent individuel, mais de process : des tests, des revues, une QA, et quelqu’un qui tient la ligne.',
+  },
+  {
+    year: '2025',
+    text: 'Je travaille en indépendant pour des équipes et des TPE. React, React Native, Symfony, Go, TDD, clean architecture : je connais le terrain parce que j’y ai passé plus de dix ans.',
+  },
+];
+
+// Reading list carried over from the previous site footer. `why` lines are drafts to validate.
+const readings = [
+  {
+    title: 'Coder proprement',
+    source: 'Robert C. Martin, livre',
+    href: 'https://openlibrary.org/books/OL27895665M/Coder_Proprement',
+    lang: 'fr',
+    why: 'Le livre qui m’a appris qu’un code se relit bien plus souvent qu’il ne s’écrit.',
+  },
+  {
+    title: 'The Cycles of TDD',
+    source: 'Robert C. Martin, article en anglais',
+    href: 'https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html',
+    lang: 'en',
+    why: 'Les cycles du TDD, de la seconde à l’heure : la base de ma façon d’écrire des tests.',
+  },
+  {
+    title: 'Architecture hexagonale : trois principes et un exemple d’implémentation',
+    source: 'OCTO, article',
+    href: 'https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation',
+    lang: 'fr',
+    why: 'Isoler le métier de la technique : c’est ce qui rend un code testable, et donc livrable en confiance.',
+  },
+  {
+    title: 'Tests sur tous les fronts : émergence des composants applicatifs',
+    source: 'OCTO, article',
+    href: 'https://blog.octo.com/tests-sur-tous-les-fronts-emergence-des-composants-applicatifs',
+    lang: 'fr',
+    why: 'Tester le front-end avec la même rigueur que le back-end.',
+  },
+];
+---
+
+<SiteLayout
+  title="Qui je suis · Guillaume Casbas"
+  description="Plus de 10 ans comme développeur web et lead tech avant de passer de l'autre côté : le contrôle, la méthode et le jugement plutôt que la ligne de code."
+>
+  <main>
+    <MovemberBanner />
+
+    <section class="hero wrap section">
+      <Portrait width={288} />
+      <h1>
+        J'ai écrit du code pendant plus de 10&nbsp;ans. Aujourd'hui, je fais en sorte que le vôtre
+        arrive en prod sereinement.
+      </h1>
+    </section>
+
+    <section class="path section" aria-labelledby="path-title">
+      <div class="wrap">
+        <h2 id="path-title">D'où je viens</h2>
+        <ol class="path__steps">
+          {
+            path.map((step) => (
+              <li>
+                <span class="path__year">{step.year}</span>
+                <p>{step.text}</p>
+              </li>
+            ))
+          }
+        </ol>
+        <p class="path__trait">
+          Optimiseur un peu obsessionnel, j'aime les process qui marchent et les mises en prod dont
+          plus personne ne parle.
+        </p>
+        <a class="path__link" href="/experiences">Voir mon parcours en détail →</a>
+      </div>
+    </section>
+
+    <section class="switch wrap section" aria-labelledby="switch-title">
+      <h2 id="switch-title">De l'autre côté</h2>
+      <p>
+        Puis l'IA est arrivée dans les équipes. Le code s'écrit plus vite que jamais, et c'est
+        exactement pour ça que le contrôle compte plus que jamais.
+      </p>
+      <p>
+        Alors je suis passé de l'autre côté. Je n'écris plus vos features : j'apporte le contrôle, la
+        méthode et le jugement qui permettent à votre équipe de les livrer en confiance.
+      </p>
+    </section>
+
+    <section class="why-block section" aria-labelledby="why-title">
+      <div class="wrap why">
+        <h2 id="why-title">Pourquoi je fais ça</h2>
+        <p>
+          Parce que l'accélération a un coût, et qu'aujourd'hui ce sont souvent les devs qui le paient :
+          davantage de contexte à tenir, davantage de bugs à corriger, et toujours la même pression.
+        </p>
+        <p>
+          Je mets en place des process pour travailler avec l'IA en gardant le maximum de sérénité. Moins
+          de bugs en prod, c'est des devs plus sereins, des utilisateurs plus satisfaits, et une
+          entreprise qui avance plus vite. Tout le monde y gagne.
+        </p>
+      </div>
+    </section>
+
+    <section class="quotes section" aria-labelledby="quotes-title">
+      <div class="wrap">
+        <h2 id="quotes-title">Ce qu'ils en disent</h2>
+        <div class="quotes__grid">
+          <figure class="quotes__card">
+            <blockquote>
+              <p>
+                « Guillaume a été une personne clé au sein de Medelse pendant quatre ans. Il s'est
+                distingué par son expertise technique, sa rigueur, son investissement et son esprit
+                d'équipe. Toujours proactif et force de proposition, il a contribué au succès de
+                nombreux projets en apportant des solutions innovantes et efficaces. Encore merci
+                Guillaume&nbsp;! Je le recommande vivement. »
+              </p>
+            </blockquote>
+            <figcaption>
+              <strong>Thomas Gendron</strong>, ex-CEO de Medelse, aujourd'hui directeur de Mistertemp'plus
+            </figcaption>
+          </figure>
+          <figure class="quotes__card">
+            <blockquote>
+              <p>
+                « J'ai eu le plaisir de travailler avec Guillaume à plusieurs reprises sur nos projets
+                web, et dès que j'ai un besoin, je fais appel à lui sans hésiter. C'est un développeur
+                sérieux, impliqué et très à l'écoute de nos demandes. Son code est propre, structuré et
+                fiable, ce qui rend chaque collaboration fluide et efficace. Je le recommande les yeux
+                fermés, c'est un vrai pro sur qui on peut compter&nbsp;! »
+              </p>
+            </blockquote>
+            <figcaption><strong>Clément Castelli</strong>, président de Réflex Boutique</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="outside wrap section" aria-labelledby="outside-title">
+      <h2 id="outside-title">En dehors des missions</h2>
+      <div class="outside__grid">
+        <article class="outside__card">
+          <h3>OryxChange</h3>
+          <p>
+            OryxChange, c'est l'aventure entrepreneuriale que je mène comme CTO, avec trois associés. Le
+            projet est né en 2025 au sein de l'association PADEO, qui aide celles et ceux qui veulent
+            agir sur les 17 objectifs de développement durable de l'ONU.
+          </p>
+        </article>
+        <article class="outside__card">
+          <h3>Movember</h3>
+          <p>
+            Depuis 2022, je participe chaque novembre à Movember, la campagne pour la santé des hommes,
+            et en particulier leur santé mentale. Une cause qui rejoint ma vision du travail : on fait
+            du meilleur travail quand on va bien.
+          </p>
+          <a class="outside__link" href="https://fr.movember.com/mospace/14950664">Ma page Movember →</a>
+        </article>
+        <article class="outside__card outside__card--wide">
+          <h3>Et sinon</h3>
+          <p>
+            <strong>Je cours.</strong> Des trails jusqu'à 30&nbsp;km, et mon premier marathon cette
+            année. Avec un coach et un plan d'entraînement suivi à la lettre : on ne se refait pas.
+          </p>
+          <p>
+            <strong>Je peins des figurines miniatures.</strong> De la patience, de la précision, et aucun
+            raccourci possible.
+          </p>
+          <p>
+            <strong>Je fais simple.</strong> Par conviction écologique, jusque dans ce site : pas de
+            cookies, pas de traceur, le strict nécessaire.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="readings section" aria-labelledby="readings-title">
+      <div class="wrap">
+        <h2 id="readings-title">Mes lectures recommandées</h2>
+        <p class="readings__intro">Les lectures qui ont façonné ma façon de travailler.</p>
+        <ul class="readings__list">
+          {
+            readings.map((reading) => (
+              <li>
+                <a href={reading.href} lang={reading.lang}>
+                  {reading.title}
+                </a>
+                <span class="readings__source">{reading.source}</span>
+                <p>{reading.why}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <CallToAction />
+  </main>
+</SiteLayout>
+
+<style>
+  /* Hero: duotone portrait next to a long statement, kept below the hero size */
+  .hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero :global(.portrait) {
+    max-width: 14rem;
+  }
+
+  .hero h1 {
+    max-width: 22ch;
+    margin: 0;
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+  }
+
+  @media (min-width: 801px) {
+    .hero {
+      grid-template-columns: 18rem 1fr;
+      gap: 3rem;
+    }
+
+    .hero :global(.portrait) {
+      max-width: none;
+    }
+  }
+
+  /* Career path: forest block, three dated steps */
+  .path {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .path h2 {
+    color: var(--on-primary);
+  }
+
+  .path__steps {
+    display: grid;
+    gap: 2rem;
+    margin: 0 0 3rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .path__steps li {
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--accent-on-primary);
+  }
+
+  .path__year {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    color: var(--accent-on-primary);
+  }
+
+  .path__steps p {
+    max-width: 44rem;
+    margin: 0;
+  }
+
+  .path__trait {
+    max-width: 36rem;
+    margin-bottom: 1.5rem;
+    font-size: var(--fs-lead);
+    font-weight: 600;
+  }
+
+  .path__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent-on-primary);
+  }
+
+  @media (min-width: 801px) {
+    .path__steps li {
+      grid-template-columns: 8rem 1fr;
+      gap: 2rem;
+      align-items: baseline;
+    }
+  }
+
+  /* Why I do this: green block, the heart of the page */
+  .why-block {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .why-block h2 {
+    color: var(--on-secondary);
+  }
+
+  .switch p,
+  .why p {
+    max-width: 40rem;
+    font-size: var(--fs-lead);
+  }
+
+  .switch p:last-child,
+  .why p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Recommendations: garnet block, like every client quote on the site */
+  .quotes {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .quotes h2 {
+    color: var(--on-accent);
+  }
+
+  .quotes__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .quotes__card {
+    margin: 0;
+    padding: 2rem 1.5rem;
+    border: var(--border-width) solid var(--primary);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--primary);
+  }
+
+  .quotes__card blockquote {
+    margin: 0 0 1.25rem;
+  }
+
+  .quotes__card blockquote p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 801px) {
+    .quotes__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Outside missions: three parts under a section rule, no card */
+  .outside__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .outside__card {
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--primary);
+  }
+
+  .outside__card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .outside__card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .outside__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+  }
+
+  @media (min-width: 801px) {
+    .outside__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Full-width last card, its three short paragraphs side by side */
+    .outside__card--wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 2rem;
+    }
+
+    .outside__card--wide h3 {
+      grid-column: 1 / -1;
+    }
+
+    .outside__card--wide p {
+      margin: 0;
+    }
+  }
+
+  /* Reading list: forest block */
+  .readings {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .readings h2 {
+    margin-bottom: 1rem;
+    color: var(--on-primary);
+  }
+
+  .readings__intro {
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+  }
+
+  .readings__list {
+    display: grid;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .readings__list li {
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--accent-on-primary);
+  }
+
+  .readings__list a {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent-on-primary);
+  }
+
+  .readings__source {
+    display: block;
+    margin: 0.4rem 0 0.75rem;
+    font-size: var(--fs-small);
+    color: var(--accent-on-primary);
+  }
+
+  .readings__list p {
+    margin: 0;
+  }
+
+  @media (min-width: 801px) {
+    .readings__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 3rem;
+    }
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+// Closing call to action, repeated at the bottom of each page.
+// Same copy everywhere by default; a page can override it if needed.
+// `tone="accent"` puts it on a garnet block, for pages whose last section is cream.
+import Button from './Button.astro';
+
+interface Props {
+  title?: string;
+  label?: string;
+  href?: string;
+  tone?: 'default' | 'accent';
+}
+
+const {
+  title = 'Envie de livrer sereinement ?', // non-breaking space before "?" (French typography)
+  label = 'Envoyez-moi un message, on regarde ça ensemble',
+  href = '/contact',
+  tone = 'default',
+} = Astro.props;
+---
+
+<section class:list={['cta', `cta--${tone}`, 'section']} aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 id="cta-title" class="cta__title">{title}</h2>
+    <Button href={href} variant={tone === 'accent' ? 'outline' : 'accent'}>{label}</Button>
+  </div>
+</section>
+
+<style>
+  .cta--accent {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .cta__title {
+    max-width: 22ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta--accent .cta__title {
+    color: var(--on-accent);
+  }
+</style>

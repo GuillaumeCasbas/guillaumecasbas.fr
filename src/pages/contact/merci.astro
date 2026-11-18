@@ -1,0 +1,63 @@
+---
+// Confirmation page shown by Netlify Forms after the contact form is sent (form `action`).
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Button from '../../components/Button.astro';
+---
+
+<SiteLayout
+  title="Message envoyé · Guillaume Casbas"
+  description="Votre message est bien arrivé."
+  noindex
+>
+  <main>
+    <section class="thanks wrap section">
+      <p class="thanks__label">Message envoyé</p>
+      <h1>Merci, votre message est bien arrivé.</h1>
+      <p class="thanks__lead">Je vous réponds personnellement.</p>
+      <div class="thanks__actions">
+        <Button href="/">Retour à l'accueil</Button>
+        <a class="thanks__link" href="/qui-je-suis">En attendant, découvrez qui je suis →</a>
+      </div>
+    </section>
+  </main>
+</SiteLayout>
+
+<style>
+  .thanks {
+    min-height: 60vh;
+  }
+
+  .thanks__label {
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .thanks h1 {
+    max-width: 18ch;
+    margin-bottom: 1rem;
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+  }
+
+  .thanks__lead {
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+  }
+
+  .thanks__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2rem;
+  }
+
+  .thanks__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+  }
+</style>
