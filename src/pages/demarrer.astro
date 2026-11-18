@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { services } from '../config/structured-data';
 import Button from '../components/Button.astro';
 import CallToAction from '../components/CallToAction.astro';
 
@@ -78,6 +79,7 @@ const faq = [
 <SiteLayout
   title="Démarrer · Session stratégie 300 € HT, audit de livraison 700 € HT · Guillaume Casbas"
   description="Deux façons de démarrer, à prix fixe : une session stratégie de 90 minutes pour 300 € HT, ou un audit de livraison d'une journée pour 700 € HT, avec un plan d'action priorisé."
+  structuredData={[services]}
 >
   <main>
     <section class="hero wrap section">

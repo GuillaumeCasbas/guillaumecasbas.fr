@@ -28,9 +28,10 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 Le site esst déjà très qualitatif, c'est surtout le SEO qu'il faudra travailler
 - [ ] rapport d'audit à challenger (`knowledge-refonte-site/rapport-audit-a-challenger.md`)
   - [x] Vague 1 faite le 2026-11-18 : `robots.txt`, sitemap (`@astrojs/sitemap`), cache longue durée de `/_astro/` (`netlify.toml`), feuille de style d'impression
-  - [ ] Domaine sans « www » : `https://guillaumecasbas.fr` ne répond pas (pointe encore vers OVH), à rediriger vers Netlify
+  - [ ] Domaine sans « www » : `https://guillaumecasbas.fr` ne répond pas (pointe encore vers OVH), DNS OVH modifié le 2026-11-18 (A → 75.2.60.5, redirection OVH supprimée) ; reste le certificat HTTPS côté Netlify (supprimer la zone DNS Netlify inactive si besoin)
+  - [ ] Emails : ajouter les enregistrements SPF et DMARC (et activer DKIM dans Google Workspace) dans la zone DNS OVH, en suivant la doc Google ; sans eux, une partie des emails risque d'arriver en spam
   - [ ] Search Console : créer la propriété et soumettre `https://www.guillaumecasbas.fr/sitemap-index.xml`
-  - [ ] Données structurées (JSON-LD Person et offres) : à décider
+  - [x] Données structurées (2026-11-18) : fiche Person sur toutes les pages, catalogue de services sur Démarrer (session et audit avec prix HT, missions sans prix) ; données dans `src/config/structured-data.ts`, à tester après déploiement avec le test des résultats enrichis de Google
   - [ ] Arbitrages : polices (3 → 2 fichiers ?), badges auto-hébergés, hébergeur vert, `partage.png` en JPEG
 
 ### Profils (suite de `knowledge-refonte-site/audit-profils.md`)
