@@ -137,3 +137,44 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Print: keep the content, drop navigation, decorative bands and colour blocks. */
+@media print {
+  .header,
+  .footer,
+  .marquee,
+  .movember,
+  .cta {
+    display: none !important;
+  }
+
+  body,
+  section,
+  aside {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  dt,
+  dd {
+    color: #000 !important;
+  }
+
+  a {
+    color: #000 !important;
+  }
+
+  .button,
+  .offer,
+  .prices__card,
+  .quotes__card,
+  .timeline__steps > li {
+    box-shadow: none !important;
+  }
+}

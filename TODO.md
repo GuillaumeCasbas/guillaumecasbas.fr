@@ -26,7 +26,12 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 
 ### Audits de site
 Le site esst déjà très qualitatif, c'est surtout le SEO qu'il faudra travailler
-- [ ] rapport d'audit à challenger (fichier dans le knoledge)
+- [ ] rapport d'audit à challenger (`knowledge-refonte-site/rapport-audit-a-challenger.md`)
+  - [x] Vague 1 faite le 2026-11-18 : `robots.txt`, sitemap (`@astrojs/sitemap`), cache longue durée de `/_astro/` (`netlify.toml`), feuille de style d'impression
+  - [ ] Domaine sans « www » : `https://guillaumecasbas.fr` ne répond pas (pointe encore vers OVH), à rediriger vers Netlify
+  - [ ] Search Console : créer la propriété et soumettre `https://www.guillaumecasbas.fr/sitemap-index.xml`
+  - [ ] Données structurées (JSON-LD Person et offres) : à décider
+  - [ ] Arbitrages : polices (3 → 2 fichiers ?), badges auto-hébergés, hébergeur vert, `partage.png` en JPEG
 
 ### Profils (suite de `knowledge-refonte-site/audit-profils.md`)
 
@@ -42,7 +47,7 @@ Le site esst déjà très qualitatif, c'est surtout le SEO qu'il faudra travaill
 - [x] **Ton de Démarrer** (revu le 2026-11-18) : « chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod », l'accroche « Pourquoi vous déboguez en prod »
 - [x] **Ton de Comment je travaille** (revu le 2026-11-18) : « ce serait la promesse d'un travail bâclé », « Pas de devis qui gonfle en cours de route », « Une usine à gaz ne sera pas maintenue par votre équipe »
 - [x] **Ton de Qui je suis** (revu le 2026-11-18) : « l'accélération a un coût, et ce sont souvent les devs qui le paient »
-- [ ] **Passe typographique** : espaces insécables avant « : », « ; », « ? » et « ! » (déjà faits pour les guillemets, les prix et une partie des questions)
+- [x] **Passe typographique** (faite le 2026-11-18 sur toutes les pages) : espaces insécables avant « : », « ; », « ? » et « ! » (déjà faits pour les guillemets, les prix et une partie des questions)
 
 ### Design
 
@@ -50,12 +55,12 @@ Le site esst déjà très qualitatif, c'est surtout le SEO qu'il faudra travaill
 
 ### Après la mise en ligne
 
-- [ ] Vérifier sur le site en ligne que « Pas de cookies, pas de suivi » reste vrai (formulaire Netlify testé et fonctionnel le 2026-11-18)
+- [x] Vérifier sur le site en ligne que « Pas de cookies, pas de suivi » reste vrai : aucun cookie sur l'accueil, Démarrer et Contact (vérifié le 2026-11-18)
 - [x] Relancer les audits Ecoindex et kastor.green (2026-11-18) : [rapport Ecoindex](https://www.ecoindex.fr/resultat/?id=7c299d60-7256-45bc-9f0e-fe6358186a43), [rapport kastor.green](https://kastor.green/simple-audit-result/6mXg8Gab)
 - [x] Pied de page : remplacer le lien et l'image du badge kastor.green (branche `fix/kastor-badge`, score 97) (`src/components/Footer.astro`) par ceux du nouvel audit ; récupérer l'adresse de l'image du badge sur kastor.green (le badge Ecoindex, lui, se met à jour tout seul)
 - [ ] Début décembre : désactiver le bandeau Movember (`enabled: false` dans `src/config/movember.ts`)
 - [ ] Mettre à jour la description du dépôt GitHub du site
-- [ ] Réécrire le `README.md` en anglais (le dépôt est public) : présentation courte du site, stack Astro, commandes d'installation, de développement et de build ; ne plus mettre en avant le `TODO.md` (pas de lien vers celui-ci)
+- [x] Réécrire le `README.md` en anglais (le dépôt est public) : présentation courte du site, stack Astro, commandes d'installation, de développement et de build ; ne plus mettre en avant le `TODO.md` (pas de lien vers celui-ci)
 
 ## 🟢 Après la V1
 

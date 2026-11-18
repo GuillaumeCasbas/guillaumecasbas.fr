@@ -30,7 +30,7 @@ const comparison = [
   },
   {
     label: 'Vous recevez',
-    session: 'Un compte rendu : où vous en êtes, les options, la priorité recommandée',
+    session: 'Un compte rendu : où vous en êtes, les options, la priorité recommandée',
     audit:
       'Un compte rendu factuel, un plan d’action priorisé, mes checklists et une restitution orale',
   },
@@ -50,34 +50,34 @@ const faq = [
   {
     question: 'Et si nous n’avons ni CI ni tests ?',
     answer:
-      'C’est justement le cas où l’audit est le plus utile : il permet d’analyser votre situation et de définir les premières briques à mettre en place, dans le bon ordre.',
+      'C’est justement le cas où l’audit est le plus utile : il permet d’analyser votre situation et de définir les premières briques à mettre en place, dans le bon ordre.',
   },
   {
     question: 'Combien de temps l’audit demande-t-il à mon équipe ?',
     answer:
-      'Peu de temps. Il me faut un interlocuteur disponible pour répondre à mes questions pendant la journée, et quelques échanges courts avec les personnes clés (lead, devs, product owner si possible). Le reste du temps, votre équipe travaille normalement : j’observe.',
+      'Peu de temps. Il me faut un interlocuteur disponible pour répondre à mes questions pendant la journée, et quelques échanges courts avec les personnes clés (lead, devs, product owner si possible). Le reste du temps, votre équipe travaille normalement : j’observe.',
   },
   {
     question: 'Vous connaissez notre stack ?',
     answer:
-      'Peu importe la stack : l’audit porte sur votre façon de livrer (pipeline, tests, déploiements, revues), pas sur un langage. Ce qui compte, c’est que votre équipe la maîtrise, pour pouvoir maintenir en autonomie ce qu’on met en place.',
+      'Peu importe la stack : l’audit porte sur votre façon de livrer (pipeline, tests, déploiements, revues), pas sur un langage. Ce qui compte, c’est que votre équipe la maîtrise, pour pouvoir maintenir en autonomie ce qu’on met en place.',
   },
   {
     question: 'Puis-je partager le compte rendu ?',
     answer:
-      'Oui. Une fois la prestation réglée, le compte rendu vous appartient : vous pouvez le partager avec votre direction, vos associés ou vos investisseurs.',
+      'Oui. Une fois la prestation réglée, le compte rendu vous appartient : vous pouvez le partager avec votre direction, vos associés ou vos investisseurs.',
   },
   {
     question: 'Les prix sont-ils HT ?',
     answer:
-      'Oui. Tous les prix affichés sur ce site sont hors taxes : la TVA s’y ajoute au taux en vigueur.',
+      'Oui. Tous les prix affichés sur ce site sont hors taxes : la TVA s’y ajoute au taux en vigueur.',
   },
 ];
 ---
 
 <SiteLayout
   title="Démarrer · Session stratégie 300 € HT, audit de livraison 700 € HT · Guillaume Casbas"
-  description="Deux façons de démarrer, à prix fixe : une session stratégie de 90 minutes pour 300 € HT, ou un audit de livraison d'une journée pour 700 € HT, avec un plan d'action priorisé."
+  description="Deux façons de démarrer, à prix fixe : une session stratégie de 90 minutes pour 300 € HT, ou un audit de livraison d'une journée pour 700 € HT, avec un plan d'action priorisé."
 >
   <main>
     <section class="hero wrap section">
@@ -128,7 +128,7 @@ const faq = [
           <div>
             <dt>Ce que vous recevez</dt>
             <dd>
-              Un compte rendu écrit : où vous en êtes, les options, la priorité que je recommande.
+              Un compte rendu écrit : où vous en êtes, les options, la priorité que je recommande.
             </dd>
           </div>
         </dl>
@@ -147,7 +147,7 @@ const faq = [
         <ul class="audit__for">
           <li>Votre équipe livre vite, et vous voulez des mises en prod qui tiennent du premier coup.</li>
           <li>
-            Avec l'IA, le code avance plus vite que la compréhension qu'en a l'équipe : certaines
+            Avec l'IA, le code avance plus vite que la compréhension qu'en a l'équipe : certaines
             parties du produit deviennent des boîtes noires.
           </li>
           <li>
@@ -156,8 +156,8 @@ const faq = [
           </li>
         </ul>
         <p class="audit__not-for">
-          <strong>Ce n'est pas pour vous</strong> si vous cherchez quelqu'un pour développer vos fonctionnalités
-          : je ne vends pas de lignes de code.
+          <strong>Ce n'est pas pour vous</strong> si vous cherchez quelqu'un pour développer vos fonctionnalités :
+          je ne vends pas de lignes de code.
         </p>
       </div>
 
@@ -168,11 +168,11 @@ const faq = [
             <h4>Avant la journée</h4>
             <ul>
               <li>
-                Si vous le souhaitez, on signe votre accord de confidentialité avant de commencer : vous
+                Si vous le souhaitez, on signe votre accord de confidentialité avant de commencer : vous
                 m'ouvrez votre code en toute sécurité.
               </li>
               <li>
-                Vous remplissez un court questionnaire : votre stack, la taille de l'équipe, vos
+                Vous remplissez un court questionnaire : votre stack, la taille de l'équipe, vos
                 trois principaux irritants.
               </li>
               <li>
@@ -184,33 +184,33 @@ const faq = [
           </li>
           <li>
             <h4>Pendant la journée</h4>
-            <p>Je regarde comment votre équipe travaille, du commit à la prod :</p>
+            <p>Je regarde comment votre équipe travaille, du commit à la prod :</p>
             <ul>
-              <li><strong>le pipeline</strong> : ce qui est automatisé, ce qui se fait encore à la main ;</li>
+              <li><strong>le pipeline</strong> : ce qui est automatisé, ce qui se fait encore à la main ;</li>
               <li>
                 <strong>les tests</strong> : ce qu'ils protègent vraiment, et surtout ce qu'ils ne
-                protègent pas ;
+                protègent pas ;
               </li>
               <li>
                 <strong>les déploiements</strong> : comment ils se passent, et ce qui se passe quand
-                ils ratent ;
+                ils ratent ;
               </li>
               <li>
                 <strong>les revues de code</strong> : qui relit quoi, y compris le code généré par IA.
               </li>
             </ul>
-            <p>Je constate et je priorise ; je ne vends rien pendant l'audit.</p>
+            <p>Je constate et je priorise ; je ne vends rien pendant l'audit.</p>
           </li>
           <li>
             <h4>Après la journée</h4>
-            <p>Sous 48 heures, vous recevez :</p>
+            <p>Sous 48 heures, vous recevez :</p>
             <ul>
               <li>
-                <strong>un compte rendu écrit</strong>, avec des constats factuels, pas des impressions ;
+                <strong>un compte rendu écrit</strong>, avec des constats factuels, pas des impressions ;
               </li>
               <li>
                 <strong>un plan d'action priorisé</strong> : quoi traiter en premier, avec quelle
-                urgence, dans quel ordre ;
+                urgence, dans quel ordre ;
               </li>
               <li><strong>mes checklists</strong>, réutilisables dès votre prochaine mise en prod.</li>
             </ul>
@@ -218,7 +218,7 @@ const faq = [
               Puis on fait <strong>une restitution orale d'environ 30 minutes</strong>, avec vous et
               votre équipe.
             </p>
-            <p>Le plan d'action est à vous : vous pouvez le mettre en œuvre sans moi.</p>
+            <p>Le plan d'action est à vous : vous pouvez le mettre en œuvre sans moi.</p>
           </li>
         </ol>
       </div>
@@ -245,7 +245,7 @@ const faq = [
     <section class="compare wrap section" aria-labelledby="compare-title">
       <h2 id="compare-title">Session ou audit&nbsp;?</h2>
       <p class="compare__intro">
-        Avec la session, on échange : je travaille sur ce que vous me racontez et me montrez. Avec
+        Avec la session, on échange : je travaille sur ce que vous me racontez et me montrez. Avec
         l'audit, je constate par moi-même dans votre code et vos outils.
       </p>
       <table class="compare__table">
@@ -275,7 +275,7 @@ const faq = [
         <h2 id="next-title">Et ensuite&nbsp;?</h2>
         <p class="next__intro">
           Si le diagnostic le justifie, je vous fais une proposition écrite sous 48 heures, chiffrée sur
-          la base de l'audit ou de la session : périmètre écrit, prix ferme.
+          la base de l'audit ou de la session : périmètre écrit, prix ferme.
         </p>
         <ul class="next__missions">
           <li>

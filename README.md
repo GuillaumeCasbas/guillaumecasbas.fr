@@ -1,20 +1,23 @@
-# Website
+# guillaumecasbas.fr
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2da858fa-ba71-4ecf-ab33-9f82cb7047a5/deploy-status)](https://app.netlify.com/projects/guillaumecasbaswebsite/deploys)
 
-Site statique construit avec [Astro](https://astro.build/). Suivi de la refonte : [TODO.md](TODO.md).
+Source code of [guillaumecasbas.fr](https://www.guillaumecasbas.fr), the website of Guillaume Casbas, freelance lead tech.
 
-## Installation
+A static site built with [Astro](https://astro.build/): no client-side framework, no cookies, no tracking, and as little JavaScript as possible. The site content is in French.
+
+## Requirements
+
+- Node.js 22.12 or later
+
+## Getting started
 
 ```bash
 npm install
-```
-
-## Développement local
-
-```bash
 npm run dev
 ```
+
+The development server runs on http://localhost:4321.
 
 ## Build
 
@@ -22,14 +25,26 @@ npm run dev
 npm run build
 ```
 
-Vérifie les types (`astro check`) puis génère le site dans `dist/`.
+Checks types with `astro check`, then generates the static site in `dist/`.
 
 ```bash
 npm run preview
 ```
 
-Sert localement le contenu de `dist/`.
+Serves the content of `dist/` locally.
 
-## Déploiement
+## Project structure
 
-Netlify construit et publie le site à chaque push, selon `netlify.toml`.
+```
+src/
+├── components/   UI components (header, footer, buttons, cards…)
+├── config/       Settings for seasonal features (Movember banner)
+├── layouts/      Page layouts
+├── pages/        One file per page
+└── styles/       Global styles and design tokens
+public/           Static files served as is
+```
+
+## Deployment
+
+Netlify builds and publishes the site on every push to `main`, as configured in `netlify.toml`.
