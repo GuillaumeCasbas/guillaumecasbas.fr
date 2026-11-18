@@ -14,6 +14,8 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
   - [x] Expériences
   - [x] Contact et mentions légales
 - [ ] **3. Pistes visuelles** : 2 ou 3 maquettes de l'accueil sur la palette (vert #276955, orange #ff6f00, bordeaux #6d001b), choix d'une piste
+  - [x] Structure retenue : piste B « Affiche » (A et B d'origine écartées), titres plafonnés sur ordinateur
+  - [ ] Couleurs à choisir parmi b1, b2, b4, b5, b6
 - [ ] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page, composant CTA
 - [ ] **5. Intégration des pages** (une étape par page)
   - [ ] Accueil

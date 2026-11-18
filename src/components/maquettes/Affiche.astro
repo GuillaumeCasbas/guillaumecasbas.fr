@@ -30,11 +30,9 @@ export interface AfficheTheme {
 interface Props {
   title: string;
   theme: AfficheTheme;
-  /** Titres plus petits et bandeau plus lent, pour un rendu moins « crié ». */
-  calme?: boolean;
 }
 
-const { title, theme, calme = false } = Astro.props;
+const { title, theme } = Astro.props;
 
 const style = [
   `--bg:${theme.bg}`,
@@ -58,7 +56,7 @@ const bandeau = ['Livrer sans stress', 'Vendredi sans peur', 'Le contrôle revie
 ---
 
 <BaseLayout title={title} description="Piste visuelle B pour l'accueil." noindex>
-  <div class:list={['affiche', { calme }]} style={style}>
+  <div class="affiche" style={style}>
     <header class="nav wrap">
       <a class="logo" href="#">Guillaume Casbas</a>
       <nav aria-label="Navigation principale">
@@ -271,13 +269,22 @@ const bandeau = ['Livrer sans stress', 'Vendredi sans peur', 'Le contrôle revie
     padding-top: clamp(2rem, 7vw, 5rem);
     padding-bottom: clamp(2.5rem, 7vw, 5rem);
   }
+  /* Sur ordinateur, le hero garde sa présence par l'espace, pas par la taille des lettres. */
+  @media (min-width: 801px) {
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
   h1 {
     font-family: var(--display);
     font-weight: 400;
     color: var(--primary);
     text-transform: uppercase;
-    font-size: clamp(2.8rem, 10.5vw, 9rem);
-    line-height: 0.9;
+    font-size: clamp(2.8rem, 10.5vw, 5.5rem);
+    line-height: 0.92;
     letter-spacing: -0.02em;
     margin: 0 0 2rem;
   }
@@ -381,10 +388,10 @@ const bandeau = ['Livrer sans stress', 'Vendredi sans peur', 'Le contrôle revie
   .punch {
     font-family: var(--display);
     text-transform: uppercase;
-    font-size: clamp(2.2rem, 7vw, 5.5rem);
+    font-size: clamp(2.2rem, 7vw, 4.2rem);
     line-height: 0.95;
     margin: 0 0 1.5rem;
-    max-width: 14ch;
+    max-width: 16ch;
   }
   .metier {
     font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -542,9 +549,10 @@ const bandeau = ['Livrer sans stress', 'Vendredi sans peur', 'Le contrôle revie
     font-weight: 400;
     text-transform: uppercase;
     color: var(--primary);
-    font-size: clamp(2.2rem, 6.5vw, 5.5rem);
+    font-size: clamp(2.2rem, 6.5vw, 4.2rem);
     line-height: 0.95;
     margin: 0 0 2.5rem;
+    max-width: 22ch;
   }
 
   .foot {
@@ -558,53 +566,6 @@ const bandeau = ['Livrer sans stress', 'Vendredi sans peur', 'Le contrôle revie
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-  }
-
-  /* Variante « calme » : mêmes couleurs et même structure, titres réduits d'environ 40 %. */
-  .calme h1 {
-    font-size: clamp(2.2rem, 6vw, 5.2rem);
-    line-height: 0.95;
-  }
-  .calme .lead {
-    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  }
-  .calme .marquee {
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
-    padding: 0.5rem 0;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .calme .marquee-track {
-      animation-duration: 50s;
-    }
-  }
-  .calme .stairs {
-    font-size: clamp(1.15rem, 2.2vw, 1.7rem);
-  }
-  .calme .punch {
-    font-size: clamp(1.8rem, 4.2vw, 3.4rem);
-    max-width: 16ch;
-  }
-  .calme .metier {
-    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  }
-  .calme .zero-num {
-    font-size: clamp(5rem, 12vw, 9rem);
-  }
-  .calme .zero-label {
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  }
-  .calme .offres h2 {
-    font-size: clamp(1.8rem, 3.8vw, 3rem);
-  }
-  .calme .price {
-    font-size: 2.4rem;
-  }
-  .calme .price-text {
-    font-size: 1.3rem;
-  }
-  .calme .cta h2 {
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-    max-width: 22ch;
   }
 
   @media (max-width: 800px) {
