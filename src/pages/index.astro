@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import MovemberBanner from '../components/MovemberBanner.astro';
 import Button from '../components/Button.astro';
 import Marquee from '../components/Marquee.astro';
 import CallToAction from '../components/CallToAction.astro';
@@ -25,6 +26,8 @@ const skillItems = [
   description="Lead tech pendant plus de 10 ans, je remets le contrôle dans vos livraisons. On démarre par un audit de livraison : 700 € HT, 1 jour."
 >
   <main>
+    <MovemberBanner />
+
     <section class="hero wrap">
       <h1>
         Livrer <mark>sereinement</mark>,

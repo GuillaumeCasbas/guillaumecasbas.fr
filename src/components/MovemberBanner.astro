@@ -1,0 +1,145 @@
+---
+// Movember campaign banner: running and fundraising progress, with a link to the donation page.
+// Settings live in src/config/movember.ts; nothing is rendered when the campaign is disabled.
+import { movember } from '../config/movember';
+
+const formatNumber = (value: number) => value.toLocaleString('fr-FR');
+const percent = (done: number, goal: number) => Math.min(100, Math.round((done / goal) * 100));
+
+const indicators = [
+  {
+    label: 'Course',
+    value: `${formatNumber(movember.kmDone)} / ${formatNumber(movember.kmGoal)} km`,
+    description: `${formatNumber(movember.kmDone)} kilomètres courus sur ${formatNumber(movember.kmGoal)}`,
+    percent: percent(movember.kmDone, movember.kmGoal),
+  },
+  {
+    label: 'Collecte',
+    value: `${formatNumber(movember.donationDone)} / ${formatNumber(movember.donationGoal)} €`,
+    description: `${formatNumber(movember.donationDone)} euros collectés sur ${formatNumber(movember.donationGoal)}`,
+    percent: percent(movember.donationDone, movember.donationGoal),
+  },
+];
+---
+
+{
+  movember.enabled && (
+    <aside class="movember" aria-labelledby="movember-title">
+      <div class="wrap movember__inner">
+        <div class="movember__intro">
+          <p id="movember-title" class="movember__title">Movember {movember.year}</p>
+          <p class="movember__end">Moustache et baskets pour la santé des hommes, jusqu'au {movember.endLabel}.</p>
+        </div>
+        <ul class="movember__indicators">
+          {indicators.map((indicator) => (
+            <li>
+              <span class="movember__label">
+                {indicator.label} : <strong>{indicator.value}</strong>
+              </span>
+              <span
+                class="movember__bar"
+                role="progressbar"
+                aria-valuenow={indicator.percent}
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-label={indicator.description}
+              >
+                <span class="movember__fill" style={`width: ${indicator.percent}%`} />
+              </span>
+            </li>
+          ))}
+        </ul>
+        <a class="movember__cta" href={movember.donationUrl}>
+          Soutenir la cagnotte
+        </a>
+      </div>
+    </aside>
+  )
+}
+
+<style>
+  .movember {
+    padding-block: 1.25rem;
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .movember__inner {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .movember__intro p {
+    margin: 0;
+  }
+
+  .movember__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--accent-on-primary);
+  }
+
+  .movember__end {
+    font-size: var(--fs-small);
+  }
+
+  .movember__indicators {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .movember__label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: var(--fs-small);
+  }
+
+  .movember__bar {
+    display: block;
+    height: 0.6rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--on-primary) 20%, transparent);
+  }
+
+  .movember__fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--accent-on-primary);
+  }
+
+  .movember__cta {
+    justify-self: start;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: var(--on-primary);
+    color: var(--primary);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .movember__cta:hover {
+    background: var(--accent-on-primary);
+  }
+
+  @media (min-width: 801px) {
+    .movember__inner {
+      grid-template-columns: auto 1fr auto;
+      gap: 2.5rem;
+    }
+
+    .movember__indicators {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

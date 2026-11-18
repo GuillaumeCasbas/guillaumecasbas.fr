@@ -48,6 +48,7 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 
 - [ ] Vérifier sur le site en ligne que « Pas de cookies, pas de suivi » reste vrai (formulaire Netlify testé et fonctionnel le 2026-11-18)
 - [ ] Relancer les audits Ecoindex et kastor.green (nouvel identifiant de badge kastor)
+- [ ] Début décembre : désactiver le bandeau Movember (`enabled: false` dans `src/config/movember.ts`)
 - [ ] Mettre à jour la description du dépôt GitHub du site
 
 ## 🟢 Après la V1
@@ -55,7 +56,6 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 - FAQ de Démarrer : ajouter « Quand dois-je payer ? » une fois les modalités décidées (piste : session payée à la réservation, audit 50 % à la commande et solde à la remise du compte rendu)
 - Canaux d'acquisition : remplacer le champ libre « Comment m'avez-vous trouvé ? » par une liste de canaux (LinkedIn, salon, bouche-à-oreille, recherche…) pour savoir lesquels fonctionnent
 - Grille ou carrousel de témoignages, à partir de 5 recommandations
-- Portage de la bannière Movember (feature flag annuel)
 - Blog / ressources
 - Page dédiée aux TPE
 - Migration vers un hébergeur européen (statichost.eu, Bunny…) : critère en plus, Netlify ne communique pas de numéro de téléphone, pourtant exigé dans les mentions légales ; choisir un hébergeur qui donne toutes les informations légales (raison sociale, adresse, téléphone)
@@ -77,5 +77,6 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 - [x] Netlify : détection des formulaires, notification email, message de test reçu
 - [x] Textes des 2 recommandations LinkedIn intégrés au site
 - [x] Preuve « 4 ans en prod » : Medelse, aucune interruption de service
+- [x] Bandeau Movember sur l'accueil et Qui je suis : réglages dans `src/config/movember.ts` (mettre à jour km et euros pendant la campagne, `enabled: false` en décembre)
 - [x] Charte graphique : `knowledge-refonte-site/charte-graphique.md`
 - [x] Audit des profils LinkedIn, GitHub et Bluesky, bannières LinkedIn et Bluesky : `knowledge-refonte-site/`
