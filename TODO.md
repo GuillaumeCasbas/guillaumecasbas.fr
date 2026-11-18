@@ -24,6 +24,10 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 
 ## 🟠 Juste après le salon (avant fin novembre)
 
+### Audits de site
+Le site esst déjà très qualitatif, c'est surtout le SEO qu'il faudra travailler
+- [ ] rapport d'audit à challenger (fichier dans le knoledge)
+
 ### Profils (suite de `knowledge-refonte-site/audit-profils.md`)
 
 - [ ] LinkedIn (preuve Medelse et bachelor faits le 2026-11-18) : TDD01 en formation (OCTO Academy, 2019), remplacer « React.js » dans les compétences principales, harmoniser les intitulés (Human's Connexion, Go chez Medelse), décider pour OryxChange
@@ -34,10 +38,10 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 
 - [ ] **Modèle de NDA prêt à signer** : une fois prêt, remettre la promesse « j'apporte un NDA prêt à signer » dans le déroulé de l'audit et la FAQ de Démarrer (`src/pages/demarrer.astro`)
 
-- [ ] **Ton de l'accueil, bloc « Trois questions »** : à repenser en positif (« ce n'est pas de la prudence, c'est que personne n'a confiance », « vos tests ne protègent pas ce qui compte ») ou à retirer pour alléger la page
-- [ ] **Ton de Démarrer** : « chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod », l'accroche « Pourquoi vous déboguez en prod »
-- [ ] **Ton de Comment je travaille** : « ce serait la promesse d'un travail bâclé », « Pas de devis qui gonfle en cours de route », « Une usine à gaz ne sera pas maintenue par votre équipe »
-- [ ] **Ton de Qui je suis** : « l'accélération a un coût, et ce sont souvent les devs qui le paient »
+- [x] **Ton de l'accueil, bloc « Trois questions »** (revu le 2026-11-18, carte Audit comprise) : à repenser en positif (« ce n'est pas de la prudence, c'est que personne n'a confiance », « vos tests ne protègent pas ce qui compte ») ou à retirer pour alléger la page
+- [x] **Ton de Démarrer** (revu le 2026-11-18) : « chaque mise en prod se termine en correctifs », « plus personne ne sait vraiment ce qui part en prod », l'accroche « Pourquoi vous déboguez en prod »
+- [x] **Ton de Comment je travaille** (revu le 2026-11-18) : « ce serait la promesse d'un travail bâclé », « Pas de devis qui gonfle en cours de route », « Une usine à gaz ne sera pas maintenue par votre équipe »
+- [x] **Ton de Qui je suis** (revu le 2026-11-18) : « l'accélération a un coût, et ce sont souvent les devs qui le paient »
 - [ ] **Passe typographique** : espaces insécables avant « : », « ; », « ? » et « ! » (déjà faits pour les guillemets, les prix et une partie des questions)
 
 ### Design
@@ -51,6 +55,7 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 - [x] Pied de page : remplacer le lien et l'image du badge kastor.green (branche `fix/kastor-badge`, score 97) (`src/components/Footer.astro`) par ceux du nouvel audit ; récupérer l'adresse de l'image du badge sur kastor.green (le badge Ecoindex, lui, se met à jour tout seul)
 - [ ] Début décembre : désactiver le bandeau Movember (`enabled: false` dans `src/config/movember.ts`)
 - [ ] Mettre à jour la description du dépôt GitHub du site
+- [ ] Réécrire le `README.md` en anglais (le dépôt est public) : présentation courte du site, stack Astro, commandes d'installation, de développement et de build ; ne plus mettre en avant le `TODO.md` (pas de lien vers celui-ci)
 
 ## 🟢 Après la V1
 
