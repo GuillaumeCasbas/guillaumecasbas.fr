@@ -1,14 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
-<BaseLayout
+<SiteLayout
   title="Guillaume Casbas"
   description="Livrer sereinement, même quand l'IA écrit le code."
 >
-  <main class="wrap section">
-    <h1>Guillaume Casbas</h1>
-    <p>Livrer sereinement, même quand l'IA écrit le code.</p>
-    <p>Nouveau site en construction.</p>
+  <main>
+    <section class="wrap section">
+      <h1>Guillaume Casbas</h1>
+      <p>Livrer sereinement, même quand l'IA écrit le code.</p>
+      <p>Nouveau site en construction.</p>
+    </section>
+    <CallToAction />
   </main>
-</BaseLayout>
+</SiteLayout>

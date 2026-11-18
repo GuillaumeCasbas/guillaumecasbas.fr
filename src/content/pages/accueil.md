@@ -118,6 +118,6 @@ Proposition écrite sous 48 heures après l'audit ou la session.
 
 <!-- Le CTA unique, répété en bas de chaque page. -->
 
-Vous déboguez en prod plus souvent que vous ne l'aimeriez ?
+Envie de livrer sereinement ?
 
 [Envoyez-moi un message, on regarde ça ensemble.](/contact)

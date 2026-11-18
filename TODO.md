@@ -17,17 +17,20 @@ Méthode : petites étapes, plan validé avant chaque étape, relecture du code 
   - [x] Structure retenue : piste B « Affiche » (A et B d'origine écartées), titres plafonnés sur ordinateur
   - [x] Couleurs b6 « Forêt et grenat » (accent #9b1426, primaire #173f33, secondaire #276955, fond #f6f0e4)
   - [x] Portrait : photo détourée en bichromie grenat et crème (filtre SVG)
-- [ ] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page, composant CTA
-  - [ ] En-tête : sur mobile, les liens passent sur une deuxième ligne sous le nom et le bouton
-  - [ ] Pied de page : « Pas de cookies, pas de suivi » (à revérifier une fois Netlify Forms en place) et bloc « Conception responsable » avec les badges Ecoindex et kastor.green repris du site actuel (`src/theme/Footer/Layout/index.tsx` sur main ; badges à relancer après la mise en ligne, le nouveau site changera le score)
+- [x] **4. Base du design** : couleurs, typographies, espacements, en-tête, pied de page, composant CTA
+  - [x] En-tête : sur mobile, les liens passent sur une deuxième ligne sous le nom et le bouton
+  - [x] Pied de page : « Pas de cookies, pas de suivi » (à revérifier une fois Netlify Forms en place) et bloc « Conception responsable » avec les badges Ecoindex et kastor.green repris du site actuel (`src/theme/Footer/Layout/index.tsx` sur main ; badges à relancer après la mise en ligne, le nouveau site changera le score)
+  - [x] Pied de page : liens LinkedIn, GitHub et Bluesky (repris de `docusaurus.config.ts` sur main), en lien texte plutôt qu'en icônes
 - [ ] **5. Intégration des pages** (une étape par page)
   - [ ] Accueil
   - [ ] Démarrer (`/demarrer`, ancres `#session` et `#audit`)
   - [ ] Comment je travaille
   - [ ] Qui je suis (`/qui-je-suis`, ex-`/a-propos` à rediriger ; parcours, pourquoi, OryxChange, Movember, 2 recommandations)
+    - [ ] Bloc « Mes lectures recommandées » : les 4 ressources du pied de page actuel (Coder proprement, The Cycles of TDD, architecture hexagonale et tests front-end chez OCTO), chacune avec une phrase sur ce qu'elle apporte ; vérifier que les liens fonctionnent toujours
   - [ ] Expériences (contenu actuel + introduction de lien avec le positionnement)
 - [ ] **6. Contact et finitions** : formulaire Netlify (avec « Comment m'avez-vous trouvé ? », et « Ce qui vous amène » présélectionné depuis `?offre=session|audit`), mentions légales et RGPD, redirections des anciennes URLs, page 404, image de partage
-- [ ] **7. Mise en ligne** : relecture finale, traiter les vulnérabilités signalées par `npm audit` (picomatch via Vite/Astro), bascule
+- [ ] **Taille des titres** : trancher une fois tout le contenu intégré (titres jugés trop gros sur ordinateur et mobile, notamment le CTA de fin de page) ; un seul réglage à revoir, les variables `--fs-*` de `src/styles/global.css`
+- [ ] **7. Mise en ligne** : relecture finale, vérifier que « Pas de cookies, pas de suivi » reste vrai avec Netlify Forms, relancer les audits Ecoindex et kastor.green (nouvel identifiant de badge kastor), traiter les vulnérabilités signalées par `npm audit` (picomatch via Vite/Astro), bascule
 
 ## À fournir
 

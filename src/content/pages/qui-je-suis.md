@@ -82,6 +82,6 @@ Depuis 2022, je participe chaque novembre à Movember, la campagne pour la sant�
 
 <!-- Le CTA unique, répété en bas de chaque page. -->
 
-Vous déboguez en prod plus souvent que vous ne l'aimeriez ?
+Envie de livrer sereinement ?
 
 [Envoyez-moi un message, on regarde ça ensemble.](/contact)

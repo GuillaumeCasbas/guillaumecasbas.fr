@@ -1,0 +1,104 @@
+---
+// Site header: name, main navigation and contact button.
+// On mobile, the navigation links move to a second line under the name and button.
+import Button from './Button.astro';
+
+const links = [
+  { href: '/demarrer', label: 'Démarrer' },
+  { href: '/comment-je-travaille', label: 'Comment je travaille' },
+  { href: '/qui-je-suis', label: 'Qui je suis' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+---
+
+<header class="header wrap">
+  <a class="header__name" href="/">Guillaume Casbas</a>
+  <nav class="header__nav" aria-label="Navigation principale">
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="header__contact">
+    <Button href="/contact" size="small">Me contacter</Button>
+  </div>
+</header>
+
+<style>
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'name contact'
+      'nav nav';
+    align-items: center;
+    gap: 0.75rem 1rem;
+    padding-block: 1.25rem;
+  }
+
+  .header__name {
+    grid-area: name;
+    font-family: var(--font-display);
+    color: var(--primary);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .header__nav {
+    grid-area: nav;
+  }
+
+  .header__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .header__nav a {
+    text-decoration: none;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+  }
+
+  .header__nav a:hover,
+  .header__nav a[aria-current='page'] {
+    text-decoration-line: underline;
+    text-decoration-color: var(--accent);
+  }
+
+  .header__contact {
+    grid-area: contact;
+  }
+
+  @media (min-width: 801px) {
+    .header {
+      grid-template-columns: 1fr auto auto;
+      grid-template-areas: 'name nav contact';
+      gap: 1.5rem;
+    }
+
+    .header__name {
+      font-size: 1rem;
+    }
+
+    .header__nav ul {
+      font-size: 1rem;
+    }
+  }
+</style>

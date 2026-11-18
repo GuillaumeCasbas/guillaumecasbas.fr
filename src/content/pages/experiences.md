@@ -135,6 +135,6 @@ Plus de 10 ans de développement web et mobile, dont 4 ans comme lead tech. Je s
 
 <!-- Le CTA unique, répété en bas de chaque page. -->
 
-Vous déboguez en prod plus souvent que vous ne l'aimeriez ?
+Envie de livrer sereinement ?
 
 [Envoyez-moi un message, on regarde ça ensemble.](/contact)

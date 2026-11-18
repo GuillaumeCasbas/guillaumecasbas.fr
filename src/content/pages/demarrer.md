@@ -168,6 +168,6 @@ Oui. Tous les prix affichés sur ce site sont hors taxes : la TVA s'y ajoute au 
 
 <!-- Le CTA unique, répété en bas de chaque page. -->
 
-Vous déboguez en prod plus souvent que vous ne l'aimeriez ?
+Envie de livrer sereinement ?
 
 [Envoyez-moi un message, on regarde ça ensemble.](/contact)

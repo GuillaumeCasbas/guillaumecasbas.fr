@@ -1,0 +1,29 @@
+---
+// Closing call to action, repeated at the bottom of each page.
+// Same copy everywhere by default; a page can override it if needed.
+import Button from './Button.astro';
+
+interface Props {
+  title?: string;
+  label?: string;
+  href?: string;
+}
+
+const {
+  title = 'Envie de livrer sereinement ?', // non-breaking space before "?" (French typography)
+  label = 'Envoyez-moi un message, on regarde ça ensemble',
+  href = '/contact',
+} = Astro.props;
+---
+
+<section class="cta wrap section" aria-labelledby="cta-title">
+  <h2 id="cta-title" class="cta__title">{title}</h2>
+  <Button href={href}>{label}</Button>
+</section>
+
+<style>
+  .cta__title {
+    max-width: 22ch;
+    margin-bottom: 2.5rem;
+  }
+</style>

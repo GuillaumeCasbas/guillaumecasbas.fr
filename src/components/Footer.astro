@@ -1,0 +1,137 @@
+---
+// Site footer: responsible design note with eco badges, social links and legal links.
+// Badges are carried over from the previous site; re-run both audits after launch.
+const socials = [
+  { href: 'https://www.linkedin.com/in/guillaumecasbas/', label: 'LinkedIn' },
+  { href: 'https://github.com/guillaumecasbas', label: 'GitHub' },
+  { href: 'https://bsky.app/profile/guillaumecasbas.fr', label: 'Bluesky' },
+];
+
+const siteLinks = [
+  { href: '/contact', label: 'Contact' },
+  { href: '/mentions-legales', label: 'Mentions légales' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <section class="footer__eco" aria-labelledby="footer-eco">
+      <h2 id="footer-eco" class="footer__title">Conception responsable</h2>
+      <p>
+        Pas de cookies, pas de suivi. Je ne sais pas combien de visites reçoit ce site, et ça me va très bien.
+      </p>
+      <div class="footer__badges">
+        <img
+          src="https://bff.ecoindex.fr/badge/?theme=dark&url=https://www.guillaumecasbas.fr"
+          alt="Badge Ecoindex du site"
+          width="108"
+          height="32"
+          loading="lazy"
+        />
+        <a href="https://kastor.green/audit-result/9e082f78-c2d0-47e9-62de-08ddb93f0b26/ecodesign">
+          <img
+            src="https://kastor.green/api/badges/639595fa-eef2-44dd-fd0b-08ddb9390ce8/language/fr"
+            alt="Score d'écoconception kastor.green"
+            width="120"
+            height="120"
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </section>
+
+    <nav class="footer__links" aria-labelledby="footer-socials">
+      <h2 id="footer-socials" class="footer__title">Me suivre</h2>
+      <ul>
+        {
+          socials.map((link) => (
+            <li>
+              <a href={link.href} rel="me">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <nav class="footer__links" aria-labelledby="footer-site">
+      <h2 id="footer-site" class="footer__title">Le site</h2>
+      <ul>
+        {
+          siteLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <p class="wrap footer__copyright">© {year} Guillaume Casbas</p>
+</footer>
+
+<style>
+  .footer {
+    background: var(--primary);
+    color: var(--on-primary);
+    padding-block: 3rem 1.5rem;
+  }
+
+  .footer__inner {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .footer__title {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--accent-on-primary);
+  }
+
+  .footer__eco p {
+    max-width: 32rem;
+  }
+
+  .footer__badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer__links ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+  }
+
+  .footer a {
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+  }
+
+  .footer a:hover {
+    text-decoration-color: var(--accent-on-primary);
+  }
+
+  .footer__copyright {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid color-mix(in srgb, var(--on-primary) 25%, transparent);
+    font-size: var(--fs-small);
+  }
+
+  @media (min-width: 801px) {
+    .footer__inner {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+</style>
