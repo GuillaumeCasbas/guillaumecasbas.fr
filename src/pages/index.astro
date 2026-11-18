@@ -1,18 +1,490 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/Button.astro';
+import Marquee from '../components/Marquee.astro';
 import CallToAction from '../components/CallToAction.astro';
+import Portrait from '../components/Portrait.astro';
+import OfferCard from '../components/OfferCard.astro';
+
+const marqueeItems = [
+  'Livrer sereinement',
+  'Des mises en prod tranquilles',
+  'Le contrôle revient',
+  'Prix fixes, périmètre écrit',
+];
+
+const skillItems = [
+  'Des tests qui protègent ce qui compte',
+  'Un pipeline fiable',
+  'Des revues de code qui ont du sens',
+];
 ---
 
 <SiteLayout
-  title="Guillaume Casbas"
-  description="Livrer sereinement, même quand l'IA écrit le code."
+  title="Guillaume Casbas · Livrer sereinement, même quand l'IA écrit le code"
+  description="Lead tech pendant plus de 10 ans, je remets le contrôle dans vos livraisons. On démarre par un audit de livraison : 700 € HT, 1 jour."
 >
   <main>
-    <section class="wrap section">
-      <h1>Guillaume Casbas</h1>
-      <p>Livrer sereinement, même quand l'IA écrit le code.</p>
-      <p>Nouveau site en construction.</p>
+    <section class="hero wrap">
+      <h1>
+        Livrer <mark>sereinement</mark>,
+        <span class="hero__subtitle">même quand l'IA écrit le code.</span>
+      </h1>
+      <div class="hero__footer">
+        <p class="hero__lead">
+          Je remets le contrôle dans vos livraisons : des process, des tests et du jugement, pour que
+          votre équipe déploie en confiance.
+        </p>
+        <div class="hero__action">
+          <p class="hero__question">Vous déboguez en prod plus souvent que vous ne l'aimeriez&nbsp;?</p>
+          <Button href="/contact">Envoyez-moi un message</Button>
+        </div>
+      </div>
     </section>
+
+    <Marquee items={marqueeItems} />
+
+    <section class="problem section" aria-labelledby="problem-title">
+      <div class="wrap">
+        <h2 id="problem-title" class="eyebrow">Le constat</h2>
+        <ol class="problem__stairs">
+          <li><strong>×3–4</strong> plus vite pour coder.</li>
+          <li><strong>×3–4</strong> plus de features demandées.</li>
+          <li><strong>×3–4</strong> plus de contexte à tenir.</li>
+          <li><strong>×3–4</strong> plus de bugs.</li>
+          <li>Et <strong>le même stress</strong>.</li>
+        </ol>
+        <p class="problem__punch">La vitesse a augmenté. Le contrôle, lui, court derrière.</p>
+      </div>
+    </section>
+
+    <section class="questions wrap section" aria-label="Trois questions">
+      <div class="questions__grid">
+        <article>
+          <h3>Vous déployez un vendredi&nbsp;?</h3>
+          <p>
+            Si la réponse est « jamais », ce n'est pas de la prudence. C'est que personne n'a
+            confiance dans ce qui part en prod.
+          </p>
+        </article>
+        <article>
+          <h3>Qui relit le code généré par IA dans votre équipe&nbsp;?</h3>
+          <p>
+            L'IA écrit vite, mais elle ne connaît pas votre métier. Quelqu'un doit s'assurer que le
+            code fait ce qu'on attend de lui.
+          </p>
+        </article>
+        <article>
+          <h3>Vous déboguez en prod plus souvent que vous ne l'aimeriez&nbsp;?</h3>
+          <p>Alors vos tests et votre pipeline ne protègent pas ce qui compte vraiment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="job section" aria-labelledby="job-title">
+      <div class="wrap">
+        <p class="eyebrow job__eyebrow">Mon métier</p>
+        <h2 id="job-title">Remettre le contrôle dans ce circuit.</h2>
+        <p class="job__text">
+          J'apporte du contrôle là où l'IA apporte de la vitesse : des tests qui protègent ce qui
+          compte, un pipeline fiable, des revues de code qui ont du sens. Votre équipe garde le rythme,
+          et retrouve la sérénité.
+        </p>
+      </div>
+    </section>
+
+    <section class="proof section" aria-labelledby="proof-title">
+      <div class="wrap proof__inner">
+        <div>
+          <h2 id="proof-title" class="visually-hidden">La preuve</h2>
+          <p class="proof__figure">
+            <span class="proof__number">0</span>
+            <span class="proof__label">
+              interruption de service en <strong>4&nbsp;ans</strong> de lead tech chez Medelse, sur le web
+              et le mobile, pour <strong>5&nbsp;000+</strong> utilisateurs.
+            </span>
+          </p>
+          <p class="proof__text">
+            Pas de magie : des tests unitaires et d'intégration, une QA sérieuse, et des revues de code
+            exigeantes. Mon rôle : fixer un niveau d'exigence élevé, et donner à l'équipe les moyens de
+            l'atteindre.
+          </p>
+        </div>
+        <figure class="proof__quote">
+          <blockquote>
+            <p>
+              « Guillaume a été une personne clé au sein de Medelse pendant quatre ans. Il s'est
+              distingué par son expertise technique, sa rigueur, son investissement et son esprit
+              d'équipe. »
+            </p>
+          </blockquote>
+          <figcaption>
+            <strong>Thomas Gendron</strong>, ex-CEO de Medelse, aujourd'hui directeur de Mistertemp'plus
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <Marquee items={skillItems} tone="primary" />
+
+    <section class="me wrap section" aria-labelledby="me-title">
+      <Portrait />
+      <div>
+        <h2 id="me-title">Je m'appelle Guillaume.</h2>
+        <p class="me__text">
+          Optimiseur un peu obsessionnel, j'aime les process qui marchent et les mises en prod dont
+          plus personne ne parle.
+        </p>
+        <a class="me__link" href="/qui-je-suis">Qui je suis →</a>
+      </div>
+    </section>
+
+    <section class="offers section" id="offres" aria-labelledby="offers-title">
+      <div class="wrap">
+        <h2 id="offers-title">Comment on démarre</h2>
+        <p class="offers__intro">Prix fixes, périmètre écrit. Pas de surprise.</p>
+        <div class="offers__grid">
+          <OfferCard
+            title="Session stratégie"
+            price="300 €"
+            meta="90 minutes, à distance"
+            cta={{ href: '/contact?offre=session', label: 'Prendre une session' }}
+          >
+            <p>
+              On échange : vous me racontez votre façon de livrer, et vous me montrez ce qui coince en
+              partage d'écran.
+            </p>
+            <p>
+              Vous recevez un compte rendu écrit : où vous en êtes, les options, la priorité que je
+              recommande.
+            </p>
+          </OfferCard>
+
+          <OfferCard
+            title="Audit de livraison"
+            price="700 €"
+            meta="1 jour, sur place ou à distance"
+            cta={{ href: '/contact?offre=audit', label: 'Réserver un audit' }}
+            featured
+            tag="Recommandé"
+          >
+            <p>
+              Je constate par moi-même dans votre code et vos outils : pipeline, tests, déploiements,
+              revues de code. Je vous dis pourquoi vous déboguez en prod, et quoi faire en premier.
+            </p>
+            <p>
+              Vous recevez un compte rendu factuel, un plan d'action priorisé, mes checklists
+              réutilisables, et une restitution orale.
+            </p>
+            <p><a href="/demarrer#audit">Découvrir l'audit →</a></p>
+          </OfferCard>
+
+          <OfferCard
+            title="Missions"
+            priceText="Chiffré après l'audit ou la session"
+            meta="Périmètre écrit, prix ferme"
+            cta={{ href: '/contact?offre=audit', label: "Commencer par l'audit" }}
+          >
+            <p>Si le diagnostic le justifie :</p>
+            <ul>
+              <li>
+                un pipeline et les tests critiques, pour déployer un vendredi après-midi sans trembler ;
+              </li>
+              <li>l'ATDD : des tests écrits à partir des critères de votre équipe produit ;</li>
+              <li>un lead tech à temps partiel pour vos mises en prod.</li>
+            </ul>
+            <p>Proposition écrite sous 48 heures après l'audit ou la session.</p>
+          </OfferCard>
+        </div>
+      </div>
+    </section>
+
     <CallToAction />
   </main>
 </SiteLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(2rem, 7vw, 5rem) clamp(2.5rem, 7vw, 5rem);
+  }
+
+  /* On desktop, the hero gets its presence from whitespace, not from letter size. */
+  @media (min-width: 801px) {
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 75vh;
+    }
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  mark {
+    padding-inline: 0.1em;
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .hero__subtitle {
+    display: block;
+    margin-top: 0.3em;
+    font-size: 0.42em;
+    line-height: 1;
+  }
+
+  .hero__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .hero__lead {
+    max-width: 36rem;
+    margin: 0;
+    font-size: var(--fs-lead);
+  }
+
+  .hero__question {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Small label above a block */
+  .eyebrow {
+    margin: 0 0 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: var(--accent);
+  }
+
+  /* Problem statement: forest block, lines stepping right like a staircase */
+  .problem {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .problem .eyebrow {
+    color: var(--accent-on-primary);
+  }
+
+  .problem__stairs {
+    margin: 0 0 3rem;
+    padding: 0;
+    list-style: none;
+    font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+    line-height: 1.25;
+  }
+
+  .problem__stairs strong {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--accent-on-primary);
+  }
+
+  @media (min-width: 801px) {
+    .problem__stairs li:nth-child(2) {
+      padding-left: 4%;
+    }
+    .problem__stairs li:nth-child(3) {
+      padding-left: 8%;
+    }
+    .problem__stairs li:nth-child(4) {
+      padding-left: 12%;
+    }
+    .problem__stairs li:nth-child(5) {
+      padding-left: 16%;
+    }
+  }
+
+  .problem__punch {
+    max-width: 16ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  /* Three questions: one column on mobile, three on desktop */
+  .questions__grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .questions article {
+    padding-top: 1.25rem;
+    border-top: var(--border-width) solid var(--primary);
+  }
+
+  .questions h3 {
+    margin-bottom: 1rem;
+  }
+
+  .questions p {
+    margin: 0;
+  }
+
+  @media (min-width: 801px) {
+    .questions__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* My job: garnet block, the turning point of the page */
+  .job {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .job .eyebrow,
+  .job h2 {
+    color: var(--on-accent);
+  }
+
+  .job h2 {
+    max-width: 18ch;
+  }
+
+  .job__text {
+    max-width: 40rem;
+    margin: 0;
+    font-size: var(--fs-lead);
+  }
+
+  /* Proof: huge zero next to the label, testimonial on a green card */
+  .proof__inner {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .proof__figure {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .proof__number {
+    font-family: var(--font-display);
+    font-size: clamp(8rem, 22vw, 16rem);
+    line-height: 0.8;
+    color: var(--primary);
+  }
+
+  .proof__label {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    line-height: 1.3;
+  }
+
+  .proof__text {
+    max-width: 36rem;
+    margin: 0;
+  }
+
+  .proof__quote {
+    margin: 0;
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .proof__quote blockquote {
+    margin: 0 0 1rem;
+  }
+
+  .proof__quote blockquote p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 801px) {
+    .proof__inner {
+      grid-template-columns: 1.1fr 1fr;
+    }
+  }
+
+  /* About me: duotone portrait next to a short introduction */
+  .me {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .me :global(.portrait) {
+    max-width: 16rem;
+  }
+
+  .me h2 {
+    margin-bottom: 1rem;
+  }
+
+  .me__text {
+    max-width: 32rem;
+    font-size: var(--fs-lead);
+  }
+
+  .me__link {
+    font-weight: 600;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+  }
+
+  @media (min-width: 801px) {
+    .me {
+      grid-template-columns: 20rem 1fr;
+      gap: 3rem;
+    }
+
+    .me :global(.portrait) {
+      max-width: none;
+    }
+  }
+
+  /* Offers: green block, three pricing cards, the featured one first on mobile */
+  .offers {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .offers h2 {
+    margin-bottom: 0.5rem;
+    color: var(--on-secondary);
+  }
+
+  .offers__intro {
+    margin: 0 0 3rem;
+    font-size: var(--fs-lead);
+  }
+
+  .offers__grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .offers__grid > :global(.offer--featured) {
+    order: -1;
+  }
+
+  @media (min-width: 801px) {
+    .offers__grid {
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .offers__grid > :global(.offer--featured) {
+      order: 0;
+    }
+  }
+</style>

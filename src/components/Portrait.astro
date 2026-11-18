@@ -1,0 +1,53 @@
+---
+// Cut-out portrait in garnet and cream duotone, like a screen-printed poster.
+// The duotone is an SVG filter applied by the browser: no second image to maintain.
+// Astro resizes and compresses the source photo at build time.
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.webp';
+
+interface Props {
+  /** Display width in CSS pixels, used to pick the generated image sizes. */
+  width?: number;
+}
+
+const { width = 320 } = Astro.props;
+---
+
+<figure class="portrait">
+  <svg width="0" height="0" aria-hidden="true" class="portrait__filters">
+    <filter id="duotone-garnet" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <!-- Dark areas take garnet (#9b1426), light areas take cream (#f6f0e4). -->
+        <feFuncR type="table" tableValues="0.608 0.965" />
+        <feFuncG type="table" tableValues="0.078 0.941" />
+        <feFuncB type="table" tableValues="0.149 0.894" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+  <Image
+    src={portrait}
+    alt="Portrait de Guillaume Casbas"
+    width={width}
+    widths={[width, width * 2]}
+    sizes={`${width}px`}
+    loading="lazy"
+  />
+</figure>
+
+<style>
+  .portrait {
+    margin: 0;
+  }
+
+  .portrait__filters {
+    position: absolute;
+  }
+
+  .portrait img {
+    width: 100%;
+    filter: url(#duotone-garnet);
+    /* Hides a leftover of the old round frame at the top edge of the source photo. */
+    clip-path: inset(8% 0 0 0);
+  }
+</style>
