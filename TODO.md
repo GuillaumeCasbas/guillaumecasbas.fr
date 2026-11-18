@@ -9,24 +9,24 @@ Les étapes 1 à 6 sont terminées (voir « Fait » en bas). Ce qui reste est cl
 
 Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton profil LinkedIn.
 
-- [ ] **LinkedIn, l'essentiel** (≈ 30 min) : appliquer la section 1 de `knowledge-refonte-site/audit-profils.md`
-  - [ ] Nouvelle bannière : `knowledge-refonte-site/linkedin-banniere.png`
-  - [ ] Nouveau titre (« Livrer sereinement… » au lieu de « sans stress »)
-  - [ ] Nouveau résumé (sans le « 3 à 4 fois », prix en HT, session stratégie ajoutée), en vérifiant les retours à la ligne
-- [ ] **Décider : mettre le nouveau site en ligne avant le salon, ou juste après.** L'ancien site contredit le nouveau positionnement, mais un jour de plus est acceptable. Si mise en ligne, il faut d'abord régler ces bloquants (≈ 1 à 2 h) :
+- [x] **LinkedIn, l'essentiel** (≈ 30 min) : appliquer la section 1 de `knowledge-refonte-site/audit-profils.md`
+  - [x] Nouvelle bannière : `knowledge-refonte-site/linkedin-banniere.png`
+  - [x] Nouveau titre (« Livrer sereinement… » au lieu de « sans stress »)
+  - [x] Nouveau résumé (sans le « 3 à 4 fois », prix en HT, session stratégie ajoutée), en vérifiant les retours à la ligne
+- [x] **Décider : mettre le nouveau site en ligne avant le salon, ou juste après.** Mis en ligne le 2026-11-18, avant le salon. L'ancien site contredit le nouveau positionnement, mais un jour de plus est acceptable. Si mise en ligne, il faut d'abord régler ces bloquants (≈ 1 à 2 h) :
   - [x] **Le « ×3–4 » non sourcé** : remplacé le 2026-11-18 par une tendance (« Plus vite pour coder. Davantage de features demandées… »)
   - [x] **Le NDA promis** : adouci le 2026-11-18 (« Si vous le souhaitez, on signe votre accord de confidentialité… ») dans le déroulé de l'audit et la FAQ de Démarrer
   - [x] **Le téléphone de Netlify** : introuvable (ni dans le compte, ni auprès de leur support) ; mentions légales : « Téléphone : non communiqué par l'hébergeur » (2026-11-18)
   - [x] **`npm audit`** : vérifié le 2026-11-18. Faille ReDoS de picomatch (≤ 4.0.7), utilisé seulement au build par Vite et Astro ; aucun correctif publié, rien n'est livré aux visiteurs (site statique). Non bloquant : revérifier après une mise à jour d'Astro
-  - [ ] Fusionner la branche dans main, déployer, vérifier le site sur ton téléphone
-- [ ] **Bluesky** (≈ 10 min) : nouvelle bio (section 3 de l'audit) et bannière `knowledge-refonte-site/bluesky-banniere.png`
-- [ ] **Signature email** (≈ 5 min, une fois le site en ligne pour que l'avatar s'affiche) : ouvrir `knowledge-refonte-site/signature-email.html` dans le navigateur, tout copier, coller dans Gmail (Paramètres → Général → Signature)
+  - [x] Fusionner la branche dans main, déployer, vérifier le site sur ton téléphone (fait le 2026-11-18, avec message de test et aperçu LinkedIn rafraîchi)
+- [x] **Bluesky** (≈ 10 min) : nouvelle bio (section 3 de l'audit) et bannière `knowledge-refonte-site/bluesky-banniere.png`
+- [x] **Signature email** (≈ 5 min, une fois le site en ligne pour que l'avatar s'affiche) : ouvrir `knowledge-refonte-site/signature-email.html` dans le navigateur, tout copier, coller dans Gmail (Paramètres → Général → Signature)
 
 ## 🟠 Juste après le salon (avant fin novembre)
 
 ### Profils (suite de `knowledge-refonte-site/audit-profils.md`)
 
-- [ ] LinkedIn : ajouter la preuve Medelse (« aucune interruption de service en 4 ans »), corriger le bachelor (« chef de projet digital, spécialisation développement web »), TDD01 en formation (OCTO Academy, 2019), remplacer « React.js » dans les compétences principales, harmoniser les intitulés (Human's Connexion, Go chez Medelse), décider pour OryxChange
+- [ ] LinkedIn (preuve Medelse et bachelor faits le 2026-11-18) : TDD01 en formation (OCTO Academy, 2019), remplacer « React.js » dans les compétences principales, harmoniser les intitulés (Human's Connexion, Go chez Medelse), décider pour OryxChange
 - [ ] GitHub : bio, README de profil en français relié au positionnement, description du dépôt du site (« construit avec Astro »)
 - [ ] Bluesky : garder le compte actif ou retirer le lien (pied de page du site et LinkedIn) ; supprimer ou non le post « J'ai envie de blogger »
 
@@ -47,7 +47,8 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 ### Après la mise en ligne
 
 - [ ] Vérifier sur le site en ligne que « Pas de cookies, pas de suivi » reste vrai (formulaire Netlify testé et fonctionnel le 2026-11-18)
-- [ ] Relancer les audits Ecoindex et kastor.green (nouvel identifiant de badge kastor)
+- [x] Relancer les audits Ecoindex et kastor.green (2026-11-18) : [rapport Ecoindex](https://www.ecoindex.fr/resultat/?id=7c299d60-7256-45bc-9f0e-fe6358186a43), [rapport kastor.green](https://kastor.green/simple-audit-result/6mXg8Gab)
+- [x] Pied de page : remplacer le lien et l'image du badge kastor.green (branche `fix/kastor-badge`, score 97) (`src/components/Footer.astro`) par ceux du nouvel audit ; récupérer l'adresse de l'image du badge sur kastor.green (le badge Ecoindex, lui, se met à jour tout seul)
 - [ ] Début décembre : désactiver le bandeau Movember (`enabled: false` dans `src/config/movember.ts`)
 - [ ] Mettre à jour la description du dépôt GitHub du site
 
@@ -78,5 +79,6 @@ Classé par impact : ce qu'un visiteur du salon verra en premier, c'est ton prof
 - [x] Textes des 2 recommandations LinkedIn intégrés au site
 - [x] Preuve « 4 ans en prod » : Medelse, aucune interruption de service
 - [x] Bandeau Movember sur l'accueil et Qui je suis : réglages dans `src/config/movember.ts` (mettre à jour km et euros pendant la campagne, `enabled: false` en décembre)
+- [x] Favicon « GC » crème sur grenat (`favicon.ico`, `favicon.png`, `apple-touch-icon.png`), validé le 2026-11-18
 - [x] Charte graphique : `knowledge-refonte-site/charte-graphique.md`
 - [x] Audit des profils LinkedIn, GitHub et Bluesky, bannières LinkedIn et Bluesky : `knowledge-refonte-site/`
