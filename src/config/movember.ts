@@ -17,7 +17,7 @@ export interface MovemberCampaign {
 export const movember: MovemberCampaign = {
   enabled: true,
   year: 2026,
-  kmDone: 85.3,
+  kmDone: 96.8,
   kmGoal: 120,
   donationDone: 120,
   donationGoal: 200,
