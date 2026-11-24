@@ -86,6 +86,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '');
     grid-area: contact;
   }
 
+  /* Very narrow screens: the name wraps so the contact button fits beside it. */
+  @media (max-width: 359px) {
+    .header__name {
+      white-space: normal;
+      line-height: 1.2;
+    }
+  }
+
   @media (min-width: 801px) {
     .header {
       grid-template-columns: 1fr auto auto;

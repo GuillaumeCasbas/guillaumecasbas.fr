@@ -37,6 +37,7 @@ const comparison = [
   },
 ];
 
+// Answers may contain inline links, so they are rendered as HTML.
 const faq = [
   {
     question: 'Mon code est confidentiel. Comment ça se passe ?',
@@ -46,7 +47,7 @@ const faq = [
   {
     question: 'Vous êtes une TPE sans équipe tech ?',
     answer:
-      'Écrivez-moi quand même. Je vous dirai honnêtement si l’une de ces offres est faite pour vous, ou ce qui le serait.',
+      'Ces deux offres s’adressent plutôt aux équipes tech. Pour une idée, un devis ou un souci sur votre site, je vous propose <a href="/coup-de-main">un coup de main</a> : une première réponse gratuite, et une orientation si ce n’est pas mon domaine.',
   },
   {
     question: 'Et si nous n’avons ni CI ni tests ?',
@@ -314,7 +315,7 @@ const faq = [
           faq.map((item) => (
             <details class="faq__item">
               <summary>{item.question}</summary>
-              <p>{item.answer}</p>
+              <p set:html={item.answer} />
             </details>
           ))
         }
