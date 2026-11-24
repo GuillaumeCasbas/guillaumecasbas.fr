@@ -1,0 +1,234 @@
+---
+// Page for very small businesses: describe a situation, get a first useful answer.
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Button from '../components/Button.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Portrait from '../components/Portrait.astro';
+
+const situations = [
+  {
+    title: 'J’ai une idée, mais je ne sais pas par où commencer',
+    text: 'Par exemple : passer vos rendez-vous du papier au numérique, avec des rappels automatiques. Un outil tout prêt suffit peut-être : on regarde ensemble ce que ça implique.',
+  },
+  {
+    title: 'J’ai reçu un devis',
+    text: 'Vous voulez comprendre ce qu’il contient, et savoir s’il répond à votre besoin.',
+  },
+  {
+    title: 'Mon site a un problème',
+    text: 'Il est lent, il affiche une erreur, ou une mise à jour s’est mal passée.',
+  },
+  {
+    title: 'Je veux changer d’hébergeur ou de prestataire',
+    text: 'Vous voulez préparer la suite et garder la main sur vos accès.',
+  },
+];
+---
+
+<SiteLayout
+  title="Coup de main · Guillaume Casbas"
+  description="Une idée, un doute sur votre site, un outil ou un devis ? Décrivez-moi votre situation : je vous aide, ou je vous oriente vers la bonne personne."
+>
+  <main>
+    <section class="hero wrap section">
+      <h1>Une idée, un doute&nbsp;? Parlons-en.</h1>
+      <p class="hero__lead">
+        Un site, un outil, un devis&nbsp;: décrivez-moi votre situation. Si je peux vous aider, je vous
+        dis comment. Sinon, je vous oriente vers la bonne ressource ou la bonne personne.
+      </p>
+      <Button href="/contact?offre=coup-de-main">Décrire ma situation</Button>
+    </section>
+
+    <section class="situations section" aria-labelledby="situations-title">
+      <div class="wrap">
+        <h2 id="situations-title">Vous vous reconnaissez&nbsp;?</h2>
+        <ul class="situations__list">
+          {
+            situations.map((situation) => (
+              <li>
+                <h3>{situation.title}</h3>
+                <p>{situation.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="steps wrap section" aria-labelledby="steps-title">
+      <h2 id="steps-title">Comment ça se passe</h2>
+      <ol class="steps__list">
+        <li>
+          <h3>Vous m'écrivez</h3>
+          <p>Avec vos mots, sans jargon.</p>
+        </li>
+        <li>
+          <h3>Je vous réponds gratuitement</h3>
+          <p>
+            Par email ou lors d'un appel de 15&nbsp;minutes&nbsp;: une piste, un article, une personne
+            de confiance, ou une proposition. Si un outil existant suffit, je vous le dis.
+          </p>
+        </li>
+        <li>
+          <h3>Vous décidez</h3>
+          <p>Si j'interviens, vous recevez d'abord un devis clair.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="independence section" aria-labelledby="independence-title">
+      <div class="wrap">
+        <h2 id="independence-title">Un avis indépendant</h2>
+        <ul class="independence__list">
+          <li>Si je donne mon avis sur un devis, je ne me propose pas pour le réaliser.</li>
+          <li>Si je vous recommande quelqu'un, je ne touche aucune commission.</li>
+          <li>Je ne transmets vos coordonnées qu'avec votre accord.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="me wrap section" aria-labelledby="me-title">
+      <Portrait width={240} />
+      <div>
+        <h2 id="me-title">Qui vous répond</h2>
+        <p class="me__text">
+          Guillaume, développeur web depuis plus de 10&nbsp;ans. J'explique simplement, et je vous dis
+          quand un sujet sort de mon domaine.
+        </p>
+      </div>
+    </section>
+
+    <CallToAction
+      tone="accent"
+      title="On regarde ça ensemble ?"
+      label="Décrire ma situation"
+      href="/contact?offre=coup-de-main"
+    />
+  </main>
+</SiteLayout>
+
+<style>
+  .hero__lead {
+    max-width: 38rem;
+    margin-bottom: 2.5rem;
+    font-size: var(--fs-lead);
+  }
+
+  /* Situations: green block, one ruled entry per situation */
+  .situations {
+    background: var(--secondary);
+    color: var(--on-secondary);
+  }
+
+  .situations h2,
+  .situations h3 {
+    color: var(--on-secondary);
+  }
+
+  /* "Reconnaissez ?" is too long for the mobile heading size */
+  @media (max-width: 400px) {
+    .situations h2 {
+      font-size: 9vw;
+    }
+  }
+
+  .situations__list {
+    display: grid;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .situations__list li {
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--on-secondary);
+  }
+
+  .situations h3,
+  .steps h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  .situations p,
+  .steps p {
+    margin: 0;
+  }
+
+  /* Steps: numbered, on cream */
+  .steps__list {
+    display: grid;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .steps__list li {
+    counter-increment: step;
+  }
+
+  .steps__list li::before {
+    content: counter(step);
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  /* Independence: forest block */
+  .independence {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+
+  .independence h2 {
+    color: var(--accent-on-primary);
+  }
+
+  .independence__list {
+    max-width: 44rem;
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: var(--fs-lead);
+  }
+
+  .independence__list li + li {
+    margin-top: 0.75rem;
+  }
+
+  .me {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .me :global(.portrait) {
+    max-width: 15rem;
+  }
+
+  .me__text {
+    max-width: 36rem;
+    margin: 0;
+    font-size: var(--fs-lead);
+  }
+
+  @media (min-width: 801px) {
+    .situations__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .me {
+      grid-template-columns: 15rem 1fr;
+      gap: 4rem;
+    }
+  }
+</style>

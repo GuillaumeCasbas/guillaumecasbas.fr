@@ -39,6 +39,13 @@
   --shadow-offset: 4px;
 }
 
+/* Very narrow screens (320px wide, or 400% zoom): keep long words inside the page. */
+@media (max-width: 359px) {
+  :root {
+    --fs-h2: 1.85rem;
+  }
+}
+
 /* Base */
 
 *,

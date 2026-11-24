@@ -2,21 +2,22 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Button from '../components/Button.astro';
 
-// Values sent by the "Ce qui vous amène" choice. `?offre=audit` or `?offre=session` preselects one.
+// Values sent by the "Ce qui vous amène" choice. `?offre=audit`, `session` or `coup-de-main` preselects one.
 const reasons = [
   { value: 'audit', label: 'L’audit de livraison' },
   { value: 'session', label: 'La session stratégie' },
+  { value: 'coup-de-main', label: 'Un coup de main : une idée, un doute' },
   { value: 'autre', label: 'Je ne sais pas encore' },
 ];
 ---
 
 <SiteLayout
   title="Contact · Guillaume Casbas"
-  description="Vous déboguez en prod plus souvent que vous ne l'aimeriez ? Envoyez-moi un message, on regarde ça ensemble."
+  description="Une question, un projet, une équipe à épauler ? Envoyez-moi un message, on regarde ça ensemble."
 >
   <main>
     <section class="contact wrap section">
-      <h1>Vous déboguez en prod plus souvent que vous ne l'aimeriez&nbsp;?</h1>
+      <h1>Parlons de votre situation.</h1>
       <p class="contact__lead">Envoyez-moi un message, on regarde ça ensemble.</p>
 
       <!-- Netlify Forms: detected at deploy time; the hidden bot-field is a honeypot against spam. -->
@@ -69,8 +70,8 @@ const reasons = [
         <div class="form__field">
           <label for="message">Votre message</label>
           <p class="form__hint" id="message-hint">
-            Décrivez votre situation en quelques lignes. Comment livrez-vous aujourd'hui, qu'est-ce qui
-            coince&nbsp;?
+            Décrivez votre situation en quelques lignes&nbsp;: où en êtes-vous, et qu'aimeriez-vous
+            améliorer&nbsp;?
           </p>
           <textarea id="message" name="message" rows="7" aria-describedby="message-hint" required
           ></textarea>
@@ -124,7 +125,7 @@ const reasons = [
   </main>
 </SiteLayout>
 
-<!-- Preselects "Ce qui vous amène" from ?offre=audit or ?offre=session. Without JavaScript, the default choice stays. -->
+<!-- Preselects "Ce qui vous amène" from ?offre=audit, session or coup-de-main. Without JavaScript, the default choice stays. -->
 <script is:inline>
   (() => {
     const offer = new URLSearchParams(window.location.search).get('offre');
