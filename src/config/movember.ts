@@ -17,9 +17,9 @@ export interface MovemberCampaign {
 export const movember: MovemberCampaign = {
   enabled: true,
   year: 2026,
-  kmDone: 104.5,
+  kmDone: 123.9,
   kmGoal: 120,
-  donationDone: 120,
+  donationDone: 145,
   donationGoal: 200,
   donationUrl: 'https://movember.com/m/14950664',
   endLabel: '30 novembre',
